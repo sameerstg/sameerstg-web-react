@@ -2,7 +2,7 @@ import React from 'react'
 import NavButton from '../Components/NavButton'
 function Navigation() {
   return (
-    <div className='flex bg-red-400 mx-auto justify-end'>
+    <div className='flex bg-[#000000] mx-auto justify-end'>
       <NavButton text="Home"/>
       <NavButton text="Portfolio"/>
 
