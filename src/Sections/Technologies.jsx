@@ -10,8 +10,8 @@ import {motion} from 'framer-motion'
 
 function Technologies() {
   return (
-    <div>
-        <div className='text-black font-bold text-[40px] tablet:text-[80px] laptop:text-[100px] text-center pb-9'>
+    <div className='h-[50vh]'>
+        <div className='text-black  font-bold text-[40px] tablet:text-[80px] laptop:text-[100px] text-center pb-9'>
 
             Technologies
         </div>

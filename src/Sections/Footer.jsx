@@ -12,7 +12,7 @@ import {motion} from 'framer-motion'
 
 function Footer() {
   return (
-    <div className='text-black w-full bg-[#00000086] py-7 mt-56 '>
+    <div className='text-black w-full bg-[#00000086] pt-4 pb-2'>
         <div className='flex gap-4 justify-center items-center'>
         <motion.img src={logo} className='h-10 laptop:h-20' alt="" initial={{opacity:0,x:-500}} animate={{opacity:1,x:0}} transition={{  ease:[0.36,1,0.26,1]}}/>
         <motion.h1 className='text-[30px] laptop:text-[50px] font-bold  'initial={{opacity:0,x:500}} animate={{opacity:1,x:0}} transition={{  ease:[0.36,1,0.26,1]}}>
