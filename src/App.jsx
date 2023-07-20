@@ -12,7 +12,8 @@ function App() {
     
       
       
-       <Navigation/>
+      <Navigation/>
+       
         <Routes>
         <Route exact path="/" Component={Home}>
 
