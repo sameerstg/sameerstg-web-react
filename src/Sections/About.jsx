@@ -9,11 +9,12 @@ import youtube from '../Assets/Images/youtube.svg'
 import facebook from '../Assets/Images/facebook.svg'
 import instagram from '../Assets/Images/instagram.svg'
 import discord from '../Assets/Images/discord.svg'
+import SocialIcon from '../Components/SocialIcon'
 function About() {
   return (
-    <div className='h-screen w-full flex flex-col laptop:justify-center gap-10'>
+    <div className='py-10 laptop:py-0 laptop:h-screen laptop:justify-center w-full flex flex-col  gap-10'>
       <div 
-        className='flex flex-col  laptop:justify-center mt-8 laptop:my-0 text-center text-black'>
+        className='flex flex-col  laptop:justify-center mt-8 tablet:mt-0 laptop:my-0 text-center text-black'>
       
 
       
@@ -41,13 +42,14 @@ function About() {
         
     </div>
     <ul className='flex justify-center gap-1 tablet:gap-6 laptop:gap-6'>
-      <a target='_blank' rel="noreferrer" href='https://github.com/sameerstg'><motion.img whileHover={{scale:1.2}}  initial={{x:-1000}} animate={{x:0}} transition={{  ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={github} alt="" /></a>
-      <a target='_blank' rel="noreferrer" href='https://www.artstation.com/sameerstg5'><motion.img whileHover={{scale:1.2}}  initial={{x:-1000}} animate={{x:0}} transition={{  ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={artstation} alt="" /></a>
-      <a target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/sameerstg/'><motion.img whileHover={{scale:1.2}}  initial={{y:400}} animate={{y:0}}  transition={{  ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={linkedin} alt="" /></a>
-      <a target='_blank' rel="noreferrer" href='https://www.instagram.com/sameerstg/'><motion.img whileHover={{scale:1.2}}  initial={{opacity:0}} animate={{opacity:1}}  transition={{  delay:0.18,ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={instagram} alt="" /></a>
-      <a target='_blank' rel="noreferrer" href='https://www.youtube.com/channel/UCt68mmpafwAmhsENbxr_5Lg'><motion.img whileHover={{scale:1.2}}  initial={{y:-400}} animate={{y:0}}  transition={{  ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={youtube} alt="" /></a>
-      <a target='_blank' rel="noreferrer" href='https://www.facebook.com/people/Sameerstg/100069067089055/'><motion.img whileHover={{scale:1.2}}  initial={{x:1000}} animate={{x:0}}  transition={{  ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={facebook} alt="" /></a>
-      <a target='_blank' rel="noreferrer" href='https://discord.gg/VBm3Vf5T'><motion.img whileHover={{scale:1.2}}  initial={{x:1000}} animate={{x:0}}  transition={{  ease:[0.36,1,0.26,1]}} className='h-12 tablet:h-16 laptop:h-24 ' src={discord} alt="" /></a>
+      <SocialIcon initial={{x:-1000}} link={'https://github.com/sameerstg'} image={github}/>
+      <SocialIcon initial={{x:-1000}} link={'https://www.artstation.com/sameerstg5'} image={artstation}/>
+      <SocialIcon initial={{y:-1000}} link={'https://www.instagram.com/sameerstg/'} image={instagram}/>
+      <SocialIcon  link={'https://www.linkedin.com/in/sameerstg/'} image={linkedin}/>
+      <SocialIcon initial={{y:1000}} link={'https://www.youtube.com/channel/UCt68mmpafwAmhsENbxr_5Lg'} image={youtube}/>
+      <SocialIcon initial={{x:1000}} link={'https://www.facebook.com/people/Sameerstg/100069067089055/'} image={facebook}/>
+      <SocialIcon initial={{x:1000}} link={'https://discord.gg/VBm3Vf5T'} image={discord}/>
+      
     </ul>
     </div>
     
