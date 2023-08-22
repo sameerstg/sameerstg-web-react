@@ -3,7 +3,23 @@
 @tailwind utilities;
 
 body{
-  background: linear-gradient(to right,  #06b5b0 42.01%, #11F7F0 95.76%);
-  /* background: linear-gradient(to right,  #8ed1f3 42.01%, #3ebeff 95.76%); */
+  background-color: #212428;
+  font-family: "Poppins", sans-serif;
  
+}
+.box{
+
+  background: linear-gradient(145deg,#212428 0%, #16181c 100%);
+  background: -webkit-linear-gradient(145deg,#212428 0%, #16181c 100%);
+  background: -moz-linear-gradient(145deg,#212428 0%, #16181c 100%);
+
+
+  box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
+-webkit-box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
+-moz-box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
+
+
+
+
+
 }

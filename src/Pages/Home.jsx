@@ -1,17 +1,16 @@
 import React from 'react'
-import About from '../Sections/About'
-import Technologiesogies from '../Sections/Technologies'
-import { BrowserRouter } from 'react-router-dom'
+import Intro from '../Components/Intro'
+import Portfolio from '../Components/Portfolio'
 
 function Home() {
   return (
     <div>
-        
-        <About/>
-       {/* <Portfolio/> */}
-        <Technologiesogies/>
+        <div className='mx-2'>
+        <Intro/>
        
-
+       <Portfolio/>
+        </div>
+       
     </div>
   )
 }
