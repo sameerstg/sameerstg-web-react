@@ -2,9 +2,9 @@ import React from 'react'
 
 function IconBox({image,href,size}) {
   return (
-    <div className='box p-1 w-20 h-20'>
- <a href={href}>
-        {/* <img src={image} className='w-16' alt="" /> */}
+    <div className='box p-1'>
+ <a href={href} target="_blank" rel="noreferrer noopener" >
+        <img src={image} className='w-20' alt="" />
     </a>
     </div>
    
