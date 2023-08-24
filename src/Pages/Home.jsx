@@ -1,11 +1,11 @@
 import React from 'react'
-import Intro from '../Components/Intro'
+import Intro from '../Section/Intro'
 import Portfolio from '../Components/Portfolio'
 
 function Home() {
   return (
     <div>
-        <div className='mx-2'>
+        <div className='text-primary'>
         <Intro/>
        
        <Portfolio/>

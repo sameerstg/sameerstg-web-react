@@ -5,6 +5,7 @@
 body{
   background-color: #212428;
   font-family: "Poppins", sans-serif;
+  
  
 }
 .box{
@@ -12,8 +13,24 @@ body{
   background: linear-gradient(145deg,#212428 0%, #16181c 100%);
   background: -webkit-linear-gradient(145deg,#212428 0%, #16181c 100%);
   background: -moz-linear-gradient(145deg,#212428 0%, #16181c 100%);
+  border-radius: 25px;
+
+  box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
+-webkit-box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
+-moz-box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
 
 
+
+
+
+}
+.blue-box{
+
+  background: linear-gradient(145deg,#00FFFF 0%, #aeffffb9 100%);
+  background: -webkit-linear-gradient(145deg,#212428 0%, #16181c 100%);
+  background: -moz-linear-gradient(145deg,#212428 0%, #16181c 100%);
+
+  border-radius: 25px;
   box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
 -webkit-box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
 -moz-box-shadow: 6px 10px 20px 3px rgba(0,0,0,0.64);
