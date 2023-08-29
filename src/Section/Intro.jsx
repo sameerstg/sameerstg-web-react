@@ -20,38 +20,35 @@ import photoshop from '../Assets/Images/Technologies/photoshop.svg'
 import react from '../Assets/Images/Technologies/react.svg'
 import unity from '../Assets/Images/Technologies/unity.svg'
 import InterestBox from '../Components/InterestBox'
- 
+
 
 
 function Home() {
   return (
     <div className='mx-auto text-center font-serif'>
-      
-        {/*  Intro */}
-        <div className='laptop:h-[90vh] my-10 laptop:my-0 flex flex-col justify-center'>
-          <div className='text-[32px] tablet:text-[50px] font-bold '>
-            <h2 className='text-tertiary font-bold'>Hello World</h2>
-            <div className='flex justify-center'>
-              <h1 className='text-primary font-bold'>I'm</h1>
 
-              <h1 className='text-secondary font-bold'>&nbsp;Sameerstg</h1>
-            </div>
-            <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
+      {/*  Intro */}
+      <div className='laptop:h-[90vh] my-10 laptop:my-0 flex flex-col justify-center'>
+        <div className='text-[32px] tablet:text-[50px] font-bold '>
+          <h2 className='text-tertiary font-bold'>Hello World</h2>
+          <div className='flex justify-center'>
+            <h1 className='text-primary'>I'm</h1>
+
+            <h1 className='text-secondary'>&nbsp;Sameerstg</h1>
           </div>
+          <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
+        </div>
 
-          <div className='text-tertiary flex flex-col gap-1 text-[16px] font-bold'>
-            <p className='font-mono'>
+        <p className='text-tertiary text-[16px] font-bold font-mono py-10'>
+          With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
+        </p>
 
-              With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.</p>
-
-          </div>
-        
 
       </div>
 
       {/* Ping and technologies */}
-      
-      <div className='h-screen flex flex-col gap-20'>
+
+      <div id='socials' className='h-screen flex flex-col gap-20'>
         {/* Ping */}
         <div>
           <h2 className='text-primary text-center text-[32px] tablet:text-[50px] font-bold my-3'>Ping me here</h2>
@@ -81,7 +78,7 @@ function Home() {
 
           </div>
         </div>
-   
+
         <div>
           {/* Interest */}
           <div>
@@ -96,7 +93,7 @@ function Home() {
           </div>
 
         </div>
-        
+
 
       </div>
 
