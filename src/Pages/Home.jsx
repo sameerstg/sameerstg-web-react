@@ -4,7 +4,7 @@ import Portfolio from '../Components/Portfolio'
 
 function Home() {
   return (
-    <div>
+    <div id='home'>
         <div className='text-primary'>
         <Intro/>
        

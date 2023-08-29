@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactTyped from 'react-typed'
+
+
 import IconBox from '../Components/IconBox'
 import github from '../Assets/Images/Socials/github.svg'
 import linkedin from '../Assets/Images/Socials/linkedin.svg'
@@ -18,7 +20,7 @@ import photoshop from '../Assets/Images/Technologies/photoshop.svg'
 import react from '../Assets/Images/Technologies/react.svg'
 import unity from '../Assets/Images/Technologies/unity.svg'
 import InterestBox from '../Components/InterestBox'
-
+ 
 
 
 function Home() {
@@ -26,7 +28,7 @@ function Home() {
     <div className='mx-auto text-center font-serif'>
       
         {/*  Intro */}
-        <div className='h-[90vh] flex flex-col justify-center'>
+        <div className='laptop:h-[90vh] my-10 laptop:my-0 flex flex-col justify-center'>
           <div className='text-[32px] tablet:text-[50px] font-bold '>
             <h2 className='text-tertiary font-bold'>Hello World</h2>
             <div className='flex justify-center'>

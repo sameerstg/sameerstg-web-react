@@ -7,9 +7,11 @@ function Navbar() {
         <div className=' my-3 flex justify-between items-center'>
             <img src={logo} alt=""  className='w-14 h-14'/>
             <div className='hidden tablet:flex tablet:flex-row font-sans font-bold gap-4 text-[28px]'>
+              
                 <h3>Home</h3>
                 <h3>Portfolio</h3>
-                <h3>My Team</h3>
+                <h3>Socials</h3>
+                <h3>Company</h3>
                 <h3>Contact</h3>
             </div>
             
