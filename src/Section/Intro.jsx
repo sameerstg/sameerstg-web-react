@@ -21,27 +21,31 @@ import react from '../Assets/Images/Technologies/react.svg'
 import unity from '../Assets/Images/Technologies/unity.svg'
 import InterestBox from '../Components/InterestBox'
 
-
+import {motion,useScroll } from 'framer-motion'
 
 function Home() {
+  const { scrollYProgress } = useScroll();
   return (
     <div className='mx-auto text-center font-serif'>
 
       {/*  Intro */}
       <div className='laptop:h-[90vh] my-10 laptop:my-0 flex flex-col justify-center'>
         <div className='text-[32px] tablet:text-[50px] font-bold '>
-          <h2 className='text-tertiary font-bold'>Hello World</h2>
-          <div className='flex justify-center'>
+         
+
+          <motion.div initial={{ opacity: 0,x:-1000 }} whileInView={{ opacity: 1,x:0 }}   transition={{ delay: 0.1,duration:0.5 }}   className='text-tertiary font-bold'>Hello World</motion.div>
+      
+          <motion.div  initial={{ opacity: 0 ,x:1000}} whileInView={{ opacity: 1,x:0 }}   transition={{ delay: 0.1,duration:0.5 }} className='flex justify-center'>
             <h1 className='text-primary'>I'm</h1>
 
             <h1 className='text-secondary'>&nbsp;Sameerstg</h1>
-          </div>
+          </motion.div>
           <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
         </div>
 
-        <p className='text-tertiary text-[16px] font-bold font-mono py-10'>
+        <motion.div  initial={{ opacity: 0,y:200 }}   whileInView={{ opacity: 1,y:0 }}    transition={{ delay: 0.1,duration:0.2 }}  className='text-tertiary text-[16px] font-bold font-mono py-10'>
           With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
-        </p>
+        </motion.div>
 
 
       </div>

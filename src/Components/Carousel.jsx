@@ -6,6 +6,7 @@ import { Box, IconButton } from '@chakra-ui/react'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick'
+// import {motion} from 'framer-motion'
 // import { Link } from 'react-router-dom'
 
 // Settings for the slider
@@ -83,7 +84,9 @@ export default function Carousel({images}) {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((url, index) => (
            
-            <img key={index} className='box m-auto p-1' src={url}  alt="" />
+
+               <img key={index} className='box m-auto p-1' src={url}  alt="" />
+           
            
     
         //   <Box
