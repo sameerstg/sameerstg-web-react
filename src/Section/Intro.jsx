@@ -21,20 +21,19 @@ import react from '../Assets/Images/Technologies/react.svg'
 import unity from '../Assets/Images/Technologies/unity.svg'
 import InterestBox from '../Components/InterestBox'
 
-import {motion,useScroll } from 'framer-motion'
+import {motion} from 'framer-motion'
 
 function Home() {
-  const { scrollYProgress } = useScroll();
   return (
     <div className='mx-auto text-center font-serif'>
 
       {/*  Intro */}
       <div className='laptop:h-[90vh] my-10 laptop:my-0 flex flex-col justify-center'>
         <div className='text-[32px] tablet:text-[50px] font-bold '>
-         
+
 
           <motion.div initial={{ opacity: 0,x:-1000 }} whileInView={{ opacity: 1,x:0 }}   transition={{ delay: 0.1,duration:0.5 }}   className='text-tertiary font-bold'>Hello World</motion.div>
-      
+
           <motion.div  initial={{ opacity: 0 ,x:1000}} whileInView={{ opacity: 1,x:0 }}   transition={{ delay: 0.1,duration:0.5 }} className='flex justify-center'>
             <h1 className='text-primary'>I'm</h1>
 
@@ -105,4 +104,4 @@ function Home() {
   )
 }
 
-export default Home 
+export default Home

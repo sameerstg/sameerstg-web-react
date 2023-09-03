@@ -10,10 +10,17 @@ function Portfolio() {
         <h1 className='text-primary text-[32px] font-serif text-center font-bold'>My Portfolio</h1>
         {/* <PortfolioBox image={leet} href={'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'}/>
         <PortfolioBox image={numberGame} href={'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'}/> */}
-        <motion.div whileHover={{scale:1.1}} transition={{ease:'easeInOut'}}>
+      <div>
 
-        <Carousel images={[leet,numberGame]}/>
-        </motion.div>
+      <div className=' laptop:hidden' whileHover={{scale:1.1}} transition={{ease:'easeInOut'}}>
+
+      <Carousel images={[leet,numberGame]}/>
+      </div>
+      <motion.div className='hidden laptop:flex' whileHover={{scale:1.1}} transition={{ease:'easeInOut'}}>
+
+      <Carousel images={[leet,numberGame]}/>
+      </motion.div>
+      </div>
     </div>
   )
 }
