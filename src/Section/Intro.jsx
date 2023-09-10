@@ -21,30 +21,53 @@ import react from '../Assets/Images/Technologies/react.svg'
 import unity from '../Assets/Images/Technologies/unity.svg'
 import InterestBox from '../Components/InterestBox'
 
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function Home() {
   return (
-    <div className='mx-auto text-center font-serif'>
+    <div className='mx-auto text-center font-serif '>
 
       {/*  Intro */}
-      <div className='laptop:h-[90vh] my-10 laptop:my-0 flex flex-col justify-center'>
+      <div className='laptop:h-[90vh]  laptop:my-0 flex flex-col justify-center'>
         <div className='text-[32px] tablet:text-[50px] font-bold '>
 
 
-          <motion.div initial={{ opacity: 0,x:-1000 }} whileInView={{ opacity: 1,x:0 }}   transition={{ delay: 0.1,duration:0.5 }}   className='text-tertiary font-bold'>Hello World</motion.div>
+          {/* for laptop */}
+          <div className='hidden laptop:flex laptop:flex-col'>
+            <motion.div initial={{ opacity: 0, x: -1000 }} whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }} className='text-tertiary font-bold'>Hello World</motion.div>
 
-          <motion.div  initial={{ opacity: 0 ,x:1000}} whileInView={{ opacity: 1,x:0 }}   transition={{ delay: 0.1,duration:0.5 }} className='flex justify-center'>
-            <h1 className='text-primary'>I'm</h1>
+            <motion.div initial={{ opacity: 0, x: 1000 }} whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }} className='flex justify-center'>
+              <h1 className='text-primary'>I'm</h1>
 
-            <h1 className='text-secondary'>&nbsp;Sameerstg</h1>
-          </motion.div>
-          <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
+              <h1 className='text-secondary'>&nbsp;Sameerstg</h1>
+            </motion.div>
+            <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
+
+            <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.2 }} className='text-tertiary text-[16px] font-bold font-mono py-10'>
+              With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
+            </motion.div>
+          </div>
+          {/* For mobile*/}
+          <div className='laptop:hidden'>
+            <div
+              className='text-tertiary font-bold'>Hello World</div>
+
+            <div
+              className='flex justify-center'>
+              <h1 className='text-primary'>I'm</h1>
+
+              <h1 className='text-secondary'>&nbsp;Sameerstg</h1>
+            </div>
+            <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
+
+            <div className='text-tertiary text-[16px] font-bold font-mono py-10'>
+              With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
+            </div>
+          </div>
         </div>
 
-        <motion.div  initial={{ opacity: 0,y:200 }}   whileInView={{ opacity: 1,y:0 }}    transition={{ delay: 0.1,duration:0.2 }}  className='text-tertiary text-[16px] font-bold font-mono py-10'>
-          With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
-        </motion.div>
 
 
       </div>

@@ -3,23 +3,23 @@ import React from 'react'
 import leet from '../Assets/Images/Portfolio/leet.jpg'
 import numberGame from '../Assets/Images/Portfolio/2048.jpg'
 import Carousel from './Carousel'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 function Portfolio() {
   return (
-    <div id='portfolio'>
-        <h1 className='text-primary text-[32px] font-serif text-center font-bold'>My Portfolio</h1>
-        {/* <PortfolioBox image={leet} href={'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'}/>
-        <PortfolioBox image={numberGame} href={'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'}/> */}
+    <div id='portfolio' className='laptop:h-screen flex flex-col justify-center'>
+      <h1 className='text-primary text-[32px] font-serif text-center font-bold'>My Portfolio</h1>
       <div>
 
-      <div className=' laptop:hidden' whileHover={{scale:1.1}} transition={{ease:'easeInOut'}}>
+        <div className=' laptop:hidden'>
 
-      <Carousel images={[leet,numberGame]}/>
-      </div>
-      <motion.div className='hidden laptop:flex' whileHover={{scale:1.1}} transition={{ease:'easeInOut'}}>
+          <Carousel projects={[{image:leet,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'},
+             {image:numberGame,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'}]} />
+        </div>
+        <motion.div className='hidden laptop:flex' whileHover={{ scale: 1.1 }} transition={{ ease: 'easeInOut' }}>
 
-      <Carousel images={[leet,numberGame]}/>
-      </motion.div>
+          <Carousel projects={[{image:leet,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'}, 
+            {image:numberGame,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'}]} />
+        </motion.div>
       </div>
     </div>
   )

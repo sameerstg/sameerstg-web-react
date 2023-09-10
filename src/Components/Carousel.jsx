@@ -6,9 +6,8 @@ import { Box, IconButton } from '@chakra-ui/react'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick'
-// import {motion} from 'framer-motion'
-// import { Link } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
 // Settings for the slider
 const settings = {
   dots: false,
@@ -20,10 +19,9 @@ const settings = {
   autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
-
 }
 
-export default function Carousel({ images }) {
+export default function Carousel({ projects }) {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState(null)
@@ -34,10 +32,10 @@ export default function Carousel({ images }) {
   //   const side = useBreakpointValue({ base: '90%', md: '50%' })
 
   // These are the images used in the slide
-  const cards = images;
+  const cards = projects;
 
   return (
-    <Box position={'relative'} overflow={'hidden'} className='box my-10 p-1 m-auto tablet:w-2/3'>
+    <Box position={'relative'} overflow={'hidden'} className='box my-5 laptop:my-10 p-1 m-auto tablet:w-2/3'>
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -117,22 +115,12 @@ export default function Carousel({ images }) {
 
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((url, index) => (
-
-
-          <img key={index} className='box m-auto p-1' src={url} alt="" />
-
-
-
-          //   <Box
-          //     key={index}
-          //     height={'2xl'}
-          //     position="relative"
-          //     backgroundPosition="center"
-          //     backgroundRepeat="no-repeat"
-          //     // backgroundSize="cover"
-          //     backgroundImage={`url(${url})`}
-          //   />
+        {cards.map((project, index) => (
+         
+         <Link exact to={project.link} target="_blank" rel="noreferrer noopener">
+          <img key={index} className='box m-auto p-1' src={project.image} alt="" />
+         </Link>
+         
         ))}
       </Slider>
     </Box>
