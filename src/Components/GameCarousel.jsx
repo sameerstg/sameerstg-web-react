@@ -35,7 +35,7 @@ export default function Carousel({ projects }) {
   const cards = projects;
 
   return (
-    <Box position={'relative'} overflow={'hidden'} className='box my-5 laptop:my-10 m-auto tablet:w-2/3'>
+    <Box position={'relative'} overflow={'hidden'} className='box my-5 laptop:my-10'>
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -49,8 +49,8 @@ export default function Carousel({ projects }) {
       />
       {/* Left Icon */}
       <div className='visible laptop:hidden'>
-        <IconButton className='left-[1%] top-[50%]  '
-
+        <IconButton className='left-[1%] top-[50%] '
+  
           size={"xs"}
           aria-label="left-arrow"
           colorScheme="cyan"
@@ -81,8 +81,8 @@ export default function Carousel({ projects }) {
         </IconButton>
       </div>
       <div className='hidden laptop:flex'>
-        <IconButton className='left-[1%] top-[50%]  '
-
+        <IconButton className='left-[1%] top-[50%]'
+          
           size={"sm"}
           aria-label="left-arrow"
           colorScheme="cyan"
@@ -118,7 +118,7 @@ export default function Carousel({ projects }) {
         {cards.map((project, index) => (
          
          <Link exact to={project.link} target="_blank" rel="noreferrer noopener">
-          <img key={index} className='box m-auto' src={project.image} alt="" />
+          <img key={index} className='box m-auto max-h-[500px] ' src={project.image} alt="" />
          </Link>
          
         ))}

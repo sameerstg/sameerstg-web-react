@@ -24,7 +24,7 @@ function Footer() {
         </h2>
         <a className='text-primary' href='mailto:sameerstg@outlook.com'>sameerstg@outlook.com</a>
       </div>
-      <h2 className='text-lg'>
+      <h2 className='laptop:text-lg'>
         © 2023. All rights reserved by Sameerstg
       </h2>
 

@@ -1,24 +1,47 @@
 import React from 'react'
 // import PortfolioBox from './PortfolioBox'
-import leet from '../Assets/Images/Portfolio/leet.jpg'
-import numberGame from '../Assets/Images/Portfolio/2048.jpg'
-import Carousel from './Carousel'
+
+import Carousel from './GameCarousel'
 import { motion } from 'framer-motion'
 function Portfolio() {
   return (
-    <div id='portfolio' className='laptop:h-screen flex flex-col justify-center'>
+    <div id='portfolio' className='justify-center m-auto'>
       <h1 className='text-primary text-[32px] font-serif text-center font-bold'>My Portfolio</h1>
       <div>
+        <h1 className='text-primary text-[32px] font-serif text-center font-bold'>Games</h1>
 
-        <div className=' laptop:hidden'>
+        <div className=''>
 
-          <Carousel projects={[{image:leet,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'},
-             {image:numberGame,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'}]} />
+          <Carousel projects={[{ image: 'https://play-lh.googleusercontent.com/q_gbKbYMl7pcaQCwEdwgcCVOclBjtHQPTAA6-rTfY9Z2Y8hITCGLY-FeQISc4cfUXA=w2560-h1440-rw', link: 'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet' },
+          {
+            image: 'https://play-lh.googleusercontent.com/fSk5Assdc6kdjk7s8DS34Q87pa1N8HrklYe6AFYdQjLCWp8GaSi2ZZKrdwAZzJthyg=w2560-h1440-rw'
+            , link: 'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'
+          }]} />
         </div>
-        <motion.div className='hidden laptop:flex' whileHover={{ scale: 1.1 }} transition={{ ease: 'easeInOut' }}>
+      
+      </div>
+      <div>
+        <h1 className='text-primary text-[32px] font-serif text-center font-bold'>Art Work</h1>
 
-          <Carousel projects={[{image:leet,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'}, 
-            {image:numberGame,link:'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'}]} />
+       
+        <motion.div className=''>
+
+          <Carousel projects={[{
+            image: 'https://cdna.artstation.com/p/assets/images/images/060/431/348/large/sameerstg-danucd-2.jpg?1678552654'
+            , link: 'https://www.artstation.com/artwork/lDR1lO'
+          },
+          {
+            image: 'https://cdnb.artstation.com/p/assets/images/images/060/431/169/large/sameerstg-maggie.jpg?1678552359',
+            link: 'https://www.artstation.com/artwork/JveaOD'
+          },
+          {
+            image: 'https://cdna.artstation.com/p/assets/images/images/060/431/084/large/sameerstg-lurart.jpg?1678552171',
+            link: 'https://www.artstation.com/artwork/PXeaG1'
+          },
+          {
+            image: 'https://cdnb.artstation.com/p/assets/images/images/060/431/021/large/sameerstg-room.jpg?1678552065',
+            link: 'https://www.artstation.com/artwork/49Xoyk'
+          }]} />
         </motion.div>
       </div>
     </div>
