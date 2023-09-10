@@ -35,7 +35,7 @@ export default function Carousel({ projects }) {
   const cards = projects;
 
   return (
-    <Box position={'relative'} overflow={'hidden'} className='box my-5 laptop:my-10 p-1 m-auto tablet:w-2/3'>
+    <Box position={'relative'} overflow={'hidden'} className='box my-5 laptop:my-10 m-auto tablet:w-2/3'>
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -118,7 +118,7 @@ export default function Carousel({ projects }) {
         {cards.map((project, index) => (
          
          <Link exact to={project.link} target="_blank" rel="noreferrer noopener">
-          <img key={index} className='box m-auto p-1' src={project.image} alt="" />
+          <img key={index} className='box m-auto' src={project.image} alt="" />
          </Link>
          
         ))}

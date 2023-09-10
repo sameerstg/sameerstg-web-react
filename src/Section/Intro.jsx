@@ -72,12 +72,12 @@ function Home() {
 
       </div>
 
-      {/* Ping and technologies */}
+      {/* Socials and technologies */}
 
-      <div id='socials' className='h-screen flex flex-col gap-20'>
-        {/* Ping */}
+      <div id='socials' className='h-screen flex justify-center flex-col gap-20'>
+        {/* Socials */}
         <div>
-          <h2 className='text-primary text-center text-[32px] tablet:text-[50px] font-bold my-3'>Ping me here</h2>
+          <h2 className='text-primary text-center text-[32px] tablet:text-[50px] font-bold my-3'>Socials</h2>
           <div className='flex flex-row gap-2 justify-center'>
             <IconBox image={playstore} href={'https://play.google.com/store/apps/developer?id=Sameerstg'} />
             <IconBox image={github} href={'https://github.com/sameerstg'} />
