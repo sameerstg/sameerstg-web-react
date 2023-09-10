@@ -28,6 +28,8 @@ function Navbar() {
   
           </motion.button>
           <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+          <Link duration={500} smooth={true} to='portfolio'>Portfolio</Link>
+
           </motion.button>
   
           <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
