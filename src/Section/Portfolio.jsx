@@ -2,11 +2,17 @@ import React from 'react'
 // import PortfolioBox from './PortfolioBox'
 
 
-import { motion } from 'framer-motion'
-import ImageSlider from './ImageSlider';
+
+import ImageSlider from '../Components/ImageSlider';
+
+import ModelsShower from '../Components/ModelsShower';
+
 function Portfolio() {
-  const games = [{ image: 'https://play-lh.googleusercontent.com/q_gbKbYMl7pcaQCwEdwgcCVOclBjtHQPTAA6-rTfY9Z2Y8hITCGLY-FeQISc4cfUXA=w2560-h1440-rw',
-   link: 'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet' },
+
+  const games = [{
+    image: 'https://play-lh.googleusercontent.com/q_gbKbYMl7pcaQCwEdwgcCVOclBjtHQPTAA6-rTfY9Z2Y8hITCGLY-FeQISc4cfUXA=w2560-h1440-rw',
+    link: 'https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet'
+  },
   {
     image: 'https://play-lh.googleusercontent.com/fSk5Assdc6kdjk7s8DS34Q87pa1N8HrklYe6AFYdQjLCWp8GaSi2ZZKrdwAZzJthyg=w2560-h1440-rw'
     , link: 'https://play.google.com/store/apps/details?id=com.Sameerstg.numberPuzzleGame'
@@ -27,13 +33,21 @@ function Portfolio() {
     image: 'https://cdnb.artstation.com/p/assets/images/images/060/431/021/large/sameerstg-room.jpg?1678552065',
     link: 'https://www.artstation.com/artwork/49Xoyk'
   }];
+
+
+ 
+
   return (
     <div id='portfolio' className='justify-center m-auto'>
-      <h1 className='text-primary text-[32px] font-serif text-center font-bold'>My Portfolio</h1>
-      
-        
-      <ImageSlider title={"My Games"} contents={games}/>
-      <ImageSlider title={"My Arts"} contents={arts}/>
+      {/* <h1 className='text-primary text-[32px] font-serif text-center font-bold'>My Portfolio</h1> */}
+
+
+      <ImageSlider title={"My Games"} contents={games} />
+      <ImageSlider title={"My Arts"} contents={arts} />
+
+     
+
+      <ModelsShower/>
     </div>
   )
 }

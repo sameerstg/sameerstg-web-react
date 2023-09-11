@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactTyped from 'react-typed'
 
-
+import IconBoxWithoutLink from '../Components/IconBoxWithoutLink'
 import IconBox from '../Components/IconBox'
 import github from '../Assets/Images/Socials/github.svg'
 import linkedin from '../Assets/Images/Socials/linkedin.svg'
@@ -34,10 +34,10 @@ function Home() {
 
           {/* for laptop */}
           <div className='hidden laptop:flex laptop:flex-col'>
-            <motion.div initial={{ opacity: 0, x: -1000 }} whileInView={{ opacity: 1, x: 0 }}
+            <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }} className='text-tertiary font-bold'>Hello World</motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 1000 }} whileInView={{ opacity: 1, x: 0 }}
+            <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }} className='flex justify-center'>
               <h1 className='text-primary'>I'm</h1>
 
@@ -45,7 +45,11 @@ function Home() {
             </motion.div>
             <ReactTyped className='text-primary ' loop={true} typeSpeed={40} backSpeed={50} strings={['a Game Developer', 'a Web Developer', ' an App Developer', 'an Ar/Vr Developer', 'a 3D Artist']} />
 
-            <motion.div initial={{ opacity: 0, y: 200 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.2 }} className='text-tertiary text-[16px] font-bold font-mono py-10'>
+            <motion.div 
+              initial={{ opacity: 0, y: 200 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              transition={{ delay: 0.1, duration: 0.2 }} 
+              className='text-tertiary text-xl font-bold font-mono py-10'>
               With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
             </motion.div>
           </div>
@@ -94,13 +98,13 @@ function Home() {
         <div>
           <h2 className='text-primary text-center text-[32px] tablet:text-[50px] font-bold my-3'>Technologies</h2>
           <div className='flex flex-row gap-2 justify-center'>
-            <IconBox image={unity} />
-            <IconBox image={blender} />
-            <IconBox image={react} />
-            <IconBox image={flutter} />
-            <IconBox image={figma} />
-            <IconBox image={photoshop} />
-            <IconBox image={aftereffects} />
+            <IconBoxWithoutLink image={unity} />
+            <IconBoxWithoutLink image={blender} />
+            <IconBoxWithoutLink image={react} />
+            <IconBoxWithoutLink image={flutter} />
+            <IconBoxWithoutLink image={figma} />
+            <IconBoxWithoutLink image={photoshop} />
+            <IconBoxWithoutLink image={aftereffects} />
 
           </div>
         </div>

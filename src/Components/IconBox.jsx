@@ -11,5 +11,5 @@ function IconBox({image,href}) {
    
   )
 }
+export default IconBox;
 
-export default IconBox

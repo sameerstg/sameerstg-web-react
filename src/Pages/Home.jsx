@@ -1,6 +1,7 @@
 import React from 'react'
 import Intro from '../Section/Intro'
-import Portfolio from '../Components/Portfolio'
+import Portfolio from '../Section/Portfolio'
+import OtherLinks from '../Section/OtherLinks'
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
         <Intro/>
        
        <Portfolio/>
+       <OtherLinks/>
         </div>
        
     </div>
