@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom';
-function ImageSlider({ title, contents }) {
+function ImageSlider({ title, link, contents }) {
     const [index, setIndex] = useState(0);
     const goto = (direction) => {
         if (index + direction > contents.length - 1) {
@@ -16,26 +16,29 @@ function ImageSlider({ title, contents }) {
 
 
     return (
-        <div className='p-3 my-20'>
-            <div className='text-center text-primary text-4xl font-bold my-10'>
-                {title}
-            </div>
-            <div className='flex items-center justify-around gap-10'>
+        <div className='flex flex-col justify-center gap-10'>
+            <button >
+                <a href={link} target='_blank' rel='noreferrer noopener'>
+                    {title}🔗
+                </a>
+            </button>
+
+            <div className='flex items-center justify-center gap-2'>
                 <button onClick={() => goto(-1)} className='blue-box'>
-                    <BiLeftArrowAlt className='w-[25px] h-[25px] laptop:w-[60px] laptop:h-[60px]' color='black' />
+                    <BiLeftArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
                 </button>
 
-                <Link exact to={contents[index].link} target='_blank'rel="noreferrer noopener" >
-                <img src={contents[index].image} alt="" className='box mx-auto w-full h-max-[30vh] laptop:h-[60vh]' />
+                <Link exact to={contents[index].link} target='_blank' rel="noreferrer noopener" >
+                    <img src={contents[index].image} alt="" className='box mx-auto w-full h-[30vh] laptop:h-[60vh]' />
 
                 </Link>
                 <button onClick={() => goto(1)} className='blue-box'>
-                    <BiRightArrowAlt className='w-[25px] h-[25px] laptop:w-[60px] laptop:h-[60px]' color='black' />
+                    <BiRightArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
                 </button>
 
             </div>
 
-          
+
 
         </div>
     )

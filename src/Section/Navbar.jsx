@@ -6,22 +6,36 @@ import { motion } from 'framer-motion'
 import Drawer from '../Components/Drawer'
 import { useState } from 'react'
 import { BsXLg } from 'react-icons/bs'
-import {  Link  } from "react-router-dom";
+import { Link } from 'react-scroll'
 import NavButton from '../Components/NavButton'
 function Navbar() {
   let [drawerClicked, setDrawerClicked] = useState(false);
+  // const [navbar, setNavbar] = useState('');
 
+
+  // const changeBackground = () => {
+  //   console.log(window.scrollY);
+
+  //   if (window.scrollY >= 80) {
+  //     setNavbar('bg-[#1a1c1d75]')
+  //   } else {
+  //     setNavbar('');
+  //   }
+  // }
+  // window.addEventListener('scroll', changeBackground);
   if (!drawerClicked) {
     return (
-      <div id='home' className='p-5 text-primary flex justify-between items-center'>
-        <Link exact to='/'>
-          <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+      <div  className={"pt-5 px-10 pb-2 text-primary flex justify-between items-center  top-0 " }  >
+        <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+          <Link duration={500} smooth={true} exact to={'home'}>
 
-            <img src={logo} alt="" className='w-14 h-14' />
+            <img src={logo} alt="" className='laptop:w-14 laptop:h-14 w-10 h-10' />
 
-          </motion.button>
-        </Link>
-        <div className='hidden tablet:flex tablet:flex-row font-sans font-bold gap-4 text-[28px]'>
+          </Link>
+        </motion.button>
+
+
+        <div className='hidden tablet:flex tablet:flex-row font-sans font-semibold gap-10 text-xl laptop:text-3xl '>
 
 
           <NavButton text={'Home'} scrollTo='home' />
@@ -29,16 +43,16 @@ function Navbar() {
           <NavButton text={'Socials'} scrollTo='socials' />
 
           <NavButton text={'Portfolio'} scrollTo='portfolio' />
-          <button>
+          {/* <button>
             
               <NavButton text={'Company'}  to='company'/>
             
-          </button>
+          </button> */}
 
 
 
 
-          <NavButton text={'Contact'} scrollTo='socials' />
+          <NavButton text={'Contact'} scrollTo='footer' />
 
         </div>
         <div className='flex tablet:hidden'>
@@ -53,7 +67,7 @@ function Navbar() {
   }
   else {
     return (
-      <div id='home' className='h-screen p-20 text-primary flex flex-col items-center box'>
+      <div id='home' className='h-screen p-20 text-primary flex flex-col items-center box sticky top-0'>
         <div className='w-full flex justify-between items-center'>
 
           <img src={logo} alt="" className='w-14 h-14' />

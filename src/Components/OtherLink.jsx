@@ -1,21 +1,35 @@
 import React from 'react'
 import { AiOutlineLink } from 'react-icons/ai'
-import { motion } from 'framer-motion'
 function OtherLink({ link }) {
     return (
 
-        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-            <button
-                className='blue-box text-[#000] font-bold px-3 py-1 laptop:text-2xl laptop:px-10 laptop:py-2 '>
-                <a href={link.link} target='_blank' rel="noreferrer noopener" className='flex gap-4' >
-                    <div>{link.title}</div>
-                    <AiOutlineLink />
-                </a>
 
-            </button>
-        </motion.div>
+        <div
+            className='blue-box   px-3 py-1 laptop:px-10 laptop:py-2 
+            flex justify-center items-center'>
+            <div className='text-[#000] font-bold text-[14px] laptop:text-xl'>
+                {link.title}
+            </div>
+            {link.link.map((link,id)=>
+            
+            
+                <LinkButton link={link} />)
+            
+            
+            }
+            
+
+        </div>
+
 
     )
+}
+function LinkButton({link}){
+return(<button>
+    <a href={link} target='_blank' rel="noreferrer noopener"  >
+        <AiOutlineLink className=' text-[#000] w-4 h-4 laptop:w-8  laptop:h-8' />
+    </a>
+</button>);
 }
 
 export default OtherLink
