@@ -5,31 +5,31 @@ function OtherLink({ link }) {
 
 
         <div
-            className='blue-box   px-3 py-1 laptop:px-10 laptop:py-2 
+            className='blue-box   px-1 py-1 laptop:px-10 laptop:py-2 
             flex justify-center items-center'>
             <div className='text-[#000] font-bold text-[14px] laptop:text-xl'>
                 {link.title}
             </div>
-            {link.link.map((link,id)=>
-            
-            
+            {link.link.map((link, id) =>
+
+
                 <LinkButton link={link} />)
-            
-            
+
+
             }
-            
+
 
         </div>
 
 
     )
 }
-function LinkButton({link}){
-return(<button>
-    <a href={link} target='_blank' rel="noreferrer noopener"  >
-        <AiOutlineLink className=' text-[#000] w-4 h-4 laptop:w-8  laptop:h-8' />
-    </a>
-</button>);
+function LinkButton({ link }) {
+    return (<button>
+        <a href={link} target='_blank' rel="noreferrer noopener"  >
+            <AiOutlineLink className=' text-[#000] w-4 h-4 laptop:w-8  laptop:h-8' />
+        </a>
+    </button>);
 }
 
 export default OtherLink

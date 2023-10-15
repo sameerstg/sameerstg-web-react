@@ -24,12 +24,36 @@ function Footer() {
         </h2>
         <a className='text-primary' href='mailto:sameerstg@outlook.com'>sameerstg@outlook.com</a>
       </div>
+
+<div className='flex justify-center items-center  gap-10'>
+
+<div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
+        
+         
+        <a className='text-secondary underline italic' href='https://www.upwork.com/freelancers/~017854bd38d2d41990'> Upwork</a>
+      
+      </div>
+
+      <div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
+        
+         
+        <a className='text-secondary underline italic' href='https://www.fiverr.com/users/sameerstg/seller_dashboard'> Fiver</a>
+      
+      </div>
+      <div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
+        
+         
+        <a className='text-secondary underline italic' href='https://www.linkedin.com/in/sameerstg/'> LinkedIn</a>
+      
+      </div>
+</div>
+
       </div>
      
 
 
-      <div className='mb-4 mt-10' >
-        <div className='bg-[#0000007a] h-[1px] mb-3' />
+      <div className='mb-4' >
+        <div className='bg-[#0000007a] h-[1px]  mb-3' />
 
 
         <h2 className='text-sm laptop:text-lg'>

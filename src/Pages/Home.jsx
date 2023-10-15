@@ -5,6 +5,7 @@ import Socials from '../Section/Socials'
 import Technologies from '../Section/Technologies'
 import Interests from '../Section/Interests'
 import GithubAndTools from '../Section/GithubAndTools'
+import OtherLinks from '../Section/OtherLinks'
 function Home() {
 
   return (
@@ -33,6 +34,7 @@ function Home() {
       </div>
 
 
+      {/* <OtherLinks/> */}
 
     </div>
   )
