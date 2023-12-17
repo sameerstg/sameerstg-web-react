@@ -34,7 +34,7 @@ function Home() {
       </div>
 
 
-      {/* <OtherLinks/> */}
+      <OtherLinks/>
 
     </div>
   )

@@ -5,9 +5,9 @@ function OtherLink({ link }) {
 
 
         <div
-            className='blue-box   px-1 py-1 laptop:px-10 laptop:py-2 
+            className='blue-box mx-auto w-full px-1 py-1 laptop:px-10 laptop:py-2 
             flex justify-center items-center'>
-            <div className='text-[#000] font-bold text-[14px] laptop:text-xl'>
+            <div className='text-[#000] font-sans font-bold  text-[18px] laptop:text-l'>
                 {link.title}
             </div>
             {link.link.map((link, id) =>
