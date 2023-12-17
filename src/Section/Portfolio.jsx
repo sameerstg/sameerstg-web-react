@@ -43,7 +43,7 @@ function Portfolio() {
 
 
   return (
-    <div className='m-auto flex flex-col gap-5'>
+    <div className='mx-2 flex flex-col gap-5'>
       {/* <h1>My Portfolio</h1> */}
 
 
