@@ -5,7 +5,7 @@ function OtherLinks() {
 
     const links = [{ title: "Chess.com", link: ['https://www.chess.com/member/sameerstg'] },
     {
-        title: 'Spotify', link: ['https://open.spotify.com/playlist/2CEJlLM37vznfBdy0lLcnA?si=14529f4ab1054ab0'
+        title: 'Spotify', link: ['https://open.spotify.com/playlist/78pnjX4ZMXGtXkzVrXDV9g?si=daf0ab126fa7456c'
 
 
         ]
