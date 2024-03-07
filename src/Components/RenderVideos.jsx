@@ -3,13 +3,10 @@ import { useState } from 'react'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 
 import SketchfabViewer from './SketchfabViewer';
-function ModelsShower() {
+function RenderVideos() {
     const ids = [
-        
-        'https://sketchfab.com/models/c8126f28638d4c6c9670e37f8a03231a/embed',
-        "https://sketchfab.com/models/95dd9c5d733643289c40ea0cd121e539/embed",
-        "https://sketchfab.com/models/5f2e511826954fe29e294ed1f0dca24c/embed",
-        'https://sketchfab.com/models/c4d144d532f943a38072c0bf5912037c/embed',
+
+        "NsF5PRAhQ7E",
 
     ];
     const [index, setIndex] = useState(0);
@@ -28,7 +25,7 @@ function ModelsShower() {
         <div className='flex flex-col justify-center items-center'>
             <div> <button className='mx-auto   my-10'>
                 <a href={'https://www.artstation.com/sameerstg5'} target='_blank' rel='noreferrer noopener'>
-                    {'My 3D Art'}🔗
+                    {'Renders'}🔗
                 </a>
             </button></div>
             <div className='flex items-center justify-center gap-2'>
@@ -36,7 +33,11 @@ function ModelsShower() {
                     <BiLeftArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
                 </button>
 
-                <SketchfabViewer link={ids[index]} />
+                <iframe className='box  mx-auto w-full laptop:w-[100vh] laptop:h-[50vh]'
+                    title='Youtube player'
+                    sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation modestbranding=0 rel=0'
+                    src={`https://youtube.com/embed/${ids[index]}?autoplay=0`}>
+                </iframe>
                 <button onClick={() => goto(1)} className='blue-box'>
                     <BiRightArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
                 </button>
@@ -49,4 +50,4 @@ function ModelsShower() {
     )
 }
 
-export default ModelsShower
+export default RenderVideos
