@@ -6,6 +6,7 @@ import React from 'react'
 import ImageSlider from '../Components/ImageSlider';
 import ModelsShower from '../Components/ModelsShower'
 import RenderVideos from '../Components/RenderVideos';
+import VrImageSlider from './VrImageSlider';
 
 
 function Portfolio() {
@@ -51,6 +52,14 @@ function Portfolio() {
     },
   ];
 
+  const vrPartOfGames = [
+    {
+      image: 'https://scontent.oculuscdn.com/v/t64.5771-25/75210392_281631068188141_7536397305614255480_n.png?stp=dst-png_s2048x2048&_nc_cat=101&ccb=1-7&_nc_sid=6e7a0a&_nc_ohc=r-tgVv-_W28AX8qdSCB&_nc_ht=scontent.oculuscdn.com&oh=00_AfAv4kqrWzdOdg0CFj7xttb0NEDRuo7FfVj2MvTbGWrFAQ&oe=65F127D3',
+      link: 'https://www.meta.com/experiences/7159569204093541/#?'
+    },
+
+  ];
+
 
 
 
@@ -60,9 +69,10 @@ function Portfolio() {
 
 
       <ImageSlider link={'https://play.google.com/store/apps/developer?id=Sameerstg'} title={"My Games"} contents={games} />
+      <ModelsShower />
+      <ImageSlider link={'https://play.google.com/store/apps/developer?id=Sameerstg'} title={"Vr Games Of Which I Was Part Of"} contents={vrPartOfGames} />
       <ImageSlider link={'https://play.google.com/store/apps/developer?id=Sameerstg'} title={"Games Of Which I Was Part Of"} contents={partOfGames} />
       <ImageSlider link={'https://www.artstation.com/sameerstg5'} title={"My Arts"} contents={arts} />
-      <ModelsShower />
       <RenderVideos />
 
 
