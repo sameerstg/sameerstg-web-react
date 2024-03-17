@@ -25,7 +25,7 @@ function Navbar() {
   // window.addEventListener('scroll', changeBackground);
   if (!drawerClicked) {
     return (
-      <div  className={"pt-5 px-10 pb-2 text-primary flex justify-between items-center  top-0 " }  >
+      <div className={"pt-5 px-10 pb-2 text-primary flex justify-between items-center  top-0 "}  >
         <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
           <Link duration={500} smooth={true} exact to={'home'}>
 
@@ -45,7 +45,7 @@ function Navbar() {
           <NavButton text={'Portfolio'} scrollTo='portfolio' />
           {/* <button>
             
-              <NavButton text={'Company'}  to='company'/>
+            <NavButton text={'Company'}  to='company'/>
             
           </button> */}
 
@@ -53,6 +53,9 @@ function Navbar() {
 
 
           <NavButton text={'Contact'} scrollTo='footer' />
+          {/* <Link exact to={'https://g.page/r/CSPIF0D--eecEAI/review'} target='_blank' rel="noreferrer noopener" >
+            <NavButton text={'Feedback'}  />
+          </Link> */}
 
         </div>
         <div className='flex tablet:hidden'>

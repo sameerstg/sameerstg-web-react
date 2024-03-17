@@ -54,7 +54,7 @@ function Portfolio() {
 
   const vrPartOfGames = [
     {
-      image: 'https://scontent.oculuscdn.com/v/t64.5771-25/75210392_281631068188141_7536397305614255480_n.png?stp=dst-png_s2048x2048&_nc_cat=101&ccb=1-7&_nc_sid=6e7a0a&_nc_ohc=r-tgVv-_W28AX8qdSCB&_nc_ht=scontent.oculuscdn.com&oh=00_AfAv4kqrWzdOdg0CFj7xttb0NEDRuo7FfVj2MvTbGWrFAQ&oe=65F127D3',
+      image: 'https://dsm01pap003files.storage.live.com/y4mePN6KS_Bt0bYprEvmm2Blkf-i3m7guGuV9f2YNPMUGSKYFFWr3RDX5XRlH1a-VRh3eD-9cUWQZG6EgABlieVGECrICN0zxQRPU7g5Ypk8tJO3TPidoGjwv7Mo4tSRVmXSN4OXihMEyO4uR-8l0-Rx2UoMHd4cI4y1veT3TZx_y3sjRV6mVDx5eKToV66guUg0gZMWi59hPPG7Ch1E7_UE-ek_yI9Q0jd2qP88XuCZw4?encodeFailures=1&width=1280&height=720',
       link: 'https://www.meta.com/experiences/7159569204093541/#?'
     },
 
