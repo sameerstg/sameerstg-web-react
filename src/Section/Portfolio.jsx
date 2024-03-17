@@ -23,6 +23,9 @@ function Portfolio() {
     {
       image: 'https://play-lh.googleusercontent.com/nwf3-CXdv6f4Ap1Z1NimoBVvsl-ufCctTiiOw6ykCJXoUc_6YYpRfXyD43xE-E2cUUY=w2560-h1440-rw',
       link: 'https://play.google.com/store/apps/details?id=com.sameerstg'
+    },{
+      image: 'https://i.imgur.com/E3qIUDf.png',
+      link: 'https://sameerstg.itch.io/bog'
     }
   ];
   const arts = [{
@@ -54,7 +57,7 @@ function Portfolio() {
 
   const vrPartOfGames = [
     {
-      image: 'https://dsm01pap003files.storage.live.com/y4mePN6KS_Bt0bYprEvmm2Blkf-i3m7guGuV9f2YNPMUGSKYFFWr3RDX5XRlH1a-VRh3eD-9cUWQZG6EgABlieVGECrICN0zxQRPU7g5Ypk8tJO3TPidoGjwv7Mo4tSRVmXSN4OXihMEyO4uR-8l0-Rx2UoMHd4cI4y1veT3TZx_y3sjRV6mVDx5eKToV66guUg0gZMWi59hPPG7Ch1E7_UE-ek_yI9Q0jd2qP88XuCZw4?encodeFailures=1&width=1280&height=720',
+      image: 'https://i.imgur.com/KUxHOVS.png',
       link: 'https://www.meta.com/experiences/7159569204093541/#?'
     },
 
