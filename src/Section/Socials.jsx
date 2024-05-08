@@ -15,7 +15,7 @@ export default function Socials() {
         { image: playstore, href: 'https://play.google.com/store/apps/developer?id=Sameerstg' },
         { image: github, href: 'https://github.com/sameerstg' },
         { image: linkedin, href: 'https://www.linkedin.com/in/sameerstg/' },
-        { image: artstation, href: 'https://www.artstation.com/sameerstg5' },
+        { image: artstation, href: 'https://www.artstation.com/sameerstg8' },
         { image: facebook, href: 'https://www.facebook.com/profile.php?id=100069067089055' },
         { image: instagram, href: 'https://www.instagram.com/sameerstg/' },
         { image: youtube, href: 'https://www.youtube.com/channel/UCt68mmpafwAmhsENbxr_5Lg?view_as=subscriber' },
