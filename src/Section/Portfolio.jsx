@@ -1,12 +1,10 @@
 import React from 'react'
-// import PortfolioBox from './PortfolioBox'
 
 
 
 import ImageSlider from '../Components/ImageSlider';
 import ModelsShower from '../Components/ModelsShower'
 import RenderVideos from '../Components/RenderVideos';
-import VrImageSlider from './VrImageSlider';
 
 
 function Portfolio() {
@@ -71,7 +69,7 @@ function Portfolio() {
       {/* <h1>My Portfolio</h1> */}
 
 
-      
+
       <ImageSlider link={'https://play.google.com/store/apps/developer?id=Sameerstg'} title={"My Games"} contents={games} />
       <ModelsShower />
       <ImageSlider link={'https://play.google.com/store/apps/developer?id=Sameerstg'} title={"Vr Games Of Which I Was Part Of"} contents={vrPartOfGames} />

@@ -4,8 +4,8 @@ function SketchfabViewer({ link }) {
     return (
         <div class="sketchfab-embed-wrapper ">
             <iframe
-                className='box  mx-auto w-full laptop:w-[100vh] laptop:h-[50vh]'
-                title="Arham Shop"
+                className='box  mx-auto w-[50vh] h-[28vh] tablet:w-[50vh] tablet:h-[35vh] laptop:w-[100vh] laptop:h-[50vh]'
+                // title="Arham Shop"
                 frameborder="0"
                 allowfullscreen mozallowfullscreen="true"
                 webkitallowfullscreen="true"
