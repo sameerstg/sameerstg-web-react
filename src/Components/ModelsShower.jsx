@@ -2,11 +2,17 @@
 import React from 'react'
 import { useState } from 'react'
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "../Components/ui/carousel"
 import SketchfabViewer from './SketchfabViewer';
 function ModelsShower() {
     const ids = [
-        
+
         'https://sketchfab.com/models/c8126f28638d4c6c9670e37f8a03231a/embed',
         "https://sketchfab.com/models/95dd9c5d733643289c40ea0cd121e539/embed",
         "https://sketchfab.com/models/5f2e511826954fe29e294ed1f0dca24c/embed",
@@ -32,21 +38,37 @@ function ModelsShower() {
                     {'My 3D Art'}🔗
                 </a>
             </button></div>
+
             <div className='flex items-center justify-center gap-2'>
-                <button onClick={() => goto(-1)} className='blue-box'>
-                    <BiLeftArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
-                </button>
-
-                <SketchfabViewer link={ids[index]} />
-                <button onClick={() => goto(1)} className='blue-box'>
-                    <BiRightArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
-                </button>
-
+                <Carousel className="max-w-5xl">
+                    <CarouselContent>
+                        {ids.map((_, index) => (
+                            <CarouselItem key={index}>
+                                <div>
+                                    <SketchfabViewer link={_} />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
             </div>
+            {/* <div className='flex items-center justify-center gap-2'>
+                {/* <button onClick={() => goto(-1)} className='blue-box'>
+                    <BiLeftArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
+                </button> */}
+
+            {/* <SketchfabViewer link={ids[index]} /> */}
+            {/* <button onClick={() => goto(1)} className='blue-box'>
+                    <BiRightArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
+                </button> */}
+
+        {/* </div> } */}
 
 
 
-        </div>
+        </div >
     )
 }
 

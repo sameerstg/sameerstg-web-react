@@ -5,7 +5,8 @@ const nextConfig = {
         domains: [
             "play-lh.googleusercontent.com",
             "i.imgur.com",
-            "cdna.artstation.com"
+            "cdna.artstation.com",
+            "cdnb.artstation.com",
         ],
     }
 

@@ -3,19 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { useState } from 'react'
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-// import { Link } from 'react-router-dom';
+
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "../Components/ui/carousel"
 function ImageSlider({ title, link, contents }) {
-    const [index, setIndex] = useState(0);
-    const goto = (direction) => {
-        if (index + direction > contents.length - 1) {
-            setIndex(0);
-        } else if (index + direction < 0) {
-            setIndex(contents.length - 1);
-        } else {
-            setIndex(index + direction);
-        }
-    }
+   
 
 
     return (
@@ -27,20 +24,30 @@ function ImageSlider({ title, link, contents }) {
             </button>
 
             <div className='flex items-center justify-center gap-2'>
-                <button onClick={() => goto(-1)} className='blue-box'>
-                    <BiLeftArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
-                </button>
+
 
                 {/* <Link exact to={contents[index].link} target='_blank' rel="noreferrer noopener" > */}
-                    <Image width={1920}  height={1080} src={contents[index].image} alt="" className='' />
-                    {/* <Image width={100}  height={100} src={contents[index].image} alt="" className='box mx-auto w-full h-[30vh] laptop:h-[60vh]' /> */}
+
+                <Carousel className="w-full ">
+                    <CarouselContent>
+                        {contents.map((_, index) => (
+                            <CarouselItem key={index}>
+                                <div className="p-1">
+                                    <img src={_.image} alt="" className='box mx-auto w-auto h-[30vh] laptop:h-[60vh]' />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
+
+                {/* <Image width={100}  height={100} src={contents[index].image} alt="" className='box mx-auto w-full h-[30vh] laptop:h-[60vh]' /> */}
 
                 {/* </Link> */}
-                <button onClick={() => goto(1)} className='blue-box'>
-                    <BiRightArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
-                </button>
 
             </div>
+
 
 
 

@@ -1,25 +1,19 @@
 'use client'
 import React from 'react'
-import { useState } from 'react'
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-
-import SketchfabViewer from './SketchfabViewer';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "../Components/ui/carousel"
 function RenderVideos() {
     const ids = [
 
         "5mHIdHsT7AE",
 
     ];
-    const [index, setIndex] = useState(0);
-    const goto = (direction) => {
-        if (index + direction > ids.length - 1) {
-            setIndex(0);
-        } else if (index + direction < 0) {
-            setIndex(ids.length - 1);
-        } else {
-            setIndex(index + direction);
-        }
-    }
+
 
 
     return (
@@ -29,21 +23,37 @@ function RenderVideos() {
                     {'Renders'}🔗
                 </a>
             </button></div>
-            <div className='flex items-center justify-center gap-2'>
-                <button onClick={() => goto(-1)} className='blue-box'>
-                    <BiLeftArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
-                </button>
-                
+            <div>
+                <Carousel className="">
+                    <CarouselContent>
+                        {ids.map((id, index) => (
+                            <CarouselItem key={index}>
+                                <div className="p-1">
+                                    {/* <img src={_.image} alt="" className='box mx-auto w-auto h-[30vh] laptop:h-[60vh]' /> */}
+                                    <iframe className='box mx-auto w-full laptop:w-[100vh] laptop:h-[50vh]'
+                                        title='Youtube player'
+                                        // sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation modestbranding=0 rel=0'
+                                        src={`https://youtube.com/embed/${ids[index]}?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0"`}>
+                                    </iframe>
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
+            </div>
+            {/* <div className='flex items-center justify-center gap-2'>
+
+
                 <iframe className='box  mx-auto w-full laptop:w-[100vh] laptop:h-[50vh]'
                     title='Youtube player'
                     // sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation modestbranding=0 rel=0'
                     src={`https://youtube.com/embed/${ids[index]}?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0"`}>
                 </iframe>
-                <button onClick={() => goto(1)} className='blue-box'>
-                    <BiRightArrowAlt className='w-[15px] h-[15px] tablet:w-[20px] tablet:h-[20px] laptop:w-[40px] laptop:h-[40px]' color='black' />
-                </button>
 
-            </div>
+
+            </div> */}
 
 
 

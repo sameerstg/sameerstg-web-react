@@ -18,7 +18,7 @@ function Navbar() {
       <div className={"pt-5 px-10 pb-2 text-primary flex justify-between items-center  top-0 "}  >
 
         <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-          <Link duration={500} smooth={true} exact to={'home'}>
+          <Link duration={200} smooth={true} exact to={'home'}>
             <Image height={50} width={50} src={logo} />
           </Link>
         </motion.button>
