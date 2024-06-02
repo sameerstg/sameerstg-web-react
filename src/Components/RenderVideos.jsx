@@ -30,7 +30,7 @@ function RenderVideos() {
                             <CarouselItem key={index}>
                                 <div className="p-1">
                                     {/* <img src={_.image} alt="" className='box mx-auto w-auto h-[30vh] laptop:h-[60vh]' /> */}
-                                    <iframe className='box mx-auto w-full laptop:w-[100vh] laptop:h-[50vh]'
+                                    <iframe className='box mx-auto w-[100vw] h-[50vw]'
                                         title='Youtube player'
                                         // sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation modestbranding=0 rel=0'
                                         src={`https://youtube.com/embed/${ids[index]}?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0"`}>

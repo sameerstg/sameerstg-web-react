@@ -21,25 +21,14 @@ function ImageSlider({ title, link, contents }) {
       </button>
 
       <Carousel>
-        <CarouselContent className="w-[80vw]">
-          {/* {contents.map((_, index) => (
-            <CarouselItem key={index}> */}
-          {/* <img src={_.image} alt="" className='box mx-auto h-[30vh] laptop:h-[60vh]' /> */}
-          {/* <img src={_.image} alt="" className='box mx-auto  ' /> */}
-          {/* <img
-                src={_.image}
-                alt=""
-                className="box mx-auto max-w-[500px]  h-[30vh] laptop:h-[60vh]"
-              /> */}
-          {/* </CarouselItem>
-          ))} */}
+        <CarouselContent className="w-[60vw] h-[40vw]">
 
           {contents.map((_, index) => (
-            <CarouselItem key={index} className="w-full ">
+            <CarouselItem key={index} className="w-full h-full my-auto">
               <img
                 src={_.image}
                 alt=""
-                className="box mx-auto   h-[30vh] laptop:h-[60vh]"
+                className="box "
               />
             </CarouselItem>
           ))}

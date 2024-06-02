@@ -2,9 +2,9 @@ import React from 'react'
 
 function SketchfabViewer({ link }) {
     return (
-        <div class="sketchfab-embed-wrapper ">
+        <div className='h-[30vw] ' class="sketchfab-embed-wrapper ">
             <iframe
-                className='box  mx-auto w-[50vh] h-[28vh] tablet:w-[50vh] tablet:h-[35vh] laptop:w-[100vh] laptop:h-[50vh]'
+                className='box h-full   mx-auto w-full  my-auto '
                 // title="Arham Shop"
                 frameborder="0"
                 allowfullscreen mozallowfullscreen="true"

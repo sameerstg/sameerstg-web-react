@@ -29,10 +29,10 @@ function ModelsShower() {
             </button></div>
 
             <div className='flex items-center justify-center gap-2'>
-                <Carousel className="max-w-5xl">
+                <Carousel className="w-[58vw] h-[35vw] flex flex-col justify-center items-center">
                     <CarouselContent>
                         {ids.map((_, index) => (
-                            <CarouselItem key={index}>
+                            <CarouselItem key={index} className=''>
                                 <SketchfabViewer link={_} />
                             </CarouselItem>
                         ))}
