@@ -23,29 +23,27 @@ function Footer() {
       <div className='flex flex-col gap-4'>
         <h1 className='text-2xl font-bold '>Contact Me Here ⏬</h1>
         {/* email row */}
-        <div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
-          <h2 className='text-secondary'>
-            Email :
-          </h2>
+        <div className='flex justify-center text-sm tablet:text-md laptop:text-2xl font-bold font-sans gap-4'>
+          <h2 className='text-secondary'>Email :</h2>
           <a className='text-primary' href='mailto:sameerstg@outlook.com'>sameerstg@outlook.com</a>
         </div>
 
-        <div className='flex justify-center items-center  gap-10'>
+        <div className='flex justify-center items-center gap-4 tablet:gap-10 text-mdl laptop:text-2xl'>
 
-          <div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
+          <div className='flex justify-center  font-bold font-sans gap-4'>
 
 
             <a className='text-secondary underline italic' href='https://www.upwork.com/freelancers/~017854bd38d2d41990'> Upwork</a>
 
           </div>
 
-          <div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
+          {/* <div className='flex justify-center  font-bold font-sans gap-4'>
 
 
             <a className='text-secondary underline italic' href='https://www.fiverr.com/users/sameerstg/seller_dashboard'> Fiver</a>
 
-          </div>
-          <div className='flex justify-center text-xl laptop:text-2xl font-bold font-sans gap-4'>
+          </div> */}
+          <div className='flex justify-center  font-bold font-sans gap-4'>
 
 
             <a className='text-secondary underline italic' href='https://www.linkedin.com/in/sameerstg/'> LinkedIn</a>

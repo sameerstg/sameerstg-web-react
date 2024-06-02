@@ -15,14 +15,14 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .box {
-  background: linear-gradient(145deg, #212428 0%, #16181c 100%);
-  background: -webkit-linear-gradient(145deg, #212428 0%, #16181c 100%);
-  background: -moz-linear-gradient(145deg, #212428 0%, #16181c 100%);
+  /* background: linear-gradient(145deg, #212428 0%, #16181c 100%); */
+  /* background: -webkit-linear-gradient(145deg, #212428 0%, #16181c 100%);
+  background: -moz-linear-gradient(145deg, #212428 0%, #16181c 100%); */
   border-radius: 25px;
 
-  box-shadow: 6px 10px 20px 3px rgba(0, 0, 0, 0.64);
-  -webkit-box-shadow: 6px 10px 20px 3px rgba(0, 0, 0, 0.64);
-  -moz-box-shadow: 6px 10px 20px 3px rgba(0, 0, 0, 0.64);
+  box-shadow: 6px 10px 10px 1px rgba(0, 0, 0, 0.3);
+  /* -webkit-box-shadow: 6px 10px 20px 3px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 6px 10px 20px 3px rgba(0, 0, 0, 0.64); */
 }
 .blue-box {
   background: linear-gradient(145deg, #00ffff 0%, #aeffffb9 100%);

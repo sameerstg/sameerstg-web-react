@@ -17,8 +17,8 @@ function HomeMain() {
       <Vortex
         backgroundColor="#0000"
         className=""
-        rangeY={1000}
-        particleCount={100}
+        rangeY={400}
+        particleCount={50}
         baseHue={120}
       >
         <Intro />

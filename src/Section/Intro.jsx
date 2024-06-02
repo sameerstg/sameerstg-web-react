@@ -22,7 +22,7 @@ function Intro() {
           <div className='text-tertiary font-bold'>Hello World</div>
 
           <div className='flex justify-center'>
-            <h1 className='text-primary'>I'm</h1>
+            <h1 className='text-primary'>I&apos;m</h1>
 
             <h1 className='text-secondary'>&nbsp;Sameerstg</h1>
           </div>

@@ -24,9 +24,9 @@ function OtherLinks() {
             <div className='text-primary font-bold text-4xl text-center my-10'>
                 Other Related Links
             </div>
-            <div className='grid mx-24 tablet:mx-32 tablet:grid-cols-2 gap-2 laptop:mx-56 laptop:grid-cols-3 laptop:gap-10 '>
-                {links.map((link) =>
-                    <OtherLink link={link} />
+            <div className='grid mx-24 tablet:mx-32 tablet:grid-cols-2 gap-2 laptop:mx-56 laptop:grid-cols-3 laptop:gap-10 justify-center items-center align-middle'>
+                {links.map((link,key) =>
+                    <OtherLink key={key} link={link} />
                 )}
             </div>
 

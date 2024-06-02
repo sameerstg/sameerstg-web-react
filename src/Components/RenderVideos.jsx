@@ -24,13 +24,12 @@ function RenderVideos() {
                 </a>
             </button></div>
             <div>
-                <Carousel className="">
-                    <CarouselContent>
+                <Carousel>
+                    <CarouselContent className="w-[60vw] h-[35vw]">
                         {ids.map((id, index) => (
                             <CarouselItem key={index}>
                                 <div className="p-1">
-                                    {/* <img src={_.image} alt="" className='box mx-auto w-auto h-[30vh] laptop:h-[60vh]' /> */}
-                                    <iframe className='box mx-auto w-[100vw] h-[50vw]'
+                                    <iframe className='box mx-auto w-full h-[600px]'
                                         title='Youtube player'
                                         // sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation modestbranding=0 rel=0'
                                         src={`https://youtube.com/embed/${ids[index]}?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0"`}>
@@ -43,18 +42,7 @@ function RenderVideos() {
                     <CarouselNext />
                 </Carousel>
             </div>
-            {/* <div className='flex items-center justify-center gap-2'>
-
-
-                <iframe className='box  mx-auto w-full laptop:w-[100vh] laptop:h-[50vh]'
-                    title='Youtube player'
-                    // sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation modestbranding=0 rel=0'
-                    src={`https://youtube.com/embed/${ids[index]}?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0"`}>
-                </iframe>
-
-
-            </div> */}
-
+            
 
 
         </div>

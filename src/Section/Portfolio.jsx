@@ -1,8 +1,6 @@
 import React from "react";
 
 import ImageSlider from "../Components/ImageSlider";
-import ModelsShower from "../Components/ModelsShower";
-import RenderVideos from "../Components/RenderVideos";
 
 function Portfolio() {
   const games = [
@@ -67,33 +65,62 @@ function Portfolio() {
       link: "https://www.meta.com/experiences/7159569204093541/#?",
     },
   ];
+  const renderIds = [
+
+    "5mHIdHsT7AE",
+
+  ];
+  const models = [
+
+    'https://sketchfab.com/models/c8126f28638d4c6c9670e37f8a03231a/embed',
+    "https://sketchfab.com/models/95dd9c5d733643289c40ea0cd121e539/embed",
+    "https://sketchfab.com/models/5f2e511826954fe29e294ed1f0dca24c/embed",
+    'https://sketchfab.com/models/c4d144d532f943a38072c0bf5912037c/embed',
+
+  ];
 
   return (
-    <div className="mx-2  flex-col gap-10 flex justify-center ">
-      {/* <h1>My Portfolio</h1> */}
+    <div className="tablet:mx-2  flex-col gap-10 flex justify-center ">
 
       <ImageSlider
         link={"https://play.google.com/store/apps/developer?id=Sameerstg"}
         title={"My Games"}
         contents={games}
+        type={"image"}
       />
-      <ModelsShower />
+      <ImageSlider
+        link={''}
+        title='3D Models'
+        contents={models}
+        type={'model'}
+
+      />
       <ImageSlider
         link={"https://play.google.com/store/apps/developer?id=Sameerstg"}
         title={"Vr Games Of Which I Was Part Of"}
         contents={vrPartOfGames}
+        type={"image"}
       />
       <ImageSlider
         link={"https://play.google.com/store/apps/developer?id=Sameerstg"}
         title={"Games Of Which I Was Part Of"}
         contents={partOfGames}
+        type={"image"}
       />
       <ImageSlider
         link={"https://www.artstation.com/sameerstg5"}
         title={"My Arts"}
         contents={arts}
+        type={"image"}
       />
-      <RenderVideos />
+      <ImageSlider
+        link={''}
+        title='3D Render'
+        contents={renderIds}
+        type={'video'}
+
+      />
+      {/* <RenderVideos /> */}
     </div>
   );
 }

@@ -6,17 +6,18 @@ function OtherLink({ link }) {
 
         <div
             className='blue-box mx-auto w-full px-1 py-1 laptop:px-10 laptop:py-2 
-            flex justify-center items-center'>
-            <div className='text-[#000] font-sans font-bold  text-[14px] laptop:text-l'>
+            flex  justify-center items-center'>
+            <div className='text-[#000] font-sans font-bold  text-[12px]  tablet:text-[14px] laptop:text-xl'>
                 {link.title}
             </div>
             {link.link.map((link, id) =>
 
 
-                <LinkButton link={link} />)
+                <LinkButton key={id} link={link} />)
 
 
             }
+
 
 
         </div>
