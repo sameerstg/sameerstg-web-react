@@ -19,7 +19,7 @@ function ImageSlider({ title, link, contents, type }) {
       </button>
 
       <Carousel>
-        <CarouselContent className="w-[75vw] h-[65vw] tablet:w-[60vw] tablet:h-[40vw] p-2">
+        <CarouselContent className="w-[65vw] h-[65vw] tablet:w-[60vw] tablet:h-[40vw] p-2">
 
           {contents.map((_, index) => (
             <CarouselItem key={index} className="p-2 flex flex-col justify-center ">
@@ -31,8 +31,8 @@ function ImageSlider({ title, link, contents, type }) {
                     alt=""
                     className="box mx-auto max-h-[100%] max-w-[100%]"
                   />
+                  {/* <Image src={_.image} fill alt="image" className="box mx-auto max-h-[100%] max-w-[100%]" /> */}
                 </a>
-                // <Image src={_.image} height={2000} width={2000} alt="image" className="box mx-auto max-h-[100%] max-w-[100%]"/>
                 : type == 'video' ?
 
 

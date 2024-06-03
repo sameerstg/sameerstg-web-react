@@ -7,6 +7,7 @@ const nextConfig = {
             "i.imgur.com",
             "cdna.artstation.com",
             "cdnb.artstation.com",
+            "github-readme-streak-stats.herokuapp.com"
         ],
     }
 

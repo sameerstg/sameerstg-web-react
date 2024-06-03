@@ -22,7 +22,7 @@ function Navbar() {
       >
         <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
           <Link duration={200} smooth={true} exact to={"home"}>
-            <Image height={50} width={50} src={logo} />
+            <Image height={50} width={50} src={logo} alt="logo" />
           </Link>
         </motion.button>
 
@@ -38,7 +38,7 @@ function Navbar() {
         <div className="flex tablet:hidden">
           <Image
             src={burger}
-            alt=""
+            alt="burger icon"
             className="w-14 h-14 "
             onClick={() => setDrawerClicked((drawerClicked = !drawerClicked))}
           />
@@ -52,7 +52,7 @@ function Navbar() {
         className="h-screen p-20 text-primary flex flex-col items-center box sticky top-0"
       >
         <div className="w-full flex justify-between items-center">
-          <Image src={logo} height={100} width={100} />
+          <Image src={logo} height={100} width={100} alt="logo"/>
           <button
             onClick={() => {
               setDrawerClicked((drawerClicked = false));
