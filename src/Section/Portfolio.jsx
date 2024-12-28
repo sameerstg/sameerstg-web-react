@@ -11,6 +11,11 @@ function Portfolio() {
     },
     {
       image:
+        "https://i.imgur.com/Z82HRmb.png",
+      link: "https://sameerstg.itch.io/crypto-jakk",
+    }, ,
+    {
+      image:
         "https://play-lh.googleusercontent.com/q_gbKbYMl7pcaQCwEdwgcCVOclBjtHQPTAA6-rTfY9Z2Y8hITCGLY-FeQISc4cfUXA=w2560-h1440-rw",
       link: "https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet",
     },
@@ -70,6 +75,11 @@ function Portfolio() {
     "5mHIdHsT7AE",
 
   ];
+  const vrApps = [
+
+    "-mbLgfKteow",
+
+  ];
   const models = [
 
     'https://sketchfab.com/models/c8126f28638d4c6c9670e37f8a03231a/embed',
@@ -81,7 +91,13 @@ function Portfolio() {
 
   return (
     <div className="tablet:mx-2  flex-col gap-10 flex justify-center ">
+      <ImageSlider
+        link={''}
+        title='VR Apps'
+        contents={vrApps}
+        type={'video'}
 
+      />
       <ImageSlider
         link={"https://play.google.com/store/apps/developer?id=Sameerstg"}
         title={"My Games"}

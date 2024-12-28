@@ -8,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../Components/ui/carousel";
-import Image from "next/image";
 function ImageSlider({ title, link, contents, type }) {
   return (
     <div className="flex flex-col justify-center items-center  tablet:gap-2 min-text-sm max-text-5xl">
