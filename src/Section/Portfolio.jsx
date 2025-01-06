@@ -13,7 +13,22 @@ function Portfolio() {
       image:
         "https://i.imgur.com/Z82HRmb.png",
       link: "https://sameerstg.itch.io/crypto-jakk",
-    }, ,
+    },
+    {
+      image:
+        "https://play-lh.googleusercontent.com/q_gbKbYMl7pcaQCwEdwgcCVOclBjtHQPTAA6-rTfY9Z2Y8hITCGLY-FeQISc4cfUXA=w2560-h1440-rw",
+      link: "https://play.google.com/store/apps/details?id=com.Sameerstg.BeLeet",
+    },
+    {
+      image:
+        "https://i.imgur.com/9PVFvXF.png",
+      link: "https://drive.google.com/file/d/1ElwWHQlg3e_n2CrdOtZc_oZwu3iRrnae/view?usp=sharing",
+    },
+    {
+      image:
+        "https://i.imgur.com/2b0zyuQ.png",
+      link: "https://sameerstg.itch.io/card-game",
+    },
     {
       image:
         "https://play-lh.googleusercontent.com/q_gbKbYMl7pcaQCwEdwgcCVOclBjtHQPTAA6-rTfY9Z2Y8hITCGLY-FeQISc4cfUXA=w2560-h1440-rw",
