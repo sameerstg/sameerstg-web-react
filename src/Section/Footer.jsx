@@ -60,15 +60,9 @@ function Footer() {
 
 
         <h2 className='text-sm laptop:text-lg'>
-          © 2024. All rights reserved by Sameerstg
+          © 2025. All rights reserved by Sameerstg
         </h2>
       </div>
-
-
-
-
-
-
     </div >
   )
 }
