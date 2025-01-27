@@ -21,9 +21,9 @@ function Navbar() {
         }
       >
         <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-          <Link duration={200} smooth={true} exact to={"home"}>
+          <a  href="/" >
             <Image height={50} width={50} src={logo} alt="logo" />
-          </Link>
+          </a>
         </motion.button>
 
         <div className="hidden tablet:flex tablet:flex-row font-sans font-semibold gap-10 text-xl laptop:text-3xl ">
