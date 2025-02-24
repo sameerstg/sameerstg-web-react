@@ -21,7 +21,7 @@ function Navbar() {
         }
       >
         <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-          <a  href="/" >
+          <a href="/" >
             <Image height={50} width={50} src={logo} alt="logo" />
           </a>
         </motion.button>
@@ -32,6 +32,7 @@ function Navbar() {
           <NavButton text={"Socials"} scrollTo="socials" />
 
           <NavButton text={"Portfolio"} scrollTo="portfolio" />
+          <NavButton text={"Blogs"} scrollTo="blogs" />
 
           <NavButton text={"Contact"} scrollTo="footer" />
         </div>
@@ -52,7 +53,7 @@ function Navbar() {
         className="h-screen p-20 text-primary flex flex-col items-center box sticky top-0"
       >
         <div className="w-full flex justify-between items-center">
-          <Image src={logo} height={100} width={100} alt="logo"/>
+          <Image src={logo} height={100} width={100} alt="logo" />
           <button
             onClick={() => {
               setDrawerClicked((drawerClicked = false));

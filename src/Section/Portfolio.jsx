@@ -1,6 +1,7 @@
 import React from "react";
 
 import ImageSlider from "../Components/ImageSlider";
+import Blogs from '@/Section/Blogs'
 
 function Portfolio() {
   const games = [
@@ -119,6 +120,7 @@ function Portfolio() {
         contents={games}
         type={"image"}
       />
+      <Blogs />
       <ImageSlider
         link={''}
         title='3D Models'
