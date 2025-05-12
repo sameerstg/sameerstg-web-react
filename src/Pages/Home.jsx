@@ -8,6 +8,7 @@ import Interests from "../Section/Interests";
 import GithubAndTools from "../Section/GithubAndTools";
 import OtherLinks from "../Section/OtherLinks";
 import { Vortex } from "../Components/ui/vortex";
+import Feedback from "@/Section/Feedback";
 function HomeMain() {
   return (
     <div
@@ -36,6 +37,7 @@ function HomeMain() {
       </div>
 
       <OtherLinks />
+      <Feedback />
     </div>
   );
 }
