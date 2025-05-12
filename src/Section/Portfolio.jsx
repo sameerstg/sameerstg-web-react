@@ -120,7 +120,7 @@ function Portfolio() {
         contents={games}
         type={"image"}
       />
-      <Blogs />
+      {/* <Blogs /> */}
       <ImageSlider
         link={''}
         title='3D Models'

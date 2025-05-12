@@ -45,7 +45,7 @@ function ImageSlider({ title, link, contents, type }) {
                   :
                   type == 'model' ?
 
-                    <div className='h-[40vw] tablet:h-[30vw]' class="sketchfab-embed-wrapper ">
+                    <div className='h-[80vw] tablet:h-[30vw] ' class="sketchfab-embed-wrapper ">
                       <iframe
                         className='box h-full mx-auto w-full  my-auto '
                         frameborder="0"
