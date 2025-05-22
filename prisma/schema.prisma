@@ -13,3 +13,9 @@ model Feedback {
   email    String @unique
   feedback String @unique
 }
+
+model Dictionary {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value Json
+}
