@@ -3188,14 +3188,17 @@ export namespace Prisma {
 
   export type PortfolioAvgAggregateOutputType = {
     id: number | null
+    priority: number | null
   }
 
   export type PortfolioSumAggregateOutputType = {
     id: number | null
+    priority: number | null
   }
 
   export type PortfolioMinAggregateOutputType = {
     id: number | null
+    priority: number | null
     title: string | null
     link: string | null
     show: boolean | null
@@ -3204,6 +3207,7 @@ export namespace Prisma {
 
   export type PortfolioMaxAggregateOutputType = {
     id: number | null
+    priority: number | null
     title: string | null
     link: string | null
     show: boolean | null
@@ -3212,6 +3216,7 @@ export namespace Prisma {
 
   export type PortfolioCountAggregateOutputType = {
     id: number
+    priority: number
     title: number
     link: number
     show: number
@@ -3222,14 +3227,17 @@ export namespace Prisma {
 
   export type PortfolioAvgAggregateInputType = {
     id?: true
+    priority?: true
   }
 
   export type PortfolioSumAggregateInputType = {
     id?: true
+    priority?: true
   }
 
   export type PortfolioMinAggregateInputType = {
     id?: true
+    priority?: true
     title?: true
     link?: true
     show?: true
@@ -3238,6 +3246,7 @@ export namespace Prisma {
 
   export type PortfolioMaxAggregateInputType = {
     id?: true
+    priority?: true
     title?: true
     link?: true
     show?: true
@@ -3246,6 +3255,7 @@ export namespace Prisma {
 
   export type PortfolioCountAggregateInputType = {
     id?: true
+    priority?: true
     title?: true
     link?: true
     show?: true
@@ -3341,6 +3351,7 @@ export namespace Prisma {
 
   export type PortfolioGroupByOutputType = {
     id: number
+    priority: number
     title: string
     link: string | null
     show: boolean
@@ -3368,6 +3379,7 @@ export namespace Prisma {
 
   export type PortfolioSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    priority?: boolean
     title?: boolean
     link?: boolean
     show?: boolean
@@ -3378,6 +3390,7 @@ export namespace Prisma {
 
   export type PortfolioSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    priority?: boolean
     title?: boolean
     link?: boolean
     show?: boolean
@@ -3386,6 +3399,7 @@ export namespace Prisma {
 
   export type PortfolioSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    priority?: boolean
     title?: boolean
     link?: boolean
     show?: boolean
@@ -3394,13 +3408,14 @@ export namespace Prisma {
 
   export type PortfolioSelectScalar = {
     id?: boolean
+    priority?: boolean
     title?: boolean
     link?: boolean
     show?: boolean
     private?: boolean
   }
 
-  export type PortfolioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "link" | "show" | "private", ExtArgs["result"]["portfolio"]>
+  export type PortfolioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "priority" | "title" | "link" | "show" | "private", ExtArgs["result"]["portfolio"]>
   export type PortfolioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     portfolioItems?: boolean | Portfolio$portfolioItemsArgs<ExtArgs>
     _count?: boolean | PortfolioCountOutputTypeDefaultArgs<ExtArgs>
@@ -3415,6 +3430,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      priority: number
       title: string
       link: string | null
       show: boolean
@@ -3844,6 +3860,7 @@ export namespace Prisma {
    */
   interface PortfolioFieldRefs {
     readonly id: FieldRef<"Portfolio", 'Int'>
+    readonly priority: FieldRef<"Portfolio", 'Int'>
     readonly title: FieldRef<"Portfolio", 'String'>
     readonly link: FieldRef<"Portfolio", 'String'>
     readonly show: FieldRef<"Portfolio", 'Boolean'>
@@ -5453,6 +5470,7 @@ export namespace Prisma {
 
   export const PortfolioScalarFieldEnum: {
     id: 'id',
+    priority: 'priority',
     title: 'title',
     link: 'link',
     show: 'show',
@@ -5679,6 +5697,7 @@ export namespace Prisma {
     OR?: PortfolioWhereInput[]
     NOT?: PortfolioWhereInput | PortfolioWhereInput[]
     id?: IntFilter<"Portfolio"> | number
+    priority?: IntFilter<"Portfolio"> | number
     title?: StringFilter<"Portfolio"> | string
     link?: StringNullableFilter<"Portfolio"> | string | null
     show?: BoolFilter<"Portfolio"> | boolean
@@ -5688,6 +5707,7 @@ export namespace Prisma {
 
   export type PortfolioOrderByWithRelationInput = {
     id?: SortOrder
+    priority?: SortOrder
     title?: SortOrder
     link?: SortOrderInput | SortOrder
     show?: SortOrder
@@ -5701,6 +5721,7 @@ export namespace Prisma {
     AND?: PortfolioWhereInput | PortfolioWhereInput[]
     OR?: PortfolioWhereInput[]
     NOT?: PortfolioWhereInput | PortfolioWhereInput[]
+    priority?: IntFilter<"Portfolio"> | number
     link?: StringNullableFilter<"Portfolio"> | string | null
     show?: BoolFilter<"Portfolio"> | boolean
     private?: BoolFilter<"Portfolio"> | boolean
@@ -5709,6 +5730,7 @@ export namespace Prisma {
 
   export type PortfolioOrderByWithAggregationInput = {
     id?: SortOrder
+    priority?: SortOrder
     title?: SortOrder
     link?: SortOrderInput | SortOrder
     show?: SortOrder
@@ -5725,6 +5747,7 @@ export namespace Prisma {
     OR?: PortfolioScalarWhereWithAggregatesInput[]
     NOT?: PortfolioScalarWhereWithAggregatesInput | PortfolioScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Portfolio"> | number
+    priority?: IntWithAggregatesFilter<"Portfolio"> | number
     title?: StringWithAggregatesFilter<"Portfolio"> | string
     link?: StringNullableWithAggregatesFilter<"Portfolio"> | string | null
     show?: BoolWithAggregatesFilter<"Portfolio"> | boolean
@@ -5877,6 +5900,7 @@ export namespace Prisma {
   }
 
   export type PortfolioCreateInput = {
+    priority?: number
     title: string
     link?: string | null
     show?: boolean
@@ -5886,6 +5910,7 @@ export namespace Prisma {
 
   export type PortfolioUncheckedCreateInput = {
     id?: number
+    priority?: number
     title: string
     link?: string | null
     show?: boolean
@@ -5894,6 +5919,7 @@ export namespace Prisma {
   }
 
   export type PortfolioUpdateInput = {
+    priority?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     link?: NullableStringFieldUpdateOperationsInput | string | null
     show?: BoolFieldUpdateOperationsInput | boolean
@@ -5903,6 +5929,7 @@ export namespace Prisma {
 
   export type PortfolioUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     link?: NullableStringFieldUpdateOperationsInput | string | null
     show?: BoolFieldUpdateOperationsInput | boolean
@@ -5912,6 +5939,7 @@ export namespace Prisma {
 
   export type PortfolioCreateManyInput = {
     id?: number
+    priority?: number
     title: string
     link?: string | null
     show?: boolean
@@ -5919,6 +5947,7 @@ export namespace Prisma {
   }
 
   export type PortfolioUpdateManyMutationInput = {
+    priority?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     link?: NullableStringFieldUpdateOperationsInput | string | null
     show?: BoolFieldUpdateOperationsInput | boolean
@@ -5927,6 +5956,7 @@ export namespace Prisma {
 
   export type PortfolioUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     link?: NullableStringFieldUpdateOperationsInput | string | null
     show?: BoolFieldUpdateOperationsInput | boolean
@@ -6195,6 +6225,7 @@ export namespace Prisma {
 
   export type PortfolioCountOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     title?: SortOrder
     link?: SortOrder
     show?: SortOrder
@@ -6203,10 +6234,12 @@ export namespace Prisma {
 
   export type PortfolioAvgOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
   }
 
   export type PortfolioMaxOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     title?: SortOrder
     link?: SortOrder
     show?: SortOrder
@@ -6215,6 +6248,7 @@ export namespace Prisma {
 
   export type PortfolioMinOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     title?: SortOrder
     link?: SortOrder
     show?: SortOrder
@@ -6223,6 +6257,7 @@ export namespace Prisma {
 
   export type PortfolioSumOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6640,6 +6675,7 @@ export namespace Prisma {
   }
 
   export type PortfolioCreateWithoutPortfolioItemsInput = {
+    priority?: number
     title: string
     link?: string | null
     show?: boolean
@@ -6648,6 +6684,7 @@ export namespace Prisma {
 
   export type PortfolioUncheckedCreateWithoutPortfolioItemsInput = {
     id?: number
+    priority?: number
     title: string
     link?: string | null
     show?: boolean
@@ -6671,6 +6708,7 @@ export namespace Prisma {
   }
 
   export type PortfolioUpdateWithoutPortfolioItemsInput = {
+    priority?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     link?: NullableStringFieldUpdateOperationsInput | string | null
     show?: BoolFieldUpdateOperationsInput | boolean
@@ -6679,6 +6717,7 @@ export namespace Prisma {
 
   export type PortfolioUncheckedUpdateWithoutPortfolioItemsInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     link?: NullableStringFieldUpdateOperationsInput | string | null
     show?: BoolFieldUpdateOperationsInput | boolean

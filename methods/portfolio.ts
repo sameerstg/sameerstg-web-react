@@ -8,6 +8,9 @@ export async function fetchPublicPortfolio() {
       show: true,
       private: false,
     },
+    orderBy: {
+      priority: "desc",
+    },
     include: {
       portfolioItems: {
         where: {

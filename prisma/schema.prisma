@@ -22,6 +22,7 @@ model Dictionary {
 
 model Portfolio {
   id             Int             @id @default(autoincrement())
+  priority       Int             @default(autoincrement())
   title          String          @unique
   link           String?
   portfolioItems PortfolioItem[]

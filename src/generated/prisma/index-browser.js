@@ -134,6 +134,7 @@ exports.Prisma.DictionaryScalarFieldEnum = {
 
 exports.Prisma.PortfolioScalarFieldEnum = {
   id: 'id',
+  priority: 'priority',
   title: 'title',
   link: 'link',
   show: 'show',
