@@ -10,8 +10,6 @@ import discord from '../Assets/Images/Socials/discord.svg'
 import IconBox from '../Components/IconBox'
 export default function Socials() {
   const socials = [
-
-
     { image: playstore, href: 'https://play.google.com/store/apps/developer?id=Sameerstg' },
     { image: github, href: 'https://github.com/sameerstg' },
     { image: linkedin, href: 'https://www.linkedin.com/in/sameerstg/' },
@@ -20,7 +18,6 @@ export default function Socials() {
     { image: instagram, href: 'https://www.instagram.com/sameerstg/' },
     { image: youtube, href: 'https://www.youtube.com/channel/UCt68mmpafwAmhsENbxr_5Lg?view_as=subscriber' },
     { image: discord, href: 'https://discord.gg/pJVTACah' },
-
   ];
   return (
     <div id='socials' >

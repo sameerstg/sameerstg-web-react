@@ -19,3 +19,23 @@ model Dictionary {
   key   String @unique
   value Json
 }
+
+model Portfolio {
+  id             Int             @id @default(autoincrement())
+  title          String          @unique
+  link           String?
+  portfolioItems PortfolioItem[]
+  show           Boolean         @default(true)
+  private        Boolean         @default(false)
+}
+
+model PortfolioItem {
+  id          Int        @id @default(autoincrement())
+  type        String
+  link        String
+  content     String
+  Portfolio   Portfolio? @relation(fields: [portfolioId], references: [id])
+  portfolioId Int?
+  show        Boolean    @default(true)
+  private     Boolean    @default(false)
+}

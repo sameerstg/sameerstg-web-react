@@ -21,23 +21,23 @@ export default function Feedback() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black px-4 py-10">
+        <div className="flex items-center justify-center  h-screen  px-4 py-10">
             <form
                 onSubmit={handleSubmit}
-                className="w-full max-w-lg bg-black/60 backdrop-blur-lg rounded-2xl shadow-2xl p-8 space-y-6"
+                className="w-full max-w-lg box bg-[#0000001d] rounded-2xl shadow-2xl p-8 space-y-6 "
             >
-                <h2 className="text-3xl font-bold text-tertiary text-center">
-                    Let me know your feedback :p
+                <h2 className="text-3xl font-bold text-center">
+                    Let me know your querry, thoughts or feedback.
                 </h2>
 
-                <div className="flex flex-col">
-                    
+                <div className="flex flex-col text-xl">
+
                     <input
                         type="email"
                         id="email"
-                        style={{color:"black"}}
+                        style={{ color: "black" }}
 
-                        className="placeholder-gray-400 bg-white/30 text-black rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="placeholder-gray-400 border-primary border-2 box  text-black rounded px-4 py-2 bg-[#00000000]"
                         placeholder="yourname@gmail.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -46,14 +46,14 @@ export default function Feedback() {
                     />
                 </div>
 
-                <div className="flex flex-col">
-                    
+                <div className="flex flex-col text-xl">
+
                     <textarea
                         id="feedback"
                         rows={5}
-                        className="placeholder-gray-400 text-black rounded px-4 py-2 resize-none"
-                        placeholder="Let us know your thoughts..."
-                        style={{color:"black"}}
+                        className="placeholder-gray-400 border-primary border-2 box text-black rounded px-4 py-2  bg-[#00000000]"
+                        placeholder="Let me know your thoughts..."
+                        style={{ color: "black" }}
                         value={feedback}
                         onChange={(e) => setFeedback(e.target.value)}
                         required
@@ -64,13 +64,12 @@ export default function Feedback() {
                 <button
                     type="submit"
                     disabled={loading}
-                    className={`w-full text-black font-semibold py-2 px-4 rounded transition duration-200 shadow-sm ${
-                        loading
-                            ? 'bg-blue-400 cursor-not-allowed'
-                            : 'bg-blue-600 hover:bg-blue-700'
-                    }`}
+                    className={`w-full box bg-secondary text-[#000000]  py-2 px-4 rounded transition duration-200 ${loading
+                        ? 'bg-blue-400 cursor-not-allowed'
+                        : 'bg-blue-600 hover:bg-blue-700'
+                        }`}
                 >
-                    {loading ? 'Submitting...' : 'Submit Feedback'}
+                    {loading ? 'Submitting...' : 'Submit'}
                 </button>
             </form>
         </div>

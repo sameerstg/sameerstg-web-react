@@ -132,6 +132,24 @@ exports.Prisma.DictionaryScalarFieldEnum = {
   value: 'value'
 };
 
+exports.Prisma.PortfolioScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  link: 'link',
+  show: 'show',
+  private: 'private'
+};
+
+exports.Prisma.PortfolioItemScalarFieldEnum = {
+  id: 'id',
+  type: 'type',
+  link: 'link',
+  content: 'content',
+  portfolioId: 'portfolioId',
+  show: 'show',
+  private: 'private'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -152,10 +170,17 @@ exports.Prisma.JsonNullValueFilter = {
   AnyNull: Prisma.AnyNull
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   Feedback: 'Feedback',
-  Dictionary: 'Dictionary'
+  Dictionary: 'Dictionary',
+  Portfolio: 'Portfolio',
+  PortfolioItem: 'PortfolioItem'
 };
 
 /**

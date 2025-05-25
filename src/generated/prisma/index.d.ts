@@ -23,6 +23,16 @@ export type Feedback = $Result.DefaultSelection<Prisma.$FeedbackPayload>
  * 
  */
 export type Dictionary = $Result.DefaultSelection<Prisma.$DictionaryPayload>
+/**
+ * Model Portfolio
+ * 
+ */
+export type Portfolio = $Result.DefaultSelection<Prisma.$PortfolioPayload>
+/**
+ * Model PortfolioItem
+ * 
+ */
+export type PortfolioItem = $Result.DefaultSelection<Prisma.$PortfolioItemPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -168,6 +178,26 @@ export class PrismaClient<
     * ```
     */
   get dictionary(): Prisma.DictionaryDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.portfolio`: Exposes CRUD operations for the **Portfolio** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Portfolios
+    * const portfolios = await prisma.portfolio.findMany()
+    * ```
+    */
+  get portfolio(): Prisma.PortfolioDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.portfolioItem`: Exposes CRUD operations for the **PortfolioItem** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PortfolioItems
+    * const portfolioItems = await prisma.portfolioItem.findMany()
+    * ```
+    */
+  get portfolioItem(): Prisma.PortfolioItemDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -609,7 +639,9 @@ export namespace Prisma {
 
   export const ModelName: {
     Feedback: 'Feedback',
-    Dictionary: 'Dictionary'
+    Dictionary: 'Dictionary',
+    Portfolio: 'Portfolio',
+    PortfolioItem: 'PortfolioItem'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,7 +660,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "feedback" | "dictionary"
+      modelProps: "feedback" | "dictionary" | "portfolio" | "portfolioItem"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -780,6 +812,154 @@ export namespace Prisma {
           }
         }
       }
+      Portfolio: {
+        payload: Prisma.$PortfolioPayload<ExtArgs>
+        fields: Prisma.PortfolioFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PortfolioFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PortfolioFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>
+          }
+          findFirst: {
+            args: Prisma.PortfolioFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PortfolioFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>
+          }
+          findMany: {
+            args: Prisma.PortfolioFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>[]
+          }
+          create: {
+            args: Prisma.PortfolioCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>
+          }
+          createMany: {
+            args: Prisma.PortfolioCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PortfolioCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>[]
+          }
+          delete: {
+            args: Prisma.PortfolioDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>
+          }
+          update: {
+            args: Prisma.PortfolioUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>
+          }
+          deleteMany: {
+            args: Prisma.PortfolioDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PortfolioUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PortfolioUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>[]
+          }
+          upsert: {
+            args: Prisma.PortfolioUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioPayload>
+          }
+          aggregate: {
+            args: Prisma.PortfolioAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePortfolio>
+          }
+          groupBy: {
+            args: Prisma.PortfolioGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PortfolioGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PortfolioCountArgs<ExtArgs>
+            result: $Utils.Optional<PortfolioCountAggregateOutputType> | number
+          }
+        }
+      }
+      PortfolioItem: {
+        payload: Prisma.$PortfolioItemPayload<ExtArgs>
+        fields: Prisma.PortfolioItemFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PortfolioItemFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PortfolioItemFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>
+          }
+          findFirst: {
+            args: Prisma.PortfolioItemFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PortfolioItemFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>
+          }
+          findMany: {
+            args: Prisma.PortfolioItemFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>[]
+          }
+          create: {
+            args: Prisma.PortfolioItemCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>
+          }
+          createMany: {
+            args: Prisma.PortfolioItemCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PortfolioItemCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>[]
+          }
+          delete: {
+            args: Prisma.PortfolioItemDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>
+          }
+          update: {
+            args: Prisma.PortfolioItemUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>
+          }
+          deleteMany: {
+            args: Prisma.PortfolioItemDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PortfolioItemUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PortfolioItemUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>[]
+          }
+          upsert: {
+            args: Prisma.PortfolioItemUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PortfolioItemPayload>
+          }
+          aggregate: {
+            args: Prisma.PortfolioItemAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePortfolioItem>
+          }
+          groupBy: {
+            args: Prisma.PortfolioItemGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PortfolioItemGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PortfolioItemCountArgs<ExtArgs>
+            result: $Utils.Optional<PortfolioItemCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -866,6 +1046,8 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     feedback?: FeedbackOmit
     dictionary?: DictionaryOmit
+    portfolio?: PortfolioOmit
+    portfolioItem?: PortfolioItemOmit
   }
 
   /* Types for Logging */
@@ -954,6 +1136,36 @@ export namespace Prisma {
    * Count Types
    */
 
+
+  /**
+   * Count Type PortfolioCountOutputType
+   */
+
+  export type PortfolioCountOutputType = {
+    portfolioItems: number
+  }
+
+  export type PortfolioCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    portfolioItems?: boolean | PortfolioCountOutputTypeCountPortfolioItemsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * PortfolioCountOutputType without action
+   */
+  export type PortfolioCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioCountOutputType
+     */
+    select?: PortfolioCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * PortfolioCountOutputType without action
+   */
+  export type PortfolioCountOutputTypeCountPortfolioItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PortfolioItemWhereInput
+  }
 
 
   /**
@@ -2963,6 +3175,2251 @@ export namespace Prisma {
 
 
   /**
+   * Model Portfolio
+   */
+
+  export type AggregatePortfolio = {
+    _count: PortfolioCountAggregateOutputType | null
+    _avg: PortfolioAvgAggregateOutputType | null
+    _sum: PortfolioSumAggregateOutputType | null
+    _min: PortfolioMinAggregateOutputType | null
+    _max: PortfolioMaxAggregateOutputType | null
+  }
+
+  export type PortfolioAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type PortfolioSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type PortfolioMinAggregateOutputType = {
+    id: number | null
+    title: string | null
+    link: string | null
+    show: boolean | null
+    private: boolean | null
+  }
+
+  export type PortfolioMaxAggregateOutputType = {
+    id: number | null
+    title: string | null
+    link: string | null
+    show: boolean | null
+    private: boolean | null
+  }
+
+  export type PortfolioCountAggregateOutputType = {
+    id: number
+    title: number
+    link: number
+    show: number
+    private: number
+    _all: number
+  }
+
+
+  export type PortfolioAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type PortfolioSumAggregateInputType = {
+    id?: true
+  }
+
+  export type PortfolioMinAggregateInputType = {
+    id?: true
+    title?: true
+    link?: true
+    show?: true
+    private?: true
+  }
+
+  export type PortfolioMaxAggregateInputType = {
+    id?: true
+    title?: true
+    link?: true
+    show?: true
+    private?: true
+  }
+
+  export type PortfolioCountAggregateInputType = {
+    id?: true
+    title?: true
+    link?: true
+    show?: true
+    private?: true
+    _all?: true
+  }
+
+  export type PortfolioAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Portfolio to aggregate.
+     */
+    where?: PortfolioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Portfolios to fetch.
+     */
+    orderBy?: PortfolioOrderByWithRelationInput | PortfolioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PortfolioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Portfolios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Portfolios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Portfolios
+    **/
+    _count?: true | PortfolioCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: PortfolioAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: PortfolioSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PortfolioMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PortfolioMaxAggregateInputType
+  }
+
+  export type GetPortfolioAggregateType<T extends PortfolioAggregateArgs> = {
+        [P in keyof T & keyof AggregatePortfolio]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePortfolio[P]>
+      : GetScalarType<T[P], AggregatePortfolio[P]>
+  }
+
+
+
+
+  export type PortfolioGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PortfolioWhereInput
+    orderBy?: PortfolioOrderByWithAggregationInput | PortfolioOrderByWithAggregationInput[]
+    by: PortfolioScalarFieldEnum[] | PortfolioScalarFieldEnum
+    having?: PortfolioScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PortfolioCountAggregateInputType | true
+    _avg?: PortfolioAvgAggregateInputType
+    _sum?: PortfolioSumAggregateInputType
+    _min?: PortfolioMinAggregateInputType
+    _max?: PortfolioMaxAggregateInputType
+  }
+
+  export type PortfolioGroupByOutputType = {
+    id: number
+    title: string
+    link: string | null
+    show: boolean
+    private: boolean
+    _count: PortfolioCountAggregateOutputType | null
+    _avg: PortfolioAvgAggregateOutputType | null
+    _sum: PortfolioSumAggregateOutputType | null
+    _min: PortfolioMinAggregateOutputType | null
+    _max: PortfolioMaxAggregateOutputType | null
+  }
+
+  type GetPortfolioGroupByPayload<T extends PortfolioGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PortfolioGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PortfolioGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PortfolioGroupByOutputType[P]>
+            : GetScalarType<T[P], PortfolioGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PortfolioSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    link?: boolean
+    show?: boolean
+    private?: boolean
+    portfolioItems?: boolean | Portfolio$portfolioItemsArgs<ExtArgs>
+    _count?: boolean | PortfolioCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["portfolio"]>
+
+  export type PortfolioSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    link?: boolean
+    show?: boolean
+    private?: boolean
+  }, ExtArgs["result"]["portfolio"]>
+
+  export type PortfolioSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    title?: boolean
+    link?: boolean
+    show?: boolean
+    private?: boolean
+  }, ExtArgs["result"]["portfolio"]>
+
+  export type PortfolioSelectScalar = {
+    id?: boolean
+    title?: boolean
+    link?: boolean
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "link" | "show" | "private", ExtArgs["result"]["portfolio"]>
+  export type PortfolioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    portfolioItems?: boolean | Portfolio$portfolioItemsArgs<ExtArgs>
+    _count?: boolean | PortfolioCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type PortfolioIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type PortfolioIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $PortfolioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Portfolio"
+    objects: {
+      portfolioItems: Prisma.$PortfolioItemPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      title: string
+      link: string | null
+      show: boolean
+      private: boolean
+    }, ExtArgs["result"]["portfolio"]>
+    composites: {}
+  }
+
+  type PortfolioGetPayload<S extends boolean | null | undefined | PortfolioDefaultArgs> = $Result.GetResult<Prisma.$PortfolioPayload, S>
+
+  type PortfolioCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PortfolioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PortfolioCountAggregateInputType | true
+    }
+
+  export interface PortfolioDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Portfolio'], meta: { name: 'Portfolio' } }
+    /**
+     * Find zero or one Portfolio that matches the filter.
+     * @param {PortfolioFindUniqueArgs} args - Arguments to find a Portfolio
+     * @example
+     * // Get one Portfolio
+     * const portfolio = await prisma.portfolio.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PortfolioFindUniqueArgs>(args: SelectSubset<T, PortfolioFindUniqueArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Portfolio that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PortfolioFindUniqueOrThrowArgs} args - Arguments to find a Portfolio
+     * @example
+     * // Get one Portfolio
+     * const portfolio = await prisma.portfolio.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PortfolioFindUniqueOrThrowArgs>(args: SelectSubset<T, PortfolioFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Portfolio that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioFindFirstArgs} args - Arguments to find a Portfolio
+     * @example
+     * // Get one Portfolio
+     * const portfolio = await prisma.portfolio.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PortfolioFindFirstArgs>(args?: SelectSubset<T, PortfolioFindFirstArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Portfolio that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioFindFirstOrThrowArgs} args - Arguments to find a Portfolio
+     * @example
+     * // Get one Portfolio
+     * const portfolio = await prisma.portfolio.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PortfolioFindFirstOrThrowArgs>(args?: SelectSubset<T, PortfolioFindFirstOrThrowArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Portfolios that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Portfolios
+     * const portfolios = await prisma.portfolio.findMany()
+     * 
+     * // Get first 10 Portfolios
+     * const portfolios = await prisma.portfolio.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const portfolioWithIdOnly = await prisma.portfolio.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PortfolioFindManyArgs>(args?: SelectSubset<T, PortfolioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Portfolio.
+     * @param {PortfolioCreateArgs} args - Arguments to create a Portfolio.
+     * @example
+     * // Create one Portfolio
+     * const Portfolio = await prisma.portfolio.create({
+     *   data: {
+     *     // ... data to create a Portfolio
+     *   }
+     * })
+     * 
+     */
+    create<T extends PortfolioCreateArgs>(args: SelectSubset<T, PortfolioCreateArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Portfolios.
+     * @param {PortfolioCreateManyArgs} args - Arguments to create many Portfolios.
+     * @example
+     * // Create many Portfolios
+     * const portfolio = await prisma.portfolio.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PortfolioCreateManyArgs>(args?: SelectSubset<T, PortfolioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Portfolios and returns the data saved in the database.
+     * @param {PortfolioCreateManyAndReturnArgs} args - Arguments to create many Portfolios.
+     * @example
+     * // Create many Portfolios
+     * const portfolio = await prisma.portfolio.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Portfolios and only return the `id`
+     * const portfolioWithIdOnly = await prisma.portfolio.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PortfolioCreateManyAndReturnArgs>(args?: SelectSubset<T, PortfolioCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Portfolio.
+     * @param {PortfolioDeleteArgs} args - Arguments to delete one Portfolio.
+     * @example
+     * // Delete one Portfolio
+     * const Portfolio = await prisma.portfolio.delete({
+     *   where: {
+     *     // ... filter to delete one Portfolio
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PortfolioDeleteArgs>(args: SelectSubset<T, PortfolioDeleteArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Portfolio.
+     * @param {PortfolioUpdateArgs} args - Arguments to update one Portfolio.
+     * @example
+     * // Update one Portfolio
+     * const portfolio = await prisma.portfolio.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PortfolioUpdateArgs>(args: SelectSubset<T, PortfolioUpdateArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Portfolios.
+     * @param {PortfolioDeleteManyArgs} args - Arguments to filter Portfolios to delete.
+     * @example
+     * // Delete a few Portfolios
+     * const { count } = await prisma.portfolio.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PortfolioDeleteManyArgs>(args?: SelectSubset<T, PortfolioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Portfolios.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Portfolios
+     * const portfolio = await prisma.portfolio.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PortfolioUpdateManyArgs>(args: SelectSubset<T, PortfolioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Portfolios and returns the data updated in the database.
+     * @param {PortfolioUpdateManyAndReturnArgs} args - Arguments to update many Portfolios.
+     * @example
+     * // Update many Portfolios
+     * const portfolio = await prisma.portfolio.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Portfolios and only return the `id`
+     * const portfolioWithIdOnly = await prisma.portfolio.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PortfolioUpdateManyAndReturnArgs>(args: SelectSubset<T, PortfolioUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Portfolio.
+     * @param {PortfolioUpsertArgs} args - Arguments to update or create a Portfolio.
+     * @example
+     * // Update or create a Portfolio
+     * const portfolio = await prisma.portfolio.upsert({
+     *   create: {
+     *     // ... data to create a Portfolio
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Portfolio we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PortfolioUpsertArgs>(args: SelectSubset<T, PortfolioUpsertArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Portfolios.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioCountArgs} args - Arguments to filter Portfolios to count.
+     * @example
+     * // Count the number of Portfolios
+     * const count = await prisma.portfolio.count({
+     *   where: {
+     *     // ... the filter for the Portfolios we want to count
+     *   }
+     * })
+    **/
+    count<T extends PortfolioCountArgs>(
+      args?: Subset<T, PortfolioCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PortfolioCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Portfolio.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PortfolioAggregateArgs>(args: Subset<T, PortfolioAggregateArgs>): Prisma.PrismaPromise<GetPortfolioAggregateType<T>>
+
+    /**
+     * Group by Portfolio.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PortfolioGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PortfolioGroupByArgs['orderBy'] }
+        : { orderBy?: PortfolioGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PortfolioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPortfolioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Portfolio model
+   */
+  readonly fields: PortfolioFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Portfolio.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PortfolioClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    portfolioItems<T extends Portfolio$portfolioItemsArgs<ExtArgs> = {}>(args?: Subset<T, Portfolio$portfolioItemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Portfolio model
+   */
+  interface PortfolioFieldRefs {
+    readonly id: FieldRef<"Portfolio", 'Int'>
+    readonly title: FieldRef<"Portfolio", 'String'>
+    readonly link: FieldRef<"Portfolio", 'String'>
+    readonly show: FieldRef<"Portfolio", 'Boolean'>
+    readonly private: FieldRef<"Portfolio", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Portfolio findUnique
+   */
+  export type PortfolioFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * Filter, which Portfolio to fetch.
+     */
+    where: PortfolioWhereUniqueInput
+  }
+
+  /**
+   * Portfolio findUniqueOrThrow
+   */
+  export type PortfolioFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * Filter, which Portfolio to fetch.
+     */
+    where: PortfolioWhereUniqueInput
+  }
+
+  /**
+   * Portfolio findFirst
+   */
+  export type PortfolioFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * Filter, which Portfolio to fetch.
+     */
+    where?: PortfolioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Portfolios to fetch.
+     */
+    orderBy?: PortfolioOrderByWithRelationInput | PortfolioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Portfolios.
+     */
+    cursor?: PortfolioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Portfolios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Portfolios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Portfolios.
+     */
+    distinct?: PortfolioScalarFieldEnum | PortfolioScalarFieldEnum[]
+  }
+
+  /**
+   * Portfolio findFirstOrThrow
+   */
+  export type PortfolioFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * Filter, which Portfolio to fetch.
+     */
+    where?: PortfolioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Portfolios to fetch.
+     */
+    orderBy?: PortfolioOrderByWithRelationInput | PortfolioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Portfolios.
+     */
+    cursor?: PortfolioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Portfolios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Portfolios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Portfolios.
+     */
+    distinct?: PortfolioScalarFieldEnum | PortfolioScalarFieldEnum[]
+  }
+
+  /**
+   * Portfolio findMany
+   */
+  export type PortfolioFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * Filter, which Portfolios to fetch.
+     */
+    where?: PortfolioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Portfolios to fetch.
+     */
+    orderBy?: PortfolioOrderByWithRelationInput | PortfolioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Portfolios.
+     */
+    cursor?: PortfolioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Portfolios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Portfolios.
+     */
+    skip?: number
+    distinct?: PortfolioScalarFieldEnum | PortfolioScalarFieldEnum[]
+  }
+
+  /**
+   * Portfolio create
+   */
+  export type PortfolioCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Portfolio.
+     */
+    data: XOR<PortfolioCreateInput, PortfolioUncheckedCreateInput>
+  }
+
+  /**
+   * Portfolio createMany
+   */
+  export type PortfolioCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Portfolios.
+     */
+    data: PortfolioCreateManyInput | PortfolioCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Portfolio createManyAndReturn
+   */
+  export type PortfolioCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * The data used to create many Portfolios.
+     */
+    data: PortfolioCreateManyInput | PortfolioCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Portfolio update
+   */
+  export type PortfolioUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Portfolio.
+     */
+    data: XOR<PortfolioUpdateInput, PortfolioUncheckedUpdateInput>
+    /**
+     * Choose, which Portfolio to update.
+     */
+    where: PortfolioWhereUniqueInput
+  }
+
+  /**
+   * Portfolio updateMany
+   */
+  export type PortfolioUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Portfolios.
+     */
+    data: XOR<PortfolioUpdateManyMutationInput, PortfolioUncheckedUpdateManyInput>
+    /**
+     * Filter which Portfolios to update
+     */
+    where?: PortfolioWhereInput
+    /**
+     * Limit how many Portfolios to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Portfolio updateManyAndReturn
+   */
+  export type PortfolioUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * The data used to update Portfolios.
+     */
+    data: XOR<PortfolioUpdateManyMutationInput, PortfolioUncheckedUpdateManyInput>
+    /**
+     * Filter which Portfolios to update
+     */
+    where?: PortfolioWhereInput
+    /**
+     * Limit how many Portfolios to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Portfolio upsert
+   */
+  export type PortfolioUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Portfolio to update in case it exists.
+     */
+    where: PortfolioWhereUniqueInput
+    /**
+     * In case the Portfolio found by the `where` argument doesn't exist, create a new Portfolio with this data.
+     */
+    create: XOR<PortfolioCreateInput, PortfolioUncheckedCreateInput>
+    /**
+     * In case the Portfolio was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PortfolioUpdateInput, PortfolioUncheckedUpdateInput>
+  }
+
+  /**
+   * Portfolio delete
+   */
+  export type PortfolioDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    /**
+     * Filter which Portfolio to delete.
+     */
+    where: PortfolioWhereUniqueInput
+  }
+
+  /**
+   * Portfolio deleteMany
+   */
+  export type PortfolioDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Portfolios to delete
+     */
+    where?: PortfolioWhereInput
+    /**
+     * Limit how many Portfolios to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Portfolio.portfolioItems
+   */
+  export type Portfolio$portfolioItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    where?: PortfolioItemWhereInput
+    orderBy?: PortfolioItemOrderByWithRelationInput | PortfolioItemOrderByWithRelationInput[]
+    cursor?: PortfolioItemWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PortfolioItemScalarFieldEnum | PortfolioItemScalarFieldEnum[]
+  }
+
+  /**
+   * Portfolio without action
+   */
+  export type PortfolioDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model PortfolioItem
+   */
+
+  export type AggregatePortfolioItem = {
+    _count: PortfolioItemCountAggregateOutputType | null
+    _avg: PortfolioItemAvgAggregateOutputType | null
+    _sum: PortfolioItemSumAggregateOutputType | null
+    _min: PortfolioItemMinAggregateOutputType | null
+    _max: PortfolioItemMaxAggregateOutputType | null
+  }
+
+  export type PortfolioItemAvgAggregateOutputType = {
+    id: number | null
+    portfolioId: number | null
+  }
+
+  export type PortfolioItemSumAggregateOutputType = {
+    id: number | null
+    portfolioId: number | null
+  }
+
+  export type PortfolioItemMinAggregateOutputType = {
+    id: number | null
+    type: string | null
+    link: string | null
+    content: string | null
+    portfolioId: number | null
+    show: boolean | null
+    private: boolean | null
+  }
+
+  export type PortfolioItemMaxAggregateOutputType = {
+    id: number | null
+    type: string | null
+    link: string | null
+    content: string | null
+    portfolioId: number | null
+    show: boolean | null
+    private: boolean | null
+  }
+
+  export type PortfolioItemCountAggregateOutputType = {
+    id: number
+    type: number
+    link: number
+    content: number
+    portfolioId: number
+    show: number
+    private: number
+    _all: number
+  }
+
+
+  export type PortfolioItemAvgAggregateInputType = {
+    id?: true
+    portfolioId?: true
+  }
+
+  export type PortfolioItemSumAggregateInputType = {
+    id?: true
+    portfolioId?: true
+  }
+
+  export type PortfolioItemMinAggregateInputType = {
+    id?: true
+    type?: true
+    link?: true
+    content?: true
+    portfolioId?: true
+    show?: true
+    private?: true
+  }
+
+  export type PortfolioItemMaxAggregateInputType = {
+    id?: true
+    type?: true
+    link?: true
+    content?: true
+    portfolioId?: true
+    show?: true
+    private?: true
+  }
+
+  export type PortfolioItemCountAggregateInputType = {
+    id?: true
+    type?: true
+    link?: true
+    content?: true
+    portfolioId?: true
+    show?: true
+    private?: true
+    _all?: true
+  }
+
+  export type PortfolioItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PortfolioItem to aggregate.
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PortfolioItems to fetch.
+     */
+    orderBy?: PortfolioItemOrderByWithRelationInput | PortfolioItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PortfolioItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PortfolioItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PortfolioItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PortfolioItems
+    **/
+    _count?: true | PortfolioItemCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: PortfolioItemAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: PortfolioItemSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PortfolioItemMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PortfolioItemMaxAggregateInputType
+  }
+
+  export type GetPortfolioItemAggregateType<T extends PortfolioItemAggregateArgs> = {
+        [P in keyof T & keyof AggregatePortfolioItem]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePortfolioItem[P]>
+      : GetScalarType<T[P], AggregatePortfolioItem[P]>
+  }
+
+
+
+
+  export type PortfolioItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PortfolioItemWhereInput
+    orderBy?: PortfolioItemOrderByWithAggregationInput | PortfolioItemOrderByWithAggregationInput[]
+    by: PortfolioItemScalarFieldEnum[] | PortfolioItemScalarFieldEnum
+    having?: PortfolioItemScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PortfolioItemCountAggregateInputType | true
+    _avg?: PortfolioItemAvgAggregateInputType
+    _sum?: PortfolioItemSumAggregateInputType
+    _min?: PortfolioItemMinAggregateInputType
+    _max?: PortfolioItemMaxAggregateInputType
+  }
+
+  export type PortfolioItemGroupByOutputType = {
+    id: number
+    type: string
+    link: string
+    content: string
+    portfolioId: number | null
+    show: boolean
+    private: boolean
+    _count: PortfolioItemCountAggregateOutputType | null
+    _avg: PortfolioItemAvgAggregateOutputType | null
+    _sum: PortfolioItemSumAggregateOutputType | null
+    _min: PortfolioItemMinAggregateOutputType | null
+    _max: PortfolioItemMaxAggregateOutputType | null
+  }
+
+  type GetPortfolioItemGroupByPayload<T extends PortfolioItemGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PortfolioItemGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PortfolioItemGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PortfolioItemGroupByOutputType[P]>
+            : GetScalarType<T[P], PortfolioItemGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PortfolioItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    link?: boolean
+    content?: boolean
+    portfolioId?: boolean
+    show?: boolean
+    private?: boolean
+    Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
+  }, ExtArgs["result"]["portfolioItem"]>
+
+  export type PortfolioItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    link?: boolean
+    content?: boolean
+    portfolioId?: boolean
+    show?: boolean
+    private?: boolean
+    Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
+  }, ExtArgs["result"]["portfolioItem"]>
+
+  export type PortfolioItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    link?: boolean
+    content?: boolean
+    portfolioId?: boolean
+    show?: boolean
+    private?: boolean
+    Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
+  }, ExtArgs["result"]["portfolioItem"]>
+
+  export type PortfolioItemSelectScalar = {
+    id?: boolean
+    type?: boolean
+    link?: boolean
+    content?: boolean
+    portfolioId?: boolean
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "link" | "content" | "portfolioId" | "show" | "private", ExtArgs["result"]["portfolioItem"]>
+  export type PortfolioItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
+  }
+  export type PortfolioItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
+  }
+  export type PortfolioItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
+  }
+
+  export type $PortfolioItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PortfolioItem"
+    objects: {
+      Portfolio: Prisma.$PortfolioPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      type: string
+      link: string
+      content: string
+      portfolioId: number | null
+      show: boolean
+      private: boolean
+    }, ExtArgs["result"]["portfolioItem"]>
+    composites: {}
+  }
+
+  type PortfolioItemGetPayload<S extends boolean | null | undefined | PortfolioItemDefaultArgs> = $Result.GetResult<Prisma.$PortfolioItemPayload, S>
+
+  type PortfolioItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PortfolioItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PortfolioItemCountAggregateInputType | true
+    }
+
+  export interface PortfolioItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PortfolioItem'], meta: { name: 'PortfolioItem' } }
+    /**
+     * Find zero or one PortfolioItem that matches the filter.
+     * @param {PortfolioItemFindUniqueArgs} args - Arguments to find a PortfolioItem
+     * @example
+     * // Get one PortfolioItem
+     * const portfolioItem = await prisma.portfolioItem.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PortfolioItemFindUniqueArgs>(args: SelectSubset<T, PortfolioItemFindUniqueArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one PortfolioItem that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PortfolioItemFindUniqueOrThrowArgs} args - Arguments to find a PortfolioItem
+     * @example
+     * // Get one PortfolioItem
+     * const portfolioItem = await prisma.portfolioItem.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PortfolioItemFindUniqueOrThrowArgs>(args: SelectSubset<T, PortfolioItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PortfolioItem that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemFindFirstArgs} args - Arguments to find a PortfolioItem
+     * @example
+     * // Get one PortfolioItem
+     * const portfolioItem = await prisma.portfolioItem.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PortfolioItemFindFirstArgs>(args?: SelectSubset<T, PortfolioItemFindFirstArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PortfolioItem that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemFindFirstOrThrowArgs} args - Arguments to find a PortfolioItem
+     * @example
+     * // Get one PortfolioItem
+     * const portfolioItem = await prisma.portfolioItem.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PortfolioItemFindFirstOrThrowArgs>(args?: SelectSubset<T, PortfolioItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more PortfolioItems that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PortfolioItems
+     * const portfolioItems = await prisma.portfolioItem.findMany()
+     * 
+     * // Get first 10 PortfolioItems
+     * const portfolioItems = await prisma.portfolioItem.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const portfolioItemWithIdOnly = await prisma.portfolioItem.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PortfolioItemFindManyArgs>(args?: SelectSubset<T, PortfolioItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a PortfolioItem.
+     * @param {PortfolioItemCreateArgs} args - Arguments to create a PortfolioItem.
+     * @example
+     * // Create one PortfolioItem
+     * const PortfolioItem = await prisma.portfolioItem.create({
+     *   data: {
+     *     // ... data to create a PortfolioItem
+     *   }
+     * })
+     * 
+     */
+    create<T extends PortfolioItemCreateArgs>(args: SelectSubset<T, PortfolioItemCreateArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many PortfolioItems.
+     * @param {PortfolioItemCreateManyArgs} args - Arguments to create many PortfolioItems.
+     * @example
+     * // Create many PortfolioItems
+     * const portfolioItem = await prisma.portfolioItem.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PortfolioItemCreateManyArgs>(args?: SelectSubset<T, PortfolioItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PortfolioItems and returns the data saved in the database.
+     * @param {PortfolioItemCreateManyAndReturnArgs} args - Arguments to create many PortfolioItems.
+     * @example
+     * // Create many PortfolioItems
+     * const portfolioItem = await prisma.portfolioItem.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PortfolioItems and only return the `id`
+     * const portfolioItemWithIdOnly = await prisma.portfolioItem.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PortfolioItemCreateManyAndReturnArgs>(args?: SelectSubset<T, PortfolioItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a PortfolioItem.
+     * @param {PortfolioItemDeleteArgs} args - Arguments to delete one PortfolioItem.
+     * @example
+     * // Delete one PortfolioItem
+     * const PortfolioItem = await prisma.portfolioItem.delete({
+     *   where: {
+     *     // ... filter to delete one PortfolioItem
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PortfolioItemDeleteArgs>(args: SelectSubset<T, PortfolioItemDeleteArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one PortfolioItem.
+     * @param {PortfolioItemUpdateArgs} args - Arguments to update one PortfolioItem.
+     * @example
+     * // Update one PortfolioItem
+     * const portfolioItem = await prisma.portfolioItem.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PortfolioItemUpdateArgs>(args: SelectSubset<T, PortfolioItemUpdateArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more PortfolioItems.
+     * @param {PortfolioItemDeleteManyArgs} args - Arguments to filter PortfolioItems to delete.
+     * @example
+     * // Delete a few PortfolioItems
+     * const { count } = await prisma.portfolioItem.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PortfolioItemDeleteManyArgs>(args?: SelectSubset<T, PortfolioItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PortfolioItems.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PortfolioItems
+     * const portfolioItem = await prisma.portfolioItem.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PortfolioItemUpdateManyArgs>(args: SelectSubset<T, PortfolioItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PortfolioItems and returns the data updated in the database.
+     * @param {PortfolioItemUpdateManyAndReturnArgs} args - Arguments to update many PortfolioItems.
+     * @example
+     * // Update many PortfolioItems
+     * const portfolioItem = await prisma.portfolioItem.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more PortfolioItems and only return the `id`
+     * const portfolioItemWithIdOnly = await prisma.portfolioItem.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PortfolioItemUpdateManyAndReturnArgs>(args: SelectSubset<T, PortfolioItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one PortfolioItem.
+     * @param {PortfolioItemUpsertArgs} args - Arguments to update or create a PortfolioItem.
+     * @example
+     * // Update or create a PortfolioItem
+     * const portfolioItem = await prisma.portfolioItem.upsert({
+     *   create: {
+     *     // ... data to create a PortfolioItem
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PortfolioItem we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PortfolioItemUpsertArgs>(args: SelectSubset<T, PortfolioItemUpsertArgs<ExtArgs>>): Prisma__PortfolioItemClient<$Result.GetResult<Prisma.$PortfolioItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of PortfolioItems.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemCountArgs} args - Arguments to filter PortfolioItems to count.
+     * @example
+     * // Count the number of PortfolioItems
+     * const count = await prisma.portfolioItem.count({
+     *   where: {
+     *     // ... the filter for the PortfolioItems we want to count
+     *   }
+     * })
+    **/
+    count<T extends PortfolioItemCountArgs>(
+      args?: Subset<T, PortfolioItemCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PortfolioItemCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PortfolioItem.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PortfolioItemAggregateArgs>(args: Subset<T, PortfolioItemAggregateArgs>): Prisma.PrismaPromise<GetPortfolioItemAggregateType<T>>
+
+    /**
+     * Group by PortfolioItem.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PortfolioItemGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PortfolioItemGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PortfolioItemGroupByArgs['orderBy'] }
+        : { orderBy?: PortfolioItemGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PortfolioItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPortfolioItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PortfolioItem model
+   */
+  readonly fields: PortfolioItemFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PortfolioItem.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PortfolioItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    Portfolio<T extends PortfolioItem$PortfolioArgs<ExtArgs> = {}>(args?: Subset<T, PortfolioItem$PortfolioArgs<ExtArgs>>): Prisma__PortfolioClient<$Result.GetResult<Prisma.$PortfolioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PortfolioItem model
+   */
+  interface PortfolioItemFieldRefs {
+    readonly id: FieldRef<"PortfolioItem", 'Int'>
+    readonly type: FieldRef<"PortfolioItem", 'String'>
+    readonly link: FieldRef<"PortfolioItem", 'String'>
+    readonly content: FieldRef<"PortfolioItem", 'String'>
+    readonly portfolioId: FieldRef<"PortfolioItem", 'Int'>
+    readonly show: FieldRef<"PortfolioItem", 'Boolean'>
+    readonly private: FieldRef<"PortfolioItem", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PortfolioItem findUnique
+   */
+  export type PortfolioItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * Filter, which PortfolioItem to fetch.
+     */
+    where: PortfolioItemWhereUniqueInput
+  }
+
+  /**
+   * PortfolioItem findUniqueOrThrow
+   */
+  export type PortfolioItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * Filter, which PortfolioItem to fetch.
+     */
+    where: PortfolioItemWhereUniqueInput
+  }
+
+  /**
+   * PortfolioItem findFirst
+   */
+  export type PortfolioItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * Filter, which PortfolioItem to fetch.
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PortfolioItems to fetch.
+     */
+    orderBy?: PortfolioItemOrderByWithRelationInput | PortfolioItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PortfolioItems.
+     */
+    cursor?: PortfolioItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PortfolioItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PortfolioItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PortfolioItems.
+     */
+    distinct?: PortfolioItemScalarFieldEnum | PortfolioItemScalarFieldEnum[]
+  }
+
+  /**
+   * PortfolioItem findFirstOrThrow
+   */
+  export type PortfolioItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * Filter, which PortfolioItem to fetch.
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PortfolioItems to fetch.
+     */
+    orderBy?: PortfolioItemOrderByWithRelationInput | PortfolioItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PortfolioItems.
+     */
+    cursor?: PortfolioItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PortfolioItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PortfolioItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PortfolioItems.
+     */
+    distinct?: PortfolioItemScalarFieldEnum | PortfolioItemScalarFieldEnum[]
+  }
+
+  /**
+   * PortfolioItem findMany
+   */
+  export type PortfolioItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * Filter, which PortfolioItems to fetch.
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PortfolioItems to fetch.
+     */
+    orderBy?: PortfolioItemOrderByWithRelationInput | PortfolioItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PortfolioItems.
+     */
+    cursor?: PortfolioItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PortfolioItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PortfolioItems.
+     */
+    skip?: number
+    distinct?: PortfolioItemScalarFieldEnum | PortfolioItemScalarFieldEnum[]
+  }
+
+  /**
+   * PortfolioItem create
+   */
+  export type PortfolioItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * The data needed to create a PortfolioItem.
+     */
+    data: XOR<PortfolioItemCreateInput, PortfolioItemUncheckedCreateInput>
+  }
+
+  /**
+   * PortfolioItem createMany
+   */
+  export type PortfolioItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PortfolioItems.
+     */
+    data: PortfolioItemCreateManyInput | PortfolioItemCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PortfolioItem createManyAndReturn
+   */
+  export type PortfolioItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * The data used to create many PortfolioItems.
+     */
+    data: PortfolioItemCreateManyInput | PortfolioItemCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PortfolioItem update
+   */
+  export type PortfolioItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * The data needed to update a PortfolioItem.
+     */
+    data: XOR<PortfolioItemUpdateInput, PortfolioItemUncheckedUpdateInput>
+    /**
+     * Choose, which PortfolioItem to update.
+     */
+    where: PortfolioItemWhereUniqueInput
+  }
+
+  /**
+   * PortfolioItem updateMany
+   */
+  export type PortfolioItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PortfolioItems.
+     */
+    data: XOR<PortfolioItemUpdateManyMutationInput, PortfolioItemUncheckedUpdateManyInput>
+    /**
+     * Filter which PortfolioItems to update
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * Limit how many PortfolioItems to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PortfolioItem updateManyAndReturn
+   */
+  export type PortfolioItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * The data used to update PortfolioItems.
+     */
+    data: XOR<PortfolioItemUpdateManyMutationInput, PortfolioItemUncheckedUpdateManyInput>
+    /**
+     * Filter which PortfolioItems to update
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * Limit how many PortfolioItems to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PortfolioItem upsert
+   */
+  export type PortfolioItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * The filter to search for the PortfolioItem to update in case it exists.
+     */
+    where: PortfolioItemWhereUniqueInput
+    /**
+     * In case the PortfolioItem found by the `where` argument doesn't exist, create a new PortfolioItem with this data.
+     */
+    create: XOR<PortfolioItemCreateInput, PortfolioItemUncheckedCreateInput>
+    /**
+     * In case the PortfolioItem was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PortfolioItemUpdateInput, PortfolioItemUncheckedUpdateInput>
+  }
+
+  /**
+   * PortfolioItem delete
+   */
+  export type PortfolioItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+    /**
+     * Filter which PortfolioItem to delete.
+     */
+    where: PortfolioItemWhereUniqueInput
+  }
+
+  /**
+   * PortfolioItem deleteMany
+   */
+  export type PortfolioItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PortfolioItems to delete
+     */
+    where?: PortfolioItemWhereInput
+    /**
+     * Limit how many PortfolioItems to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * PortfolioItem.Portfolio
+   */
+  export type PortfolioItem$PortfolioArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Portfolio
+     */
+    select?: PortfolioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Portfolio
+     */
+    omit?: PortfolioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioInclude<ExtArgs> | null
+    where?: PortfolioWhereInput
+  }
+
+  /**
+   * PortfolioItem without action
+   */
+  export type PortfolioItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PortfolioItem
+     */
+    select?: PortfolioItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PortfolioItem
+     */
+    omit?: PortfolioItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PortfolioItemInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -2992,6 +5449,30 @@ export namespace Prisma {
   };
 
   export type DictionaryScalarFieldEnum = (typeof DictionaryScalarFieldEnum)[keyof typeof DictionaryScalarFieldEnum]
+
+
+  export const PortfolioScalarFieldEnum: {
+    id: 'id',
+    title: 'title',
+    link: 'link',
+    show: 'show',
+    private: 'private'
+  };
+
+  export type PortfolioScalarFieldEnum = (typeof PortfolioScalarFieldEnum)[keyof typeof PortfolioScalarFieldEnum]
+
+
+  export const PortfolioItemScalarFieldEnum: {
+    id: 'id',
+    type: 'type',
+    link: 'link',
+    content: 'content',
+    portfolioId: 'portfolioId',
+    show: 'show',
+    private: 'private'
+  };
+
+  export type PortfolioItemScalarFieldEnum = (typeof PortfolioItemScalarFieldEnum)[keyof typeof PortfolioItemScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3024,6 +5505,14 @@ export namespace Prisma {
   };
 
   export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -3070,6 +5559,13 @@ export namespace Prisma {
    * Reference to a field of type 'QueryMode'
    */
   export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -3178,6 +5674,130 @@ export namespace Prisma {
     value?: JsonWithAggregatesFilter<"Dictionary">
   }
 
+  export type PortfolioWhereInput = {
+    AND?: PortfolioWhereInput | PortfolioWhereInput[]
+    OR?: PortfolioWhereInput[]
+    NOT?: PortfolioWhereInput | PortfolioWhereInput[]
+    id?: IntFilter<"Portfolio"> | number
+    title?: StringFilter<"Portfolio"> | string
+    link?: StringNullableFilter<"Portfolio"> | string | null
+    show?: BoolFilter<"Portfolio"> | boolean
+    private?: BoolFilter<"Portfolio"> | boolean
+    portfolioItems?: PortfolioItemListRelationFilter
+  }
+
+  export type PortfolioOrderByWithRelationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    link?: SortOrderInput | SortOrder
+    show?: SortOrder
+    private?: SortOrder
+    portfolioItems?: PortfolioItemOrderByRelationAggregateInput
+  }
+
+  export type PortfolioWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    title?: string
+    AND?: PortfolioWhereInput | PortfolioWhereInput[]
+    OR?: PortfolioWhereInput[]
+    NOT?: PortfolioWhereInput | PortfolioWhereInput[]
+    link?: StringNullableFilter<"Portfolio"> | string | null
+    show?: BoolFilter<"Portfolio"> | boolean
+    private?: BoolFilter<"Portfolio"> | boolean
+    portfolioItems?: PortfolioItemListRelationFilter
+  }, "id" | "title">
+
+  export type PortfolioOrderByWithAggregationInput = {
+    id?: SortOrder
+    title?: SortOrder
+    link?: SortOrderInput | SortOrder
+    show?: SortOrder
+    private?: SortOrder
+    _count?: PortfolioCountOrderByAggregateInput
+    _avg?: PortfolioAvgOrderByAggregateInput
+    _max?: PortfolioMaxOrderByAggregateInput
+    _min?: PortfolioMinOrderByAggregateInput
+    _sum?: PortfolioSumOrderByAggregateInput
+  }
+
+  export type PortfolioScalarWhereWithAggregatesInput = {
+    AND?: PortfolioScalarWhereWithAggregatesInput | PortfolioScalarWhereWithAggregatesInput[]
+    OR?: PortfolioScalarWhereWithAggregatesInput[]
+    NOT?: PortfolioScalarWhereWithAggregatesInput | PortfolioScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Portfolio"> | number
+    title?: StringWithAggregatesFilter<"Portfolio"> | string
+    link?: StringNullableWithAggregatesFilter<"Portfolio"> | string | null
+    show?: BoolWithAggregatesFilter<"Portfolio"> | boolean
+    private?: BoolWithAggregatesFilter<"Portfolio"> | boolean
+  }
+
+  export type PortfolioItemWhereInput = {
+    AND?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
+    OR?: PortfolioItemWhereInput[]
+    NOT?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
+    id?: IntFilter<"PortfolioItem"> | number
+    type?: StringFilter<"PortfolioItem"> | string
+    link?: StringFilter<"PortfolioItem"> | string
+    content?: StringFilter<"PortfolioItem"> | string
+    portfolioId?: IntNullableFilter<"PortfolioItem"> | number | null
+    show?: BoolFilter<"PortfolioItem"> | boolean
+    private?: BoolFilter<"PortfolioItem"> | boolean
+    Portfolio?: XOR<PortfolioNullableScalarRelationFilter, PortfolioWhereInput> | null
+  }
+
+  export type PortfolioItemOrderByWithRelationInput = {
+    id?: SortOrder
+    type?: SortOrder
+    link?: SortOrder
+    content?: SortOrder
+    portfolioId?: SortOrderInput | SortOrder
+    show?: SortOrder
+    private?: SortOrder
+    Portfolio?: PortfolioOrderByWithRelationInput
+  }
+
+  export type PortfolioItemWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
+    OR?: PortfolioItemWhereInput[]
+    NOT?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
+    type?: StringFilter<"PortfolioItem"> | string
+    link?: StringFilter<"PortfolioItem"> | string
+    content?: StringFilter<"PortfolioItem"> | string
+    portfolioId?: IntNullableFilter<"PortfolioItem"> | number | null
+    show?: BoolFilter<"PortfolioItem"> | boolean
+    private?: BoolFilter<"PortfolioItem"> | boolean
+    Portfolio?: XOR<PortfolioNullableScalarRelationFilter, PortfolioWhereInput> | null
+  }, "id">
+
+  export type PortfolioItemOrderByWithAggregationInput = {
+    id?: SortOrder
+    type?: SortOrder
+    link?: SortOrder
+    content?: SortOrder
+    portfolioId?: SortOrderInput | SortOrder
+    show?: SortOrder
+    private?: SortOrder
+    _count?: PortfolioItemCountOrderByAggregateInput
+    _avg?: PortfolioItemAvgOrderByAggregateInput
+    _max?: PortfolioItemMaxOrderByAggregateInput
+    _min?: PortfolioItemMinOrderByAggregateInput
+    _sum?: PortfolioItemSumOrderByAggregateInput
+  }
+
+  export type PortfolioItemScalarWhereWithAggregatesInput = {
+    AND?: PortfolioItemScalarWhereWithAggregatesInput | PortfolioItemScalarWhereWithAggregatesInput[]
+    OR?: PortfolioItemScalarWhereWithAggregatesInput[]
+    NOT?: PortfolioItemScalarWhereWithAggregatesInput | PortfolioItemScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"PortfolioItem"> | number
+    type?: StringWithAggregatesFilter<"PortfolioItem"> | string
+    link?: StringWithAggregatesFilter<"PortfolioItem"> | string
+    content?: StringWithAggregatesFilter<"PortfolioItem"> | string
+    portfolioId?: IntNullableWithAggregatesFilter<"PortfolioItem"> | number | null
+    show?: BoolWithAggregatesFilter<"PortfolioItem"> | boolean
+    private?: BoolWithAggregatesFilter<"PortfolioItem"> | boolean
+  }
+
   export type FeedbackCreateInput = {
     email: string
     feedback: string
@@ -3254,6 +5874,129 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     key?: StringFieldUpdateOperationsInput | string
     value?: JsonNullValueInput | InputJsonValue
+  }
+
+  export type PortfolioCreateInput = {
+    title: string
+    link?: string | null
+    show?: boolean
+    private?: boolean
+    portfolioItems?: PortfolioItemCreateNestedManyWithoutPortfolioInput
+  }
+
+  export type PortfolioUncheckedCreateInput = {
+    id?: number
+    title: string
+    link?: string | null
+    show?: boolean
+    private?: boolean
+    portfolioItems?: PortfolioItemUncheckedCreateNestedManyWithoutPortfolioInput
+  }
+
+  export type PortfolioUpdateInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    link?: NullableStringFieldUpdateOperationsInput | string | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+    portfolioItems?: PortfolioItemUpdateManyWithoutPortfolioNestedInput
+  }
+
+  export type PortfolioUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    link?: NullableStringFieldUpdateOperationsInput | string | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+    portfolioItems?: PortfolioItemUncheckedUpdateManyWithoutPortfolioNestedInput
+  }
+
+  export type PortfolioCreateManyInput = {
+    id?: number
+    title: string
+    link?: string | null
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioUpdateManyMutationInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    link?: NullableStringFieldUpdateOperationsInput | string | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    link?: NullableStringFieldUpdateOperationsInput | string | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioItemCreateInput = {
+    type: string
+    link: string
+    content: string
+    show?: boolean
+    private?: boolean
+    Portfolio?: PortfolioCreateNestedOneWithoutPortfolioItemsInput
+  }
+
+  export type PortfolioItemUncheckedCreateInput = {
+    id?: number
+    type: string
+    link: string
+    content: string
+    portfolioId?: number | null
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioItemUpdateInput = {
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+    Portfolio?: PortfolioUpdateOneWithoutPortfolioItemsNestedInput
+  }
+
+  export type PortfolioItemUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    portfolioId?: NullableIntFieldUpdateOperationsInput | number | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioItemCreateManyInput = {
+    id?: number
+    type: string
+    link: string
+    content: string
+    portfolioId?: number | null
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioItemUpdateManyMutationInput = {
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioItemUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    portfolioId?: NullableIntFieldUpdateOperationsInput | number | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -3415,12 +6158,251 @@ export namespace Prisma {
     _max?: NestedJsonFilter<$PrismaModel>
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type PortfolioItemListRelationFilter = {
+    every?: PortfolioItemWhereInput
+    some?: PortfolioItemWhereInput
+    none?: PortfolioItemWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type PortfolioItemOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type PortfolioCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    link?: SortOrder
+    show?: SortOrder
+    private?: SortOrder
+  }
+
+  export type PortfolioAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type PortfolioMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    link?: SortOrder
+    show?: SortOrder
+    private?: SortOrder
+  }
+
+  export type PortfolioMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    link?: SortOrder
+    show?: SortOrder
+    private?: SortOrder
+  }
+
+  export type PortfolioSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type PortfolioNullableScalarRelationFilter = {
+    is?: PortfolioWhereInput | null
+    isNot?: PortfolioWhereInput | null
+  }
+
+  export type PortfolioItemCountOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    link?: SortOrder
+    content?: SortOrder
+    portfolioId?: SortOrder
+    show?: SortOrder
+    private?: SortOrder
+  }
+
+  export type PortfolioItemAvgOrderByAggregateInput = {
+    id?: SortOrder
+    portfolioId?: SortOrder
+  }
+
+  export type PortfolioItemMaxOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    link?: SortOrder
+    content?: SortOrder
+    portfolioId?: SortOrder
+    show?: SortOrder
+    private?: SortOrder
+  }
+
+  export type PortfolioItemMinOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    link?: SortOrder
+    content?: SortOrder
+    portfolioId?: SortOrder
+    show?: SortOrder
+    private?: SortOrder
+  }
+
+  export type PortfolioItemSumOrderByAggregateInput = {
+    id?: SortOrder
+    portfolioId?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
   export type IntFieldUpdateOperationsInput = {
     set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type PortfolioItemCreateNestedManyWithoutPortfolioInput = {
+    create?: XOR<PortfolioItemCreateWithoutPortfolioInput, PortfolioItemUncheckedCreateWithoutPortfolioInput> | PortfolioItemCreateWithoutPortfolioInput[] | PortfolioItemUncheckedCreateWithoutPortfolioInput[]
+    connectOrCreate?: PortfolioItemCreateOrConnectWithoutPortfolioInput | PortfolioItemCreateOrConnectWithoutPortfolioInput[]
+    createMany?: PortfolioItemCreateManyPortfolioInputEnvelope
+    connect?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+  }
+
+  export type PortfolioItemUncheckedCreateNestedManyWithoutPortfolioInput = {
+    create?: XOR<PortfolioItemCreateWithoutPortfolioInput, PortfolioItemUncheckedCreateWithoutPortfolioInput> | PortfolioItemCreateWithoutPortfolioInput[] | PortfolioItemUncheckedCreateWithoutPortfolioInput[]
+    connectOrCreate?: PortfolioItemCreateOrConnectWithoutPortfolioInput | PortfolioItemCreateOrConnectWithoutPortfolioInput[]
+    createMany?: PortfolioItemCreateManyPortfolioInputEnvelope
+    connect?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type PortfolioItemUpdateManyWithoutPortfolioNestedInput = {
+    create?: XOR<PortfolioItemCreateWithoutPortfolioInput, PortfolioItemUncheckedCreateWithoutPortfolioInput> | PortfolioItemCreateWithoutPortfolioInput[] | PortfolioItemUncheckedCreateWithoutPortfolioInput[]
+    connectOrCreate?: PortfolioItemCreateOrConnectWithoutPortfolioInput | PortfolioItemCreateOrConnectWithoutPortfolioInput[]
+    upsert?: PortfolioItemUpsertWithWhereUniqueWithoutPortfolioInput | PortfolioItemUpsertWithWhereUniqueWithoutPortfolioInput[]
+    createMany?: PortfolioItemCreateManyPortfolioInputEnvelope
+    set?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    disconnect?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    delete?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    connect?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    update?: PortfolioItemUpdateWithWhereUniqueWithoutPortfolioInput | PortfolioItemUpdateWithWhereUniqueWithoutPortfolioInput[]
+    updateMany?: PortfolioItemUpdateManyWithWhereWithoutPortfolioInput | PortfolioItemUpdateManyWithWhereWithoutPortfolioInput[]
+    deleteMany?: PortfolioItemScalarWhereInput | PortfolioItemScalarWhereInput[]
+  }
+
+  export type PortfolioItemUncheckedUpdateManyWithoutPortfolioNestedInput = {
+    create?: XOR<PortfolioItemCreateWithoutPortfolioInput, PortfolioItemUncheckedCreateWithoutPortfolioInput> | PortfolioItemCreateWithoutPortfolioInput[] | PortfolioItemUncheckedCreateWithoutPortfolioInput[]
+    connectOrCreate?: PortfolioItemCreateOrConnectWithoutPortfolioInput | PortfolioItemCreateOrConnectWithoutPortfolioInput[]
+    upsert?: PortfolioItemUpsertWithWhereUniqueWithoutPortfolioInput | PortfolioItemUpsertWithWhereUniqueWithoutPortfolioInput[]
+    createMany?: PortfolioItemCreateManyPortfolioInputEnvelope
+    set?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    disconnect?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    delete?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    connect?: PortfolioItemWhereUniqueInput | PortfolioItemWhereUniqueInput[]
+    update?: PortfolioItemUpdateWithWhereUniqueWithoutPortfolioInput | PortfolioItemUpdateWithWhereUniqueWithoutPortfolioInput[]
+    updateMany?: PortfolioItemUpdateManyWithWhereWithoutPortfolioInput | PortfolioItemUpdateManyWithWhereWithoutPortfolioInput[]
+    deleteMany?: PortfolioItemScalarWhereInput | PortfolioItemScalarWhereInput[]
+  }
+
+  export type PortfolioCreateNestedOneWithoutPortfolioItemsInput = {
+    create?: XOR<PortfolioCreateWithoutPortfolioItemsInput, PortfolioUncheckedCreateWithoutPortfolioItemsInput>
+    connectOrCreate?: PortfolioCreateOrConnectWithoutPortfolioItemsInput
+    connect?: PortfolioWhereUniqueInput
+  }
+
+  export type PortfolioUpdateOneWithoutPortfolioItemsNestedInput = {
+    create?: XOR<PortfolioCreateWithoutPortfolioItemsInput, PortfolioUncheckedCreateWithoutPortfolioItemsInput>
+    connectOrCreate?: PortfolioCreateOrConnectWithoutPortfolioItemsInput
+    upsert?: PortfolioUpsertWithoutPortfolioItemsInput
+    disconnect?: PortfolioWhereInput | boolean
+    delete?: PortfolioWhereInput | boolean
+    connect?: PortfolioWhereUniqueInput
+    update?: XOR<XOR<PortfolioUpdateToOneWithWhereWithoutPortfolioItemsInput, PortfolioUpdateWithoutPortfolioItemsInput>, PortfolioUncheckedUpdateWithoutPortfolioItemsInput>
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
@@ -3517,6 +6499,225 @@ export namespace Prisma {
     gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type PortfolioItemCreateWithoutPortfolioInput = {
+    type: string
+    link: string
+    content: string
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioItemUncheckedCreateWithoutPortfolioInput = {
+    id?: number
+    type: string
+    link: string
+    content: string
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioItemCreateOrConnectWithoutPortfolioInput = {
+    where: PortfolioItemWhereUniqueInput
+    create: XOR<PortfolioItemCreateWithoutPortfolioInput, PortfolioItemUncheckedCreateWithoutPortfolioInput>
+  }
+
+  export type PortfolioItemCreateManyPortfolioInputEnvelope = {
+    data: PortfolioItemCreateManyPortfolioInput | PortfolioItemCreateManyPortfolioInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type PortfolioItemUpsertWithWhereUniqueWithoutPortfolioInput = {
+    where: PortfolioItemWhereUniqueInput
+    update: XOR<PortfolioItemUpdateWithoutPortfolioInput, PortfolioItemUncheckedUpdateWithoutPortfolioInput>
+    create: XOR<PortfolioItemCreateWithoutPortfolioInput, PortfolioItemUncheckedCreateWithoutPortfolioInput>
+  }
+
+  export type PortfolioItemUpdateWithWhereUniqueWithoutPortfolioInput = {
+    where: PortfolioItemWhereUniqueInput
+    data: XOR<PortfolioItemUpdateWithoutPortfolioInput, PortfolioItemUncheckedUpdateWithoutPortfolioInput>
+  }
+
+  export type PortfolioItemUpdateManyWithWhereWithoutPortfolioInput = {
+    where: PortfolioItemScalarWhereInput
+    data: XOR<PortfolioItemUpdateManyMutationInput, PortfolioItemUncheckedUpdateManyWithoutPortfolioInput>
+  }
+
+  export type PortfolioItemScalarWhereInput = {
+    AND?: PortfolioItemScalarWhereInput | PortfolioItemScalarWhereInput[]
+    OR?: PortfolioItemScalarWhereInput[]
+    NOT?: PortfolioItemScalarWhereInput | PortfolioItemScalarWhereInput[]
+    id?: IntFilter<"PortfolioItem"> | number
+    type?: StringFilter<"PortfolioItem"> | string
+    link?: StringFilter<"PortfolioItem"> | string
+    content?: StringFilter<"PortfolioItem"> | string
+    portfolioId?: IntNullableFilter<"PortfolioItem"> | number | null
+    show?: BoolFilter<"PortfolioItem"> | boolean
+    private?: BoolFilter<"PortfolioItem"> | boolean
+  }
+
+  export type PortfolioCreateWithoutPortfolioItemsInput = {
+    title: string
+    link?: string | null
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioUncheckedCreateWithoutPortfolioItemsInput = {
+    id?: number
+    title: string
+    link?: string | null
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioCreateOrConnectWithoutPortfolioItemsInput = {
+    where: PortfolioWhereUniqueInput
+    create: XOR<PortfolioCreateWithoutPortfolioItemsInput, PortfolioUncheckedCreateWithoutPortfolioItemsInput>
+  }
+
+  export type PortfolioUpsertWithoutPortfolioItemsInput = {
+    update: XOR<PortfolioUpdateWithoutPortfolioItemsInput, PortfolioUncheckedUpdateWithoutPortfolioItemsInput>
+    create: XOR<PortfolioCreateWithoutPortfolioItemsInput, PortfolioUncheckedCreateWithoutPortfolioItemsInput>
+    where?: PortfolioWhereInput
+  }
+
+  export type PortfolioUpdateToOneWithWhereWithoutPortfolioItemsInput = {
+    where?: PortfolioWhereInput
+    data: XOR<PortfolioUpdateWithoutPortfolioItemsInput, PortfolioUncheckedUpdateWithoutPortfolioItemsInput>
+  }
+
+  export type PortfolioUpdateWithoutPortfolioItemsInput = {
+    title?: StringFieldUpdateOperationsInput | string
+    link?: NullableStringFieldUpdateOperationsInput | string | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioUncheckedUpdateWithoutPortfolioItemsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    link?: NullableStringFieldUpdateOperationsInput | string | null
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioItemCreateManyPortfolioInput = {
+    id?: number
+    type: string
+    link: string
+    content: string
+    show?: boolean
+    private?: boolean
+  }
+
+  export type PortfolioItemUpdateWithoutPortfolioInput = {
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioItemUncheckedUpdateWithoutPortfolioInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type PortfolioItemUncheckedUpdateManyWithoutPortfolioInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    type?: StringFieldUpdateOperationsInput | string
+    link?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    show?: BoolFieldUpdateOperationsInput | boolean
+    private?: BoolFieldUpdateOperationsInput | boolean
   }
 
 

@@ -1,25 +1,33 @@
+'use client'
+import { useEffect, useState } from "react";
+import ImageSlider from "@/Components/ImageSlider";
+import { fetchPrivatePortfolio } from "../../../methods/portfolio";
+
 export default function Page() {
-  const videos = [
-    { id: "Iq_K5LWwuZc", title: "VR Brain Surgery" },
-    { id: "-mbLgfKteow", title: "Iqraversity" },
-    { id: "CatBYE38mm4", title: "VR Tank Simulation" }
-  ];
-
+  const [portfolios, setportfolios] = useState<any>([]);
+  async function getPortfolios() {
+    const ports = await fetchPrivatePortfolio("VR Simulations");
+    console.log(ports);
+    setportfolios(ports as any);
+  }
+  useEffect(() => {
+    getPortfolios();
+  }, []);
+  useEffect(() => { }, [portfolios]);
   return (
-    <div className="flex flex-col items-center p-4 space-y-8 gap-10">
-      {/* <div className="text-6xl font-bold" style={{ color: "white" }}>VR Portfolio</div> */}
-
-      {videos.map((video) => (
-        <div key={video.id} className="w-full max-w-4xl aspect-video p-2 my-10">
-          <div className="text-4xl font-bold text-white text-center mb-4" style={{ color: "white" }}>{video.title}</div>
-          <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            title={video.title}
-            src={`https://youtube.com/embed/${video.id}?rel=0&controls=1&showinfo=0&modestbranding=1`}
-            allowFullScreen
+    <div>
+      <div className="text-primary text-2xl laptop:text-4xl font-bold text-center mt-10">VR Simulations</div>
+      <div className="tablet:mx-2  flex-col gap-10 flex justify-center ">
+        {portfolios.map((port: any) => port.portfolioItems.map((p: any) => (
+          <ImageSlider
+            key={p.id}
+            link={null}
+            title={""}
+            contents={[p]}
           />
-        </div>
-      ))}
+
+        )))}
+      </div>
     </div>
   );
 }

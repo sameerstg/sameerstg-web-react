@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import Drawer from "../Components/Drawer";
 import { useState } from "react";
 import { BsXLg } from "react-icons/bs";
-import { Link } from "react-scroll";
 import NavButton from "../Components/NavButton";
 import Image from "next/image";
 
@@ -32,7 +31,6 @@ function Navbar() {
           <NavButton text={"Socials"} scrollTo="socials" />
 
           <NavButton text={"Portfolio"} scrollTo="portfolio" />
-          <NavButton text={"Blogs"} scrollTo="blogs" />
 
           <NavButton text={"Contact"} scrollTo="footer" />
         </div>
