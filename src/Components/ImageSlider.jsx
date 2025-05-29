@@ -42,6 +42,16 @@ function ImageSlider({ title, link, contents }) {
                     className="box mx-auto max-h-[100%] max-w-[100%]"
                   />
                 </a>
+              ) : _.type === "Website" ? (
+                <a href={_.link} target="_blank" rel="noreferrer noopener" className="relative w-full h-full">
+                  <iframe
+                    className="box mx-auto w-full h-full pointer-events-none"
+                    allowFullScreen={false}
+                    src={_.content}
+                    title="Embedded Website"
+                    scrolling="no"
+                  ></iframe>
+                </a>
               ) : _.type == "Video" ? (
                 <iframe
                   className="box mx-auto w-full my-auto h-[80%]"

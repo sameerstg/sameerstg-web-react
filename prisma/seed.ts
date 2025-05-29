@@ -108,7 +108,7 @@ export const models = [
 export async function seed() {
   console.log("seeding....");
   
-  return;
+  // return;
   for (const item of titles) {
     await prisma.portfolio.create({ data: item });
   }
