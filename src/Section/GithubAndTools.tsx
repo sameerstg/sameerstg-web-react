@@ -1,8 +1,8 @@
 import React from 'react'
-import { SiBlender, SiC, SiCplusplus, SiCsharp, SiCss3, SiDotnet, SiFigma, SiFirebase, SiFlutter, SiHtml5, SiJavascript, SiMysql, SiNextdotjs, SiNodedotjs, SiPostman, SiPython, SiReact, SiTypescript, SiUnity } from 'react-icons/si';
+import { SiBlender, SiC, SiCplusplus, SiCss3, SiDotnet, SiFigma, SiFirebase, SiFlutter, SiHtml5, SiJavascript, SiMysql, SiNextdotjs, SiNodedotjs, SiPostman, SiPython, SiReact, SiTypescript, SiUnity } from 'react-icons/si';
 
-function GithubAndTools() {
-    
+export default function GithubAndTools() {
+
     return (
         <div className='flex flex-col gap-5 mx-2'>
 
@@ -11,14 +11,13 @@ function GithubAndTools() {
 
 
 
-            <img  className=' border-[#fff] border rounded-xl mx-auto' src="https://github-readme-streak-stats.herokuapp.com/?user=sameerstg&theme=dark&hide_border=true" alt="sameerstg" />
-            <div href="https://github.com/sameerstg">Tools I Use</div>
+            <img className=' border-[#fff] border rounded-xl mx-auto' src="https://github-readme-streak-stats.herokuapp.com/?user=sameerstg&theme=dark&hide_border=true" alt="sameerstg" />
+            <a href="https://github.com/sameerstg">Tools I Use</a>
 
             <div className='border p-4 rounded-xl flex justify-center items-center gap-3 flex-wrap bg-[#151515] '>
 
                 <SiUnity color='cyan' />
                 <SiBlender color='cyan' />
-                <SiCsharp color='cyan' />
                 <SiDotnet color='cyan' />
                 <SiHtml5 color='cyan' />
                 <SiCss3 color='cyan' />
@@ -45,4 +44,3 @@ function GithubAndTools() {
     )
 }
 
-export default GithubAndTools

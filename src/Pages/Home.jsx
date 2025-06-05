@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import Intro from "../Section/Intro";
-import Portfolio from "../Section/Portfolio";
-import Socials from "../Section/Socials";
-import Technologies from "../Section/Technologies";
-import Interests from "../Section/Interests";
-import GithubAndTools from "../Section/GithubAndTools";
-import OtherLinks from "../Section/OtherLinks";
-import { Vortex } from "../Components/ui/vortex";
+import Intro from "@/Section/Intro";
+import Portfolio from "@/Section/Portfolio";
+import Socials from "@/Section/Socials";
+import Technologies from "@/Section/Technologies";
+import Interests from "@/Section/Interests";
+import GithubAndTools from "@/Section/GithubAndTools";
+import OtherLinks from "@/Section/OtherLinks";
+import { Vortex } from "@/Components/ui/vortex";
 import Feedback from "@/Section/Feedback";
 import Experience from "@/Section/Experience";
 function HomeMain() {
