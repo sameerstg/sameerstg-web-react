@@ -43,7 +43,12 @@ function ImageSlider({ title, link, contents }) {
                   />
                 </a>
               ) : _.type === "Website" ? (
-                <a href={_.link} target="_blank" rel="noreferrer noopener" className="relative w-full h-full">
+                <a
+                  href={_.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="relative w-full h-full"
+                >
                   <iframe
                     className="box mx-auto w-full h-full pointer-events-none"
                     allowFullScreen={false}
@@ -69,6 +74,13 @@ function ImageSlider({ title, link, contents }) {
                     src={_.content}
                   ></iframe>
                 </div>
+              ) : _.type === "Github" ? (
+                <iframe
+                  src={`https://github-readme-stats.vercel.app/api/pin/?username=${"sameerstg"}&repo=${
+                    _.content
+                  }`}
+                  className="w-full h-[160px] box mx-auto rounded-lg shadow"
+                />
               ) : (
                 <div></div>
               )}

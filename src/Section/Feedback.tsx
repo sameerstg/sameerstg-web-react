@@ -35,7 +35,7 @@ export default function Feedback() {
                     <input
                         type="email"
                         id="email"
-                        style={{ color: "black" }}
+                        style={{ color: "white" }}
 
                         className="placeholder-gray-400 border-primary border-2 box  text-black rounded px-4 py-2 bg-[#00000000]"
                         placeholder="yourname@gmail.com"
@@ -53,7 +53,7 @@ export default function Feedback() {
                         rows={5}
                         className="placeholder-gray-400 border-primary border-2 box text-black rounded px-4 py-2  bg-[#00000000]"
                         placeholder="Let me know your thoughts..."
-                        style={{ color: "black" }}
+                        style={{ color: "white" }}
                         value={feedback}
                         onChange={(e) => setFeedback(e.target.value)}
                         required
