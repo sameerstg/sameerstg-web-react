@@ -101,6 +101,13 @@ function ImageSlider({ title, link, contents, index = 0 }) {
                     src={_.content}
                   ></iframe>
                 </div>
+              ) : _.type === "Github" ? (
+                <iframe
+                  src={`https://github-readme-stats.vercel.app/api/pin/?username=${"sameerstg"}&repo=${
+                    _.content
+                  }`}
+                  className="w-full h-[160px] box mx-auto rounded-lg shadow"
+                />
               ) : (
                 <div />
               )}

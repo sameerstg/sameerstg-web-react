@@ -9,7 +9,7 @@ const nextConfig = {
             "cdnb.artstation.com",
             "github-readme-streak-stats.herokuapp.com"
         ],
-    }
+    },
 
 
 };

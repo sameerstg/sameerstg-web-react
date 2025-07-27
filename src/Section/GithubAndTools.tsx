@@ -60,8 +60,9 @@ const GithubAndTools: React.FC = () => {
       }
     };
     updateRadius();
-    window.addEventListener('resize', updateRadius);
-    return () => window.removeEventListener('resize', updateRadius);
+    if (typeof window !== "undefined")
+      window?.addEventListener('resize', updateRadius);
+    return () => window?.removeEventListener('resize', updateRadius);
   }, []);
 
   const renderIcons = (icons: IconEntry[], radius: number) =>

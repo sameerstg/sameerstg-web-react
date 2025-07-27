@@ -141,8 +141,8 @@ const ExperienceTimeline: React.FC = () => {
             }
         };
         updateTitlePosition();
-        window.addEventListener('resize', updateTitlePosition);
-        return () => window.removeEventListener('resize', updateTitlePosition);
+        window?.addEventListener('resize', updateTitlePosition);
+        return () => window?.removeEventListener('resize', updateTitlePosition);
     }, [isSectionVisible]);
 
     return (
