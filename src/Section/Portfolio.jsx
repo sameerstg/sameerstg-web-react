@@ -22,12 +22,13 @@ function Portfolio() {
       {loading ? (
         <div className="text-center text-lg py-10">Loading...</div>
       ) : (
-        portfolios.map((port) => (
+        portfolios.map((port,key) => (
           <ImageSlider
             key={port.id}
             link={port.link}
             title={port.title}
             contents={port.portfolioItems}
+            index={key}
           />
         ))
       )}

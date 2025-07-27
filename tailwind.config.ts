@@ -4,10 +4,8 @@ const config: Config = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{ts,tsx}",
-    // "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    // "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    // "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    // "./src/Section/**/*.{js,ts,jsx,tsx,mdx}",
+    "./Components/**/*.{ts,tsx}",
+    "./Section/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -17,12 +15,13 @@ const config: Config = {
         "2xl": "1400px",
       },
     },
-    colors: {
-      primary: "#ffffff",
-      secondary: "#00FFFF",
-      tertiary: "#c4cfde",
-    },
+
     extend: {
+      colors: {
+        primary: "#ffffff",
+        secondary: "#00FFFF",
+        tertiary: "#c4cfde",
+      },
       screens: {
         mobile: "400px",
         // => @media (min-width: 640px) { ... }
