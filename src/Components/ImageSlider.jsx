@@ -19,11 +19,11 @@ function ImageSlider({ title, link, contents, index = 0 }) {
     offset: ["start center", "end center"], // triggers around center
   });
 
-  // Smooth spring scale
-  const rawScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.1, 1, 0.8]);
-  const scale = useSpring(rawScale, { stiffness: 100, damping: 20 });
+  // Smooth spring scale with optimized speed and easing
+  const rawScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.8]);
+  const scale = useSpring(rawScale, { stiffness: 150, damping: 25, mass: 0.5 });
 
-  // Slide in direction
+  // Slide-in direction
   const isEven = index % 2 === 0;
   const initialX = isEven ? 100 : -100;
 
@@ -31,7 +31,7 @@ function ImageSlider({ title, link, contents, index = 0 }) {
     <motion.div
       ref={ref}
       initial={{ opacity: 0, x: initialX }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } }}
       viewport={{ once: true }}
       style={{
         scale,

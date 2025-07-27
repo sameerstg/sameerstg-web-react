@@ -166,7 +166,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "J:\\Programming\\sameerstg-web-react\\src\\generated\\prisma",
+      "value": "E:\\programming\\sameerstg-web-react\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -180,12 +180,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "J:\\Programming\\sameerstg-web-react\\prisma\\schema.prisma",
+    "sourceFilePath": "E:\\programming\\sameerstg-web-react\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../../prisma",
   "clientVersion": "6.12.0",

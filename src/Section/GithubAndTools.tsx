@@ -88,8 +88,8 @@ const GithubAndTools: React.FC = () => {
     });
 
   return (
-    <div ref={targetRef} className="flex flex-col gap-6 mx-4 items-center">
-      <button className="mx-auto w-full text-white font-semibold bg-black p-2 rounded-xl">
+    <div ref={targetRef} className="flex flex-col gap-6 mx-4 items-center h-screen justify-center">
+      <button className="mx-auto w-full text-white font-semibold  p-2 rounded-xl">
         <a href="https://github.com/sameerstg" target="_blank" rel="noreferrer noopener">
           Github 🔗
         </a>

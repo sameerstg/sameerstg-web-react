@@ -146,37 +146,40 @@ const ExperienceTimeline: React.FC = () => {
     }, [isSectionVisible]);
 
     return (
-        <div ref={sectionRef} className="text-white flex flex-col md:flex-row ">
-            <div className="md:w-1/3 w-full p-4">
-                <h1
-                    ref={titleRef}
-                    className={`text-3xl font-bold text-white text-center transition-opacity duration-300 ${isSectionVisible ? 'sticky' : 'static'
-                        }`}
-                >
-                    Experience Timeline
-                </h1>
-            </div>
+        <div className='h-screen flex flex-col items-center justify-center'>
 
-            <div className="md:w-2/3 w-full flex flex-col items-center ">
-                <div
-                    className="flex flex-col items-center  w-full max-w-md snap-y snap-mandatory overflow-y-scroll hide-scrollbar "
-                >
-                    {experiences.map((exp, index) => (
-                        <div
-                            key={index}
-                            ref={(el) => {
-                                experienceRefs.current[index] = el;
-                            }}
-                            className={`w-full flex items-center justify-center snap-center transition-all duration-500 ease-in-out ${activeIndex === index ? 'opacity-100 scale-100' : 'opacity-50 scale-95'
-                                }`}
-                        >
-                            <Experience
-                                title={exp.title}
-                                startDate={exp.startDate}
-                                titleColor={activeIndex === index ? 'text-yellow-400' : 'text-white'}
-                            />
-                        </div>
-                    ))}
+            <div ref={sectionRef} className="text-white flex flex-col md:flex-row ">
+                <div className="md:w-1/3 w-full p-4">
+                    <h1
+                        ref={titleRef}
+                        className={`text-3xl font-bold text-white text-center transition-opacity duration-300 ${isSectionVisible ? 'sticky' : 'static'
+                            }`}
+                    >
+                        Experience Timeline
+                    </h1>
+                </div>
+
+                <div className="md:w-2/3 w-full flex flex-col items-center ">
+                    <div
+                        className="flex flex-col items-center  w-full max-w-md snap-y snap-mandatory overflow-y-scroll hide-scrollbar "
+                    >
+                        {experiences.map((exp, index) => (
+                            <div
+                                key={index}
+                                ref={(el) => {
+                                    experienceRefs.current[index] = el;
+                                }}
+                                className={`w-full flex items-center justify-center snap-center transition-all duration-500 ease-in-out ${activeIndex === index ? 'opacity-100 scale-100' : 'opacity-50 scale-95'
+                                    }`}
+                            >
+                                <Experience
+                                    title={exp.title}
+                                    startDate={exp.startDate}
+                                    titleColor={activeIndex === index ? 'text-yellow-400' : 'text-white'}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
