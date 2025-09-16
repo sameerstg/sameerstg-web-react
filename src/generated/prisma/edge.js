@@ -167,7 +167,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "E:\\programming\\sameerstg-web-react\\src\\generated\\prisma",
+      "value": "D:\\Programming\\sameerstg-web-react\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -181,11 +181,12 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "E:\\programming\\sameerstg-web-react\\prisma\\schema.prisma",
+    "sourceFilePath": "D:\\Programming\\sameerstg-web-react\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": null,
+    "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
   "clientVersion": "6.12.0",
@@ -203,15 +204,9 @@ const config = {
       }
     }
   },
-<<<<<<< HEAD
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Feedback {\n  id       Int    @id @default(autoincrement())\n  email    String @unique\n  feedback String @unique\n}\n\nmodel Dictionary {\n  id    Int    @id @default(autoincrement())\n  key   String @unique\n  value Json\n}\n\nmodel Portfolio {\n  id             Int             @id @default(autoincrement())\n  priority       Int             @default(autoincrement())\n  title          String          @unique\n  link           String?\n  portfolioItems PortfolioItem[]\n  show           Boolean         @default(true)\n  private        Boolean         @default(false)\n}\n\nmodel PortfolioItem {\n  id          Int        @id @default(autoincrement())\n  type        String\n  link        String\n  content     String\n  Portfolio   Portfolio? @relation(fields: [portfolioId], references: [id])\n  portfolioId Int?\n  show        Boolean    @default(true)\n  private     Boolean    @default(false)\n}\n",
-  "inlineSchemaHash": "658e1fd31ec583b7961de0fa484c6a601488185ba1a28a0ad50c2e4376c77d07",
-  "copyEngine": true
-=======
   "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Feedback {\n  id       Int    @id @default(autoincrement())\n  email    String @unique\n  feedback String @unique\n}\n\nmodel Dictionary {\n  id    Int    @id @default(autoincrement())\n  key   String @unique\n  value Json\n}\n\nmodel Portfolio {\n  id             Int             @id @default(autoincrement())\n  priority       Int             @default(autoincrement())\n  title          String          @unique\n  link           String?\n  portfolioItems PortfolioItem[]\n  show           Boolean         @default(true)\n  private        Boolean         @default(false)\n}\n\nmodel PortfolioItem {\n  id          Int        @id @default(autoincrement())\n  priority    Int        @default(autoincrement())\n  type        String\n  link        String\n  content     String\n  Portfolio   Portfolio? @relation(fields: [portfolioId], references: [id])\n  portfolioId Int?\n  show        Boolean    @default(true)\n  private     Boolean    @default(false)\n}\n",
   "inlineSchemaHash": "8a896d91e4b64a54716aeff798ae7d7f0e15ac614f1b6cc77aa515e380b07966",
-  "copyEngine": false
->>>>>>> e113ac2 (Order portfolio items by priority descending)
+  "copyEngine": true
 }
 config.dirname = '/'
 
