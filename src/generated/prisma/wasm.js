@@ -143,6 +143,7 @@ exports.Prisma.PortfolioScalarFieldEnum = {
 
 exports.Prisma.PortfolioItemScalarFieldEnum = {
   id: 'id',
+  priority: 'priority',
   type: 'type',
   link: 'link',
   content: 'content',

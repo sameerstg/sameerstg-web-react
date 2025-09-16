@@ -4309,16 +4309,19 @@ export namespace Prisma {
 
   export type PortfolioItemAvgAggregateOutputType = {
     id: number | null
+    priority: number | null
     portfolioId: number | null
   }
 
   export type PortfolioItemSumAggregateOutputType = {
     id: number | null
+    priority: number | null
     portfolioId: number | null
   }
 
   export type PortfolioItemMinAggregateOutputType = {
     id: number | null
+    priority: number | null
     type: string | null
     link: string | null
     content: string | null
@@ -4329,6 +4332,7 @@ export namespace Prisma {
 
   export type PortfolioItemMaxAggregateOutputType = {
     id: number | null
+    priority: number | null
     type: string | null
     link: string | null
     content: string | null
@@ -4339,6 +4343,7 @@ export namespace Prisma {
 
   export type PortfolioItemCountAggregateOutputType = {
     id: number
+    priority: number
     type: number
     link: number
     content: number
@@ -4351,16 +4356,19 @@ export namespace Prisma {
 
   export type PortfolioItemAvgAggregateInputType = {
     id?: true
+    priority?: true
     portfolioId?: true
   }
 
   export type PortfolioItemSumAggregateInputType = {
     id?: true
+    priority?: true
     portfolioId?: true
   }
 
   export type PortfolioItemMinAggregateInputType = {
     id?: true
+    priority?: true
     type?: true
     link?: true
     content?: true
@@ -4371,6 +4379,7 @@ export namespace Prisma {
 
   export type PortfolioItemMaxAggregateInputType = {
     id?: true
+    priority?: true
     type?: true
     link?: true
     content?: true
@@ -4381,6 +4390,7 @@ export namespace Prisma {
 
   export type PortfolioItemCountAggregateInputType = {
     id?: true
+    priority?: true
     type?: true
     link?: true
     content?: true
@@ -4478,6 +4488,7 @@ export namespace Prisma {
 
   export type PortfolioItemGroupByOutputType = {
     id: number
+    priority: number
     type: string
     link: string
     content: string
@@ -4507,6 +4518,7 @@ export namespace Prisma {
 
   export type PortfolioItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    priority?: boolean
     type?: boolean
     link?: boolean
     content?: boolean
@@ -4518,6 +4530,7 @@ export namespace Prisma {
 
   export type PortfolioItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    priority?: boolean
     type?: boolean
     link?: boolean
     content?: boolean
@@ -4529,6 +4542,7 @@ export namespace Prisma {
 
   export type PortfolioItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    priority?: boolean
     type?: boolean
     link?: boolean
     content?: boolean
@@ -4540,6 +4554,7 @@ export namespace Prisma {
 
   export type PortfolioItemSelectScalar = {
     id?: boolean
+    priority?: boolean
     type?: boolean
     link?: boolean
     content?: boolean
@@ -4548,7 +4563,7 @@ export namespace Prisma {
     private?: boolean
   }
 
-  export type PortfolioItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "link" | "content" | "portfolioId" | "show" | "private", ExtArgs["result"]["portfolioItem"]>
+  export type PortfolioItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "priority" | "type" | "link" | "content" | "portfolioId" | "show" | "private", ExtArgs["result"]["portfolioItem"]>
   export type PortfolioItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Portfolio?: boolean | PortfolioItem$PortfolioArgs<ExtArgs>
   }
@@ -4566,6 +4581,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      priority: number
       type: string
       link: string
       content: string
@@ -4997,6 +5013,7 @@ export namespace Prisma {
    */
   interface PortfolioItemFieldRefs {
     readonly id: FieldRef<"PortfolioItem", 'Int'>
+    readonly priority: FieldRef<"PortfolioItem", 'Int'>
     readonly type: FieldRef<"PortfolioItem", 'String'>
     readonly link: FieldRef<"PortfolioItem", 'String'>
     readonly content: FieldRef<"PortfolioItem", 'String'>
@@ -5482,6 +5499,7 @@ export namespace Prisma {
 
   export const PortfolioItemScalarFieldEnum: {
     id: 'id',
+    priority: 'priority',
     type: 'type',
     link: 'link',
     content: 'content',
@@ -5759,6 +5777,7 @@ export namespace Prisma {
     OR?: PortfolioItemWhereInput[]
     NOT?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
     id?: IntFilter<"PortfolioItem"> | number
+    priority?: IntFilter<"PortfolioItem"> | number
     type?: StringFilter<"PortfolioItem"> | string
     link?: StringFilter<"PortfolioItem"> | string
     content?: StringFilter<"PortfolioItem"> | string
@@ -5770,6 +5789,7 @@ export namespace Prisma {
 
   export type PortfolioItemOrderByWithRelationInput = {
     id?: SortOrder
+    priority?: SortOrder
     type?: SortOrder
     link?: SortOrder
     content?: SortOrder
@@ -5784,6 +5804,7 @@ export namespace Prisma {
     AND?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
     OR?: PortfolioItemWhereInput[]
     NOT?: PortfolioItemWhereInput | PortfolioItemWhereInput[]
+    priority?: IntFilter<"PortfolioItem"> | number
     type?: StringFilter<"PortfolioItem"> | string
     link?: StringFilter<"PortfolioItem"> | string
     content?: StringFilter<"PortfolioItem"> | string
@@ -5795,6 +5816,7 @@ export namespace Prisma {
 
   export type PortfolioItemOrderByWithAggregationInput = {
     id?: SortOrder
+    priority?: SortOrder
     type?: SortOrder
     link?: SortOrder
     content?: SortOrder
@@ -5813,6 +5835,7 @@ export namespace Prisma {
     OR?: PortfolioItemScalarWhereWithAggregatesInput[]
     NOT?: PortfolioItemScalarWhereWithAggregatesInput | PortfolioItemScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"PortfolioItem"> | number
+    priority?: IntWithAggregatesFilter<"PortfolioItem"> | number
     type?: StringWithAggregatesFilter<"PortfolioItem"> | string
     link?: StringWithAggregatesFilter<"PortfolioItem"> | string
     content?: StringWithAggregatesFilter<"PortfolioItem"> | string
@@ -5964,6 +5987,7 @@ export namespace Prisma {
   }
 
   export type PortfolioItemCreateInput = {
+    priority?: number
     type: string
     link: string
     content: string
@@ -5974,6 +5998,7 @@ export namespace Prisma {
 
   export type PortfolioItemUncheckedCreateInput = {
     id?: number
+    priority?: number
     type: string
     link: string
     content: string
@@ -5983,6 +6008,7 @@ export namespace Prisma {
   }
 
   export type PortfolioItemUpdateInput = {
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
@@ -5993,6 +6019,7 @@ export namespace Prisma {
 
   export type PortfolioItemUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
@@ -6003,6 +6030,7 @@ export namespace Prisma {
 
   export type PortfolioItemCreateManyInput = {
     id?: number
+    priority?: number
     type: string
     link: string
     content: string
@@ -6012,6 +6040,7 @@ export namespace Prisma {
   }
 
   export type PortfolioItemUpdateManyMutationInput = {
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
@@ -6021,6 +6050,7 @@ export namespace Prisma {
 
   export type PortfolioItemUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
@@ -6304,6 +6334,7 @@ export namespace Prisma {
 
   export type PortfolioItemCountOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     type?: SortOrder
     link?: SortOrder
     content?: SortOrder
@@ -6314,11 +6345,13 @@ export namespace Prisma {
 
   export type PortfolioItemAvgOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     portfolioId?: SortOrder
   }
 
   export type PortfolioItemMaxOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     type?: SortOrder
     link?: SortOrder
     content?: SortOrder
@@ -6329,6 +6362,7 @@ export namespace Prisma {
 
   export type PortfolioItemMinOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     type?: SortOrder
     link?: SortOrder
     content?: SortOrder
@@ -6339,6 +6373,7 @@ export namespace Prisma {
 
   export type PortfolioItemSumOrderByAggregateInput = {
     id?: SortOrder
+    priority?: SortOrder
     portfolioId?: SortOrder
   }
 
@@ -6619,6 +6654,7 @@ export namespace Prisma {
   }
 
   export type PortfolioItemCreateWithoutPortfolioInput = {
+    priority?: number
     type: string
     link: string
     content: string
@@ -6628,6 +6664,7 @@ export namespace Prisma {
 
   export type PortfolioItemUncheckedCreateWithoutPortfolioInput = {
     id?: number
+    priority?: number
     type: string
     link: string
     content: string
@@ -6666,6 +6703,7 @@ export namespace Prisma {
     OR?: PortfolioItemScalarWhereInput[]
     NOT?: PortfolioItemScalarWhereInput | PortfolioItemScalarWhereInput[]
     id?: IntFilter<"PortfolioItem"> | number
+    priority?: IntFilter<"PortfolioItem"> | number
     type?: StringFilter<"PortfolioItem"> | string
     link?: StringFilter<"PortfolioItem"> | string
     content?: StringFilter<"PortfolioItem"> | string
@@ -6726,6 +6764,7 @@ export namespace Prisma {
 
   export type PortfolioItemCreateManyPortfolioInput = {
     id?: number
+    priority?: number
     type: string
     link: string
     content: string
@@ -6734,6 +6773,7 @@ export namespace Prisma {
   }
 
   export type PortfolioItemUpdateWithoutPortfolioInput = {
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
@@ -6743,6 +6783,7 @@ export namespace Prisma {
 
   export type PortfolioItemUncheckedUpdateWithoutPortfolioInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
@@ -6752,6 +6793,7 @@ export namespace Prisma {
 
   export type PortfolioItemUncheckedUpdateManyWithoutPortfolioInput = {
     id?: IntFieldUpdateOperationsInput | number
+    priority?: IntFieldUpdateOperationsInput | number
     type?: StringFieldUpdateOperationsInput | string
     link?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string

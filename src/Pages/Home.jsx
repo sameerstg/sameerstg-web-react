@@ -29,7 +29,31 @@ function HomeMain() {
         <Socials />
         <Interests />
         <GithubAndTools />
-        <Experience />
+        {/* <div className="my-10 flex flex-col gap-10">
+          <div>Experience Timeline</div>
+          <div className="flex flex-wrap justify-center gap-6 w-full">
+            <Experience
+              title="Web Development"
+              startDate="2019-03-15T03:13:12Z"
+            />
+            <Experience
+              title="Game Development"
+              startDate="2021-04-21T20:45:13Z"
+            />
+            <Experience
+              title="Mobile Development"
+              startDate="2021-03-02T12:05:06Z"
+            />
+            <Experience
+              title="Photo Editting"
+              startDate="2015-03-01T20:45:13Z"
+            />
+            <Experience
+              title="Video Editting"
+              startDate="2019-03-05T21:30:08Z"
+            />
+          </div>
+        </div> */}
       </div>
 
       {/* BUG: bahir nikal rha h */}

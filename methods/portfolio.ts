@@ -17,6 +17,9 @@ export async function fetchPublicPortfolio() {
           show: true,
           private: false,
         },
+        orderBy: {
+          priority: "desc",
+        },
       },
     },
   });
@@ -34,6 +37,9 @@ export async function fetchPrivatePortfolio(title: string) {
         where: {
           show: true,
           private: true,
+        },
+        orderBy: {
+          priority: "desc",
         },
       },
     },

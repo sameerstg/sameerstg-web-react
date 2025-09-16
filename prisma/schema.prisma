@@ -32,6 +32,7 @@ model Portfolio {
 
 model PortfolioItem {
   id          Int        @id @default(autoincrement())
+  priority    Int        @default(autoincrement())
   type        String
   link        String
   content     String
