@@ -30,7 +30,7 @@ export default function Page() {
 
                             {/* App Download Button */}
                             <a
-                                href="https://drive.google.com/file/d/12yBxRQIRcyR_seZan_pcF5R5aRHPi5pj/view?usp=sharing"
+                                href="https://drive.usercontent.google.com/download?id=12yBxRQIRcyR_seZan_pcF5R5aRHPi5pj&export=download&authuser=2"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:from-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-200 text-sm sm:text-base"
@@ -106,7 +106,7 @@ export default function Page() {
                                     Download the APK and install on Android.
                                 </p>
                                 <a
-                                    href="https://drive.google.com/file/d/12yBxRQIRcyR_seZan_pcF5R5aRHPi5pj/view?usp=sharing"
+                                    href="https://drive.usercontent.google.com/download?id=12yBxRQIRcyR_seZan_pcF5R5aRHPi5pj&export=download&authuser=2"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-500 hover:to-pink-500 transition text-sm sm:text-base w-full sm:w-auto"
