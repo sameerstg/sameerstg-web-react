@@ -50,7 +50,7 @@ function ImageSlider({ title, link, contents, index = 0 }) {
           loop: true,
         }}
       >
-        <CarouselContent className="w-[65vw] h-[65vw] tablet:w-[60vw] tablet:h-[40vw] p-2">
+        <CarouselContent className="w-[85vw] h-[65vw] tablet:w-[60vw] tablet:h-[40vw] p-2">
           {contents.map((_, index) => (
             <CarouselItem
               key={index}
