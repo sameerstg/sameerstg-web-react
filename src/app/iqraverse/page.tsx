@@ -82,7 +82,7 @@ export default function IqraVersePage() {
                             Welcome to <span className="text-cyan-400">IqraVerse</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 px-2">
-                            Visit Iqra University's admission department and ask your queries through interactive conversation. Get instant answers about admissions, programs, and student life.
+                            Visit Iqra University&apos;s admission department and ask your queries through interactive conversation. Get instant answers about admissions, programs, and student life.
                         </p>
                     </div>
                 </section>
