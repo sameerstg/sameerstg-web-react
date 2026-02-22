@@ -11,13 +11,21 @@ import Image from "next/image";
 
 function Navbar() {
   let [drawerClicked, setDrawerClicked] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   if (!drawerClicked) {
     return (
       <div
-        className={
-          "pt-5 px-10 pb-2 text-primary flex justify-between items-center  top-0 z-50 "
-        }
+        className={`fixed pt-4 px-6 tablet:px-10 pb-3 text-primary flex justify-between items-center top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+            ? "bg-black/30 backdrop-blur-md border-b border-white/5"
+            : "bg-transparent border-b border-transparent"
+          }`}
       >
         <motion.button whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
           <a href="/" >

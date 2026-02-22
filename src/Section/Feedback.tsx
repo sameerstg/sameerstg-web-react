@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import { createFeedback } from '../../methods/feedback';
 import { motion, AnimatePresence } from 'framer-motion';

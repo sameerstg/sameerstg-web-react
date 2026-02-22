@@ -13,7 +13,7 @@ function HomeMain() {
   return (
     <div
       id="home"
-      className="text-primary text-2xl laptop:text-4xl font-bold text-center flex flex-col gap-8 laptop:gap-20 scroll-smooth"
+      className="text-primary font-bold text-center flex flex-col scroll-smooth"
     >
       <Intro />
 
