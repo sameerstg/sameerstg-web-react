@@ -1,4 +1,4 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/Components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselDots } from '@/Components/ui/carousel';
 import React from 'react';
 
 const blogs = [
@@ -45,6 +45,7 @@ function GameModules() {
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
+                <CarouselDots />
             </Carousel>
         </div>
     );
