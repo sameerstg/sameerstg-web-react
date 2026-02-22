@@ -1,5 +1,5 @@
 import { cn } from "@/utils/cn";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 import { motion } from "framer-motion";
 
@@ -20,6 +20,8 @@ interface VortexProps {
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const particleCount = props.particleCount || 700;
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
@@ -189,10 +191,8 @@ export const Vortex = (props: VortexProps) => {
     canvas: HTMLCanvasElement,
     ctx?: CanvasRenderingContext2D
   ) => {
-    const { innerWidth, innerHeight } = window;
-
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     center[0] = 0.5 * canvas.width;
     center[1] = 0.5 * canvas.height;
@@ -227,27 +227,48 @@ export const Vortex = (props: VortexProps) => {
 
   useEffect(() => {
     setup();
-    window.addEventListener("resize", () => {
+
+    const handleResize = () => {
       const canvas = canvasRef.current;
       const ctx = canvas?.getContext("2d");
       if (canvas && ctx) {
         resize(canvas, ctx);
       }
-    });
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Also watch for container height changes (e.g. as portfolio items load)
+    const ro = new ResizeObserver(handleResize);
+    if (containerRef.current) ro.observe(containerRef.current);
+
+    // Track whether the section is in view
+    const io = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (sectionRef.current) io.observe(sectionRef.current);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ro.disconnect();
+      io.disconnect();
+    };
   }, []);
 
   return (
-    <div className={cn("relative h-full w-full", props.containerClassName)}>
+    <div ref={sectionRef} className={cn("relative h-full w-full", props.containerClassName)}>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
         ref={containerRef}
-        className="absolute h-full w-full inset-0 -z-10 bg-transparent flex items-center justify-center"
+        className="fixed inset-0 -z-10 bg-transparent pointer-events-none"
       >
-        <canvas ref={canvasRef} className="max-w-[99%]"></canvas>
+        <canvas ref={canvasRef} className="w-full h-full"></canvas>
       </motion.div>
 
-      <div className={cn("relative -z-10", props.className)}>
+      <div className={cn("relative z-10", props.className)}>
         {props.children}
       </div>
     </div>
