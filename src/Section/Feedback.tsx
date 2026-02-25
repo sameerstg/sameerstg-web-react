@@ -40,7 +40,7 @@ export default function Feedback() {
                         Get in Touch
                     </h2>
                     <p className="text-tertiary text-lg tablet:text-xl max-w-lg mx-auto">
-                        Have a question, an idea, or just want to say hi? I'd love to hear from you.
+                        Have a question, an idea, or just want to say hi? I&apos;d love to hear from you.
                     </p>
                 </div>
 
@@ -122,7 +122,7 @@ export default function Feedback() {
                             </div>
                             <h3 className="text-3xl font-bold mb-4 text-secondary">Message Received!</h3>
                             <p className="text-tertiary text-lg mb-8">
-                                Thanks for reaching out. I'll get back to you as soon as I can!
+                                Thanks for reaching out. I&apos;ll get back to you as soon as I can!
                             </p>
                             <button
                                 onClick={() => setSubmitted(false)}
