@@ -43,7 +43,7 @@ function ImageSlider({ title, link, contents }) {
       }}
       className="flex flex-col justify-center items-center w-full max-w-6xl mx-auto my-12 tablet:my-24 px-4 overflow-hidden"
     >
-      <div className="w-full flex justify-between items-center mb-6">
+      <div className="w-full flex justify-center items-center mb-6">
         <h2 className="text-2xl tablet:text-4xl font-bold text-primary group">
           <a
             href={link}
@@ -52,7 +52,7 @@ function ImageSlider({ title, link, contents }) {
             className="hover:underline flex items-center gap-2"
           >
             {title}
-            {link && <span className="text-xl opacity-0 group-hover:opacity-100 transition-opacity">🔗</span>}
+            {link && <span className="text-xl 0 group-hover:opacity-100 transition-opacity">🔗</span>}
           </a>
         </h2>
       </div>
@@ -86,6 +86,21 @@ function ImageSlider({ title, link, contents }) {
                     <iframe
                       src={`https://github-readme-stats.vercel.app/api/pin/?username=sameerstg&repo=${item.content}&theme=dark`}
                       className="w-full max-w-md h-[180px]"
+                    />
+                  </div>
+                ) : item.type === "Insta" ? (
+                  <div className="w-full h-full flex items-center justify-center p-2">
+                    <iframe
+                      src={
+                        item.content.includes("embed")
+                          ? item.content
+                          : item.content.split('?')[0].replace(/\/$/, '') + '/embed/'
+                      }
+                      className="w-full max-w-[340px] h-[480px] tablet:h-[580px] rounded-xl border border-white/10"
+                      frameBorder="0"
+                      scrolling="no"
+                      allowTransparency
+                      allowFullScreen
                     />
                   </div>
                 ) : (
