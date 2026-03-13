@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useRef, useLayoutEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -29,7 +29,7 @@ const softwareIcons: IconEntry[] = [
   { src: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Photoshop_CC_icon.png', name: 'Photoshop' },
   { src: 'https://www.adobe.com/cc-shared/assets/img/product-icons/svg/after-effects.svg', name: 'After Effects' },
   { src: 'https://www.audacityteam.org/_astro/Audacity_Logo.DK8H7nvr.svg', name: 'Audacity' },
-  { src: 'https://www.svgrepo.com/show/373441/arduino.svg', name: 'Arduino' }, // Your full Base64 Arduino icon here
+  { src: 'https://www.svgrepo.com/show/373441/arduino.svg', name: 'Arduino' },
   { src: 'https://icon.icepanel.io/Technology/svg/.NET-core.svg', name: '.NET' },
   { src: 'https://www.svgrepo.com/show/448222/figma.svg', name: 'Figma' },
   { src: 'https://www.svgrepo.com/show/354202/postman-icon.svg', name: 'Postman' },

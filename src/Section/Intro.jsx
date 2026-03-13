@@ -33,6 +33,7 @@ function Intro() {
         />
       </div>
 
+
       <div className='relative z-10 text-tertiary text-xs tablet:text-sm laptop:text-lg font-bold font-mono max-w-xl text-center leading-relaxed'>
         With a curiosity for cutting-edge possibilities and a knack for weaving them together, I craft experiences that redefine the possible.
       </div>

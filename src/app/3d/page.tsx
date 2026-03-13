@@ -1,0 +1,44 @@
+"use client";
+import React from "react";
+import Intro from "@/Section/Intro";
+import Portfolio from "@/Section/Portfolio";
+import Socials from "@/Section/Socials";
+import Interests from "@/Section/Interests";
+import GithubAndTools from "@/Section/GithubAndTools";
+import OtherLinks from "@/Section/OtherLinks";
+import { Vortex } from "@/Components/ui/vortex";
+import Feedback from "@/Section/Feedback";
+
+function HomeMain() {
+  return (
+    <div
+      id="home"
+      className="text-primary font-bold text-center flex flex-col scroll-smooth"
+    >
+      <Intro />
+
+      <div className="flex flex-col justify-center items-center gap-8 laptop:gap-5 laptop:my-20">
+        <Socials />
+        <Interests />
+        <GithubAndTools />
+      </div>
+
+      <Vortex
+        backgroundColor="#0000"
+        className=""
+        rangeY={400}
+        particleCount={50}
+        baseHue={120}
+      >
+        <div id="portfolio">
+          <Portfolio />
+        </div>
+      </Vortex>
+
+      <OtherLinks />
+      <Feedback />
+    </div>
+  );
+}
+
+export default HomeMain;
