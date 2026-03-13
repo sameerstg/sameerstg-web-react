@@ -25,22 +25,9 @@ function ImageSlider({ title, link, contents }) {
     return () => (mq.onchange = null);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  // Subtle opacity and scale transitions for a premium feel without being jarring
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
-
   return (
-    <motion.div
+    <div
       ref={ref}
-      style={{
-        opacity,
-        scale,
-      }}
       className="flex flex-col justify-center items-center w-full max-w-6xl mx-auto my-12 tablet:my-24 px-4 overflow-hidden"
     >
       <div className="w-full flex justify-center items-center mb-6">
@@ -120,7 +107,7 @@ function ImageSlider({ title, link, contents }) {
           </>
         )}
       </Carousel>
-    </motion.div>
+    </div>
   );
 }
 

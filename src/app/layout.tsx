@@ -23,7 +23,6 @@ export default function RootLayout({
         <Analytics mode={'production'} />
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
