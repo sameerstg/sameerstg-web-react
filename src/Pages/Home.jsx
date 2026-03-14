@@ -1,16 +1,19 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
 import Intro from "@/Section/Intro";
-import Portfolio from "@/Section/Portfolio";
-import Socials from "@/Section/Socials";
-import Interests from "@/Section/Interests";
-import GithubSection from "@/Section/GithubSection";
-import OtherLinks from "@/Section/OtherLinks";
-import { Vortex } from "@/Components/ui/vortex";
-import Feedback from "@/Section/Feedback";
-import Background3D from "@/Components/Background3D";
-import Footer from "@/Section/Footer";
+
+// Dynamically import heavy sections
+const Portfolio = dynamic(() => import("@/Section/Portfolio"), { ssr: false });
+const Socials = dynamic(() => import("@/Section/Socials"), { ssr: false });
+const Interests = dynamic(() => import("@/Section/Interests"), { ssr: false });
+const GithubSection = dynamic(() => import("@/Section/GithubSection"), { ssr: false });
+const OtherLinks = dynamic(() => import("@/Section/OtherLinks"), { ssr: false });
+const Feedback = dynamic(() => import("@/Section/Feedback"), { ssr: false });
+const Footer = dynamic(() => import("@/Section/Footer"), { ssr: false });
+const Background3D = dynamic(() => import("@/Components/Background3D"), { ssr: false });
+const Vortex = dynamic(() => import("@/Components/ui/vortex").then(mod => mod.Vortex), { ssr: false });
 
 const UserHelpOverlay = ({ show }) => (
   <div className={`fixed bottom-10 left-10 z-50 transition-opacity duration-1000 pointer-events-none flex flex-col items-center gap-3 ${show ? "opacity-100" : "opacity-0"}`}>

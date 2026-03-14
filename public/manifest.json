@@ -1,7 +1,7 @@
 {
-  "name": "Sameer stg (Sameerstg) Portfolio",
-  "short_name": "SameerSTG",
-  "description": "3D Creative Developer & Designer Portfolio of Sameer stg (Sameerstg)",
+  "name": "Sameerstg Portfolio",
+  "short_name": "Sameerstg",
+  "description": "3D Creative Developer & Designer Portfolio of Sameerstg",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",

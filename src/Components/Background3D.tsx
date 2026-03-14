@@ -1,108 +1,86 @@
 "use client";
 
 import React, { useRef, useMemo, useEffect, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Stars, Sparkles, Environment, Text } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Float, Stars, Sparkles, Environment, Text, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { InteractiveGroup } from "../Section/Tools3D";
 
 function RotatingShapes() {
-  const group = useRef<THREE.Group>(null);
+  const meshRef = useRef<THREE.InstancedMesh>(null);
   const scrollTracker = useRef(0);
   const mouseTracker = useRef({ x: 0, y: 0 });
 
+  const { viewport } = useThree();
+
+  // Optimized data structure for 100+ shapes
+  const count = 40;
+  const dummy = useMemo(() => new THREE.Object3D(), []);
+  const items = useMemo(() => {
+    return Array.from({ length: count }).map(() => ({
+      position: [
+        (Math.random() - 0.5) * 40,
+        (Math.random() - 0.5) * 60 - 5,
+        (Math.random() - 0.5) * 20 - 10,
+      ] as [number, number, number],
+      factor: Math.random() * 2 + 0.5,
+      speed: Math.random() * 0.01 + 0.005,
+      xFactor: Math.random() * 10,
+      yFactor: Math.random() * 10,
+      zFactor: Math.random() * 10,
+    }));
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      scrollTracker.current = window.scrollY;
-    };
+    const handleScroll = () => { scrollTracker.current = window.scrollY; };
     const handleMouseMove = (e: MouseEvent) => {
       mouseTracker.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       mouseTracker.current.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
-
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-  useFrame((state, delta) => {
-    if (group.current) {
-      // Rotate the entire group slowly
-      group.current.rotation.y += delta * 0.05;
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+    if (!meshRef.current) return;
 
-      // Parallax effect on scroll
-      const targetY = scrollTracker.current * 0.005;
-      group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, targetY, delta * 3);
+    items.forEach((item, i) => {
+      const { position, xFactor, yFactor, zFactor, speed } = item;
+      
+      const x = position[0] + Math.cos(time * speed + xFactor) * 2;
+      const y = position[1] + Math.sin(time * speed + yFactor) * 2 + (scrollTracker.current * 0.002);
+      const z = position[2] + Math.sin(time * speed + zFactor) * 2;
 
-      // Mouse interactive tilt
-      group.current.rotation.x = THREE.MathUtils.lerp(
-        group.current.rotation.x,
-        -mouseTracker.current.y * 0.2,
-        delta * 2
-      );
-      group.current.rotation.z = THREE.MathUtils.lerp(
-        group.current.rotation.z,
-        -mouseTracker.current.x * 0.2,
-        delta * 2
-      );
-    }
+      dummy.position.set(x, y, z);
+      dummy.rotation.set(time * speed, time * speed, time * speed);
+      
+      // Interactive mouse tilt influence
+      dummy.rotation.x += mouseTracker.current.y * 0.1;
+      dummy.rotation.y += mouseTracker.current.x * 0.1;
+      
+      dummy.updateMatrix();
+      meshRef.current!.setMatrixAt(i, dummy.matrix);
+    });
+    meshRef.current.instanceMatrix.needsUpdate = true;
   });
 
-  // Array of random shapes to distribute
-  const items = useMemo(() => {
-    return Array.from({ length: 25 }).map((_, i) => ({
-      position: [
-        (Math.random() - 0.5) * 35,
-        (Math.random() - 0.5) * 60 - 10,
-        (Math.random() - 0.5) * 15 - 5,
-      ] as [number, number, number],
-      scale: Math.random() * 0.8 + 0.2,
-      rotation: [
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-      ] as [number, number, number],
-      type: Math.floor(Math.random() * 3),
-      speed: Math.random() * 2 + 0.5,
-    }));
-  }, []);
-
   return (
-    <group ref={group}>
-
-
-      {items.map((item, i) => (
-        <Float
-          key={i}
-          speed={item.speed}
-          rotationIntensity={1.5}
-          floatIntensity={2}
-          position={item.position}
-        >
-          <mesh rotation={item.rotation} scale={item.scale}>
-            {item.type === 0 ? (
-              <octahedronGeometry args={[1, 0]} />
-            ) : item.type === 1 ? (
-              <icosahedronGeometry args={[1, 1]} />
-            ) : (
-              <torusGeometry args={[0.5, 0.2, 16, 32]} />
-            )}
-            <meshStandardMaterial
-              color={item.type === 0 ? "#00ffff" : item.type === 1 ? "#3b82f6" : "#6366f1"}
-              wireframe={item.type !== 0}
-              metalness={0.8}
-              roughness={0.2}
-              transparent
-              opacity={0.6}
-            />
-          </mesh>
-        </Float>
-      ))}
-    </group>
+    <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
+      <octahedronGeometry args={[0.6, 0]} />
+      <meshStandardMaterial
+        color="#00ffff"
+        metalness={0.9}
+        roughness={0.1}
+        transparent
+        opacity={0.3}
+        wireframe
+      />
+    </instancedMesh>
   );
 }
 
@@ -134,6 +112,14 @@ export default function Background3D() {
 
       <div className={`fixed top-0 left-0 w-full h-full -z-50 pointer-events-none transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}>
         <Canvas
+          dpr={[1, 2]} // Performance: limit pixel ratio on high-density screens
+          gl={{
+            powerPreference: "high-performance",
+            alpha: true,
+            antialias: false,
+            stencil: false,
+            depth: true
+          }}
           camera={{ position: [0, 0, 10], fov: 50 }}
           onCreated={() => {
             // Slight delay to ensure content is ready before fade

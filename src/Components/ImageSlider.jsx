@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -67,10 +68,12 @@ function ImageSlider({ title, link, contents, index = 0 }) {
                     rel="noreferrer noopener"
                     className="w-full h-full flex items-center justify-center p-2"
                   >
-                    <img
+                    <Image
                       src={item.content}
                       alt={title}
-                      className="max-w-full max-h-full object-contain rounded-lg"
+                      fill
+                      className="object-contain rounded-lg"
+                      sizes="(max-width: 768px) 100vw, 1200px"
                     />
                   </a>
                 ) : item.type === "Video" ? (

@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'VR Simulations',
-  description: 'Explore high-fidelity VR simulations and immersive digital experiences crafted by Sameer stg (Sameerstg) using cutting-edge technologies.',
-  keywords: ['VR Simulations', 'Sameer stg', 'Sameerstg', 'Virtual Reality Portfolio', 'WebVR', 'Unity 3D', 'Architectural Visualization', 'Creative Developer'],
+  description: 'Explore high-fidelity VR simulations and immersive digital experiences crafted by Sameerstg using cutting-edge technologies.',
+  keywords: ['VR Simulations', 'Sameerstg', 'Virtual Reality Portfolio', 'WebVR', 'Unity 3D', 'Architectural Visualization', 'Creative Developer'],
   openGraph: {
-    title: 'VR Simulations | Sameer stg (Sameerstg)',
-    description: 'Immersive VR simulations and 3D web experiences by Sameer stg.',
+    title: 'VR Simulations | Sameerstg',
+    description: 'Immersive VR simulations and 3D web experiences by Sameerstg.',
     images: [
       {
         url: "/vr-og-image.png",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VR Simulations | Sameer STG",
+    title: "VR Simulations | Sameerstg",
     description: "Immersive VR projects and 3D simulations showcase.",
     images: ["/vr-og-image.png"],
   },
