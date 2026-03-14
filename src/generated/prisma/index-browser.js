@@ -123,7 +123,8 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.FeedbackScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  feedback: 'feedback'
+  feedback: 'feedback',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.DictionaryScalarFieldEnum = {

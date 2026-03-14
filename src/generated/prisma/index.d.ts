@@ -1193,18 +1193,21 @@ export namespace Prisma {
     id: number | null
     email: string | null
     feedback: string | null
+    createdAt: Date | null
   }
 
   export type FeedbackMaxAggregateOutputType = {
     id: number | null
     email: string | null
     feedback: string | null
+    createdAt: Date | null
   }
 
   export type FeedbackCountAggregateOutputType = {
     id: number
     email: number
     feedback: number
+    createdAt: number
     _all: number
   }
 
@@ -1221,18 +1224,21 @@ export namespace Prisma {
     id?: true
     email?: true
     feedback?: true
+    createdAt?: true
   }
 
   export type FeedbackMaxAggregateInputType = {
     id?: true
     email?: true
     feedback?: true
+    createdAt?: true
   }
 
   export type FeedbackCountAggregateInputType = {
     id?: true
     email?: true
     feedback?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -1326,6 +1332,7 @@ export namespace Prisma {
     id: number
     email: string
     feedback: string
+    createdAt: Date
     _count: FeedbackCountAggregateOutputType | null
     _avg: FeedbackAvgAggregateOutputType | null
     _sum: FeedbackSumAggregateOutputType | null
@@ -1351,27 +1358,31 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     feedback?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["feedback"]>
 
   export type FeedbackSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
     feedback?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["feedback"]>
 
   export type FeedbackSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
     feedback?: boolean
+    createdAt?: boolean
   }, ExtArgs["result"]["feedback"]>
 
   export type FeedbackSelectScalar = {
     id?: boolean
     email?: boolean
     feedback?: boolean
+    createdAt?: boolean
   }
 
-  export type FeedbackOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "feedback", ExtArgs["result"]["feedback"]>
+  export type FeedbackOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "feedback" | "createdAt", ExtArgs["result"]["feedback"]>
 
   export type $FeedbackPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Feedback"
@@ -1380,6 +1391,7 @@ export namespace Prisma {
       id: number
       email: string
       feedback: string
+      createdAt: Date
     }, ExtArgs["result"]["feedback"]>
     composites: {}
   }
@@ -1806,6 +1818,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Feedback", 'Int'>
     readonly email: FieldRef<"Feedback", 'String'>
     readonly feedback: FieldRef<"Feedback", 'String'>
+    readonly createdAt: FieldRef<"Feedback", 'DateTime'>
   }
     
 
@@ -5487,7 +5500,8 @@ export namespace Prisma {
   export const FeedbackScalarFieldEnum: {
     id: 'id',
     email: 'email',
-    feedback: 'feedback'
+    feedback: 'feedback',
+    createdAt: 'createdAt'
   };
 
   export type FeedbackScalarFieldEnum = (typeof FeedbackScalarFieldEnum)[keyof typeof FeedbackScalarFieldEnum]
@@ -5602,6 +5616,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Json'
    */
   export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
@@ -5646,12 +5674,14 @@ export namespace Prisma {
     id?: IntFilter<"Feedback"> | number
     email?: StringFilter<"Feedback"> | string
     feedback?: StringFilter<"Feedback"> | string
+    createdAt?: DateTimeFilter<"Feedback"> | Date | string
   }
 
   export type FeedbackOrderByWithRelationInput = {
     id?: SortOrder
     email?: SortOrder
     feedback?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type FeedbackWhereUniqueInput = Prisma.AtLeast<{
@@ -5661,12 +5691,14 @@ export namespace Prisma {
     AND?: FeedbackWhereInput | FeedbackWhereInput[]
     OR?: FeedbackWhereInput[]
     NOT?: FeedbackWhereInput | FeedbackWhereInput[]
+    createdAt?: DateTimeFilter<"Feedback"> | Date | string
   }, "id" | "email" | "feedback">
 
   export type FeedbackOrderByWithAggregationInput = {
     id?: SortOrder
     email?: SortOrder
     feedback?: SortOrder
+    createdAt?: SortOrder
     _count?: FeedbackCountOrderByAggregateInput
     _avg?: FeedbackAvgOrderByAggregateInput
     _max?: FeedbackMaxOrderByAggregateInput
@@ -5681,6 +5713,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Feedback"> | number
     email?: StringWithAggregatesFilter<"Feedback"> | string
     feedback?: StringWithAggregatesFilter<"Feedback"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Feedback"> | Date | string
   }
 
   export type DictionaryWhereInput = {
@@ -5864,40 +5897,47 @@ export namespace Prisma {
   export type FeedbackCreateInput = {
     email: string
     feedback: string
+    createdAt?: Date | string
   }
 
   export type FeedbackUncheckedCreateInput = {
     id?: number
     email: string
     feedback: string
+    createdAt?: Date | string
   }
 
   export type FeedbackUpdateInput = {
     email?: StringFieldUpdateOperationsInput | string
     feedback?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FeedbackUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     feedback?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FeedbackCreateManyInput = {
     id?: number
     email: string
     feedback: string
+    createdAt?: Date | string
   }
 
   export type FeedbackUpdateManyMutationInput = {
     email?: StringFieldUpdateOperationsInput | string
     feedback?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FeedbackUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     feedback?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DictionaryCreateInput = {
@@ -6102,10 +6142,22 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type FeedbackCountOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
     feedback?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type FeedbackAvgOrderByAggregateInput = {
@@ -6116,12 +6168,14 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     feedback?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type FeedbackMinOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
     feedback?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type FeedbackSumOrderByAggregateInput = {
@@ -6160,6 +6214,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
   export type JsonFilter<$PrismaModel = never> =
     | PatchUndefined<
@@ -6414,6 +6482,10 @@ export namespace Prisma {
     set?: string
   }
 
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -6521,6 +6593,17 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -6563,6 +6646,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
   export type NestedJsonFilter<$PrismaModel = never> =
     | PatchUndefined<
