@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react';
-import { createFeedback } from '../../methods/feedback';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, MessageSquare, Mail } from 'lucide-react';
 
@@ -14,13 +13,19 @@ export default function Feedback() {
         e.preventDefault();
         setLoading(true);
         try {
-            await createFeedback(email, feedback);
-            setSubmitted(true);
-            setTimeout(() => {
-                setSubmitted(false);
-                setEmail('');
-                setFeedback('');
-            }, 5000);
+            const res = await fetch('/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, feedback }),
+            });
+            if (res.ok) {
+                setSubmitted(true);
+                setTimeout(() => {
+                    setSubmitted(false);
+                    setEmail('');
+                    setFeedback('');
+                }, 5000);
+            }
         } catch (error) {
             console.error('Error submitting feedback:', error);
         } finally {

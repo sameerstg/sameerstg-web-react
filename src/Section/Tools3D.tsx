@@ -64,8 +64,10 @@ export function InteractiveGroup() {
   });
 
   const [sectionIndex, setSectionIndex] = useState(0);
+  const [isHome, setIsHome] = useState(true);
 
   useEffect(() => {
+    setIsHome(window.location.pathname === '/' || window.location.pathname === '/Home');
     const handleSectionChange = (e: any) => {
       setSectionIndex(e.detail.index);
     };
@@ -84,10 +86,11 @@ export function InteractiveGroup() {
         const y = r * Math.sin(theta) * Math.sin(phi);
         const z = r * Math.cos(phi);
 
+        const currentOpacity = (isHome && sectionIndex === 0) ? 0.6 : 0.05;
+
         return (
           <Float key={i} speed={2} rotationIntensity={1} floatIntensity={2} position={[x, y, z]}>
-            {/* HTML component maps these 3D coordinates exactly into the CSS DOM */}
-            <Html transform sprite center style={{ pointerEvents: 'none', mixBlendMode: 'screen', opacity: sectionIndex === 0 ? 0.6 : 0.05, transition: 'opacity 1.5s ease-in-out' }}>
+            <Html transform sprite center style={{ pointerEvents: 'none', mixBlendMode: 'screen', opacity: currentOpacity, transition: 'opacity 1.5s ease-in-out' }}>
               <div className="w-12 h-12 tablet:w-16 tablet:h-16 rounded-2xl flex items-center justify-center bg-black/40 backdrop-blur-md border border-[#00ffff]/20 shadow-[0_0_15px_rgba(0,255,255,0.1)]">
                 <img src={icon.src} alt={icon.name} className="w-6 h-6 tablet:w-8 tablet:h-8 object-contain drop-shadow-md" />
               </div>

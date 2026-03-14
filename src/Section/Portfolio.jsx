@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import ImageSlider from "../Components/ImageSlider";
-import { fetchPublicPortfolio } from "../../methods/portfolio";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Portfolio() {
@@ -14,14 +13,20 @@ function Portfolio() {
 
   async function getPortfolios() {
     setLoading(true);
-    const ports = await fetchPublicPortfolio();
-    setportfolios(ports);
+    try {
+      const res = await fetch("/api/portfolio");
+      const ports = await res.json();
+      setportfolios(Array.isArray(ports) ? ports : []);
+    } catch (e) {
+      console.error("Failed to fetch portfolio", e);
+    }
     setLoading(false);
   }
 
   useEffect(() => {
     getPortfolios();
   }, []);
+
 
   useEffect(() => {
     setShowHint(false);

@@ -86,17 +86,23 @@ function TiltIcon({ social, index, total }) {
 }
 
 export default function Socials() {
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springX = useSpring(mouseX, { stiffness: 100, damping: 30 });
+  const springY = useSpring(mouseY, { stiffness: 100, damping: 30 });
+
+  const rotateX = useTransform(springY, [-1, 1], [15, -15]);
+  const rotateY = useTransform(springX, [-1, 1], [-15, 15]);
 
   useEffect(() => {
     const handleMove = (e) => {
-      setMouseX((e.clientX / window.innerWidth) * 2 - 1);
-      setMouseY((e.clientY / window.innerHeight) * 2 - 1);
+      mouseX.set((e.clientX / window.innerWidth) * 2 - 1);
+      mouseY.set((e.clientY / window.innerHeight) * 2 - 1);
     };
     window.addEventListener("mousemove", handleMove);
     return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center min-h-[350px] sm:min-h-[400px]">
@@ -113,10 +119,9 @@ export default function Socials() {
         className="relative flex items-center justify-center w-full h-full z-10 mt-10"
         style={{ 
           perspective: "1200px",
-          rotateX: mouseY * -15,
-          rotateY: mouseX * 15,
+          rotateX,
+          rotateY,
         }}
-        transition={{ type: "spring", stiffness: 100, damping: 30 }}
       >
         {/* Core Glowing Orb */}
         <div className="absolute w-[60px] h-[60px] rounded-full bg-[#00ffff]/10 shadow-[0_0_60px_#00ffff] animate-pulse pointer-events-none" />
