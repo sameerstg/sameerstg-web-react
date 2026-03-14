@@ -10,6 +10,8 @@ import {
   CarouselPrevious,
   CarouselDots,
 } from "../Components/ui/carousel";
+import Magnetic from "@/Components/Magnetic";
+
 
 function ImageSlider({ title, link, contents, index = 0 }) {
   const ref = useRef(null);
@@ -29,18 +31,28 @@ function ImageSlider({ title, link, contents, index = 0 }) {
     <div
       className="flex flex-col justify-center items-center w-full max-w-6xl mx-auto px-4 overflow-hidden h-[90vh] tablet:h-[80vh] tablet:my-10"
     >
-      <div className="w-full flex justify-center items-center mb-6">
-        <h2 className="text-2xl tablet:text-4xl font-bold text-primary group">
-          <a
-            href={link}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hover:underline flex items-center gap-2"
+      <div className="w-full flex justify-center items-center mb-8">
+        <Magnetic>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="z-20 pointer-events-auto"
           >
-            {title}
-            {link && <span className="text-xl 0 group-hover:opacity-100 transition-opacity">🔗</span>}
-          </a>
-        </h2>
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="relative block px-10 py-4 rounded-2xl bg-black/60 backdrop-blur-xl border border-[#00ffff]/30 shadow-[0_0_30px_rgba(0,255,255,0.2)] group"
+            >
+              <h2 className="text-2xl tablet:text-4xl font-black tracking-[0.2em] uppercase bg-gradient-to-r from-white via-[#00ffff] to-white bg-clip-text text-transparent flex items-center gap-4">
+                {title}
+                {link && <span className="text-xl opacity-50 group-hover:opacity-100 group-hover:scale-125 transition-all text-[#00ffff]">🔗</span>}
+              </h2>
+              {/* Animated Glow Line */}
+              <div className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 w-2/3 h-[2px] bg-gradient-to-r from-transparent via-[#00ffff] to-transparent shadow-[0_0_15px_#00ffff]" />
+            </a>
+          </motion.div>
+        </Magnetic>
       </div>
 
       <Carousel className="w-full group">
@@ -173,25 +185,27 @@ function InteractiveIframe({ src, title }) {
           className="absolute inset-0 z-10 flex flex-col items-center justify-center cursor-pointer bg-black/40 hover:bg-black/20 transition-colors group"
           onClick={() => setIsInteracting(true)}
         >
-          <div className="bg-secondary text-black px-8 py-4 rounded-full shadow-[0_0_40px_rgba(0,255,255,0.3)] flex items-center gap-3 transition-all duration-300 transform group-hover:scale-110 group-active:scale-95">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="animate-bounce"
-            >
-              <path d="M15 18l-2 2-2-2" />
-              <path d="M10 10l2 2 2-2" />
-              <path d="M12 2v10" />
-            </svg>
-            <span className="font-bold text-lg uppercase tracking-wider">Interact with {title}</span>
-          </div>
+          <Magnetic>
+            <div className="bg-secondary text-black px-8 py-4 rounded-full shadow-[0_0_40px_rgba(0,255,255,0.3)] flex items-center gap-3 transition-all duration-300 transform group-hover:scale-110 group-active:scale-95">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="animate-bounce"
+              >
+                <path d="M15 18l-2 2-2-2" />
+                <path d="M10 10l2 2 2-2" />
+                <path d="M12 2v10" />
+              </svg>
+              <span className="font-bold text-lg uppercase tracking-wider">Interact with {title}</span>
+            </div>
+          </Magnetic>
           <p className="text-white/60 mt-4 text-sm font-medium tablet:block hidden">
             Clicking will enable interaction and lock swiping
           </p>
@@ -199,30 +213,32 @@ function InteractiveIframe({ src, title }) {
       )}
 
       {isInteracting && (
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsInteracting(false);
-          }}
-          className="absolute top-4 right-4 z-20 bg-red-500 text-white flex items-center gap-2 px-4 py-2 rounded-full shadow-2xl hover:bg-red-600 transition-all transform hover:scale-105 active:scale-95"
-          title="Disable interaction to swipe"
-        >
-          <span className="font-bold text-xs">EXIT INTERACTION</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <Magnetic>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsInteracting(false);
+            }}
+            className="absolute top-4 right-4 z-20 bg-red-500 text-white flex items-center gap-2 px-4 py-2 rounded-full shadow-2xl hover:bg-red-600 transition-all transform hover:scale-105 active:scale-95"
+            title="Disable interaction to swipe"
           >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
-          </svg>
-        </button>
+            <span className="font-bold text-xs">EXIT INTERACTION</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </Magnetic>
       )}
     </div>
   );

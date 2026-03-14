@@ -37,7 +37,7 @@ function TiltInterestBox({ interest, index, total }) {
       initial={{ opacity: 0, x: -100, rotateY: -30 }}
       whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
       viewport={{ once: false, margin: "-100px" }}
-      transition={{ type: "spring", stiffness: 100, damping: 20, delay: index * 0.15 }}
+      transition={{ type: "spring", stiffness: 200, damping: 25, delay: index * 0.08 }}
       whileHover={{ scale: 1.05, zIndex: 10 }}
       style={{
         rotateX,
@@ -89,11 +89,16 @@ export default function Interests() {
   return (
     <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[500px]">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="text-white/50 text-xs sm:text-sm font-bold tracking-[0.4em] uppercase mb-12 mix-blend-screen bg-black/30 px-6 py-2 rounded-full border border-white/5"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        className="z-20 mb-12"
       >
-        My Interests
+        <div className="relative px-8 py-3 rounded-full bg-black/60 backdrop-blur-xl border border-[#00ffff]/30 shadow-[0_0_20px_rgba(0,255,255,0.2)]">
+          <span className="text-white text-sm sm:text-base font-black tracking-[0.5em] uppercase bg-gradient-to-r from-white via-[#00ffff] to-white bg-clip-text text-transparent">
+            My Interests
+          </span>
+          <div className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-[#00ffff] to-transparent shadow-[0_0_10px_#00ffff]" />
+        </div>
       </motion.div>
 
       <motion.div 

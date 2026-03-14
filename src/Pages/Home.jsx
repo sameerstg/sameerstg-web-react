@@ -13,7 +13,7 @@ import Background3D from "@/Components/Background3D";
 import Footer from "@/Section/Footer";
 
 const UserHelpOverlay = ({ show }) => (
-  <div className={`fixed bottom-10 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-1000 pointer-events-none flex flex-col items-center gap-3 ${show ? "opacity-100" : "opacity-0"}`}>
+  <div className={`fixed bottom-10 left-10 z-50 transition-opacity duration-1000 pointer-events-none flex flex-col items-center gap-3 ${show ? "opacity-100" : "opacity-0"}`}>
     <div className="flex items-center gap-5 bg-black/60 backdrop-blur-lg px-6 py-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(0,255,255,0.3)]">
       <div className="flex items-center gap-2">
         <div className="w-5 h-8 border-2 border-white/70 rounded-full flex justify-center pt-1">
@@ -91,7 +91,7 @@ function HomeMain() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState({ dir: 1, side: 0 }); 
   const isScrolling = useRef(false);
-  const totalSections = 5;
+  const totalSections = 4;
   const [showHelp, setShowHelp] = useState(false);
 
   useEffect(() => {
@@ -109,8 +109,7 @@ function HomeMain() {
     const navigate = (dir) => {
       setIndex((prev) => {
         const next = prev + dir;
-        if (next >= 0 && next < totalSections) {
-          // Select random side for the newly entering slide (0 to 3)
+        if (next >= 0 && next < 4) { // Updated to 4 sections
           const randomSide = Math.floor(Math.random() * 4);
           setDirection({ dir, side: randomSide });
           isScrolling.current = true;
@@ -122,23 +121,21 @@ function HomeMain() {
     };
 
     const handleWheel = (e) => {
-      // Check if we are inside a deliberately scrolling container like FullScreenWrap
       const scrollable = e.target.closest('.overflow-y-auto');
       if (scrollable) {
         const { scrollTop, scrollHeight, clientHeight } = scrollable;
         const atTop = scrollTop === 0;
-        const atBottom = Math.abs(scrollHeight - clientHeight - scrollTop) < 1;
+        const atBottom = Math.abs(scrollHeight - clientHeight - scrollTop) < 5; // Added margin
 
-        if (e.deltaY > 0 && !atBottom) return; // Allow normal scroll down within component
-        if (e.deltaY < 0 && !atTop) return; // Allow normal scroll up within component
+        if (e.deltaY > 0 && !atBottom) return;
+        if (e.deltaY < 0 && !atTop) return;
       }
 
-      // If already animating, prevent standard wheel events
       if (isScrolling.current) {
         e.preventDefault();
         return;
       }
-      if (Math.abs(e.deltaY) < 30) return; // Ignore small magic mouse glides
+      if (Math.abs(e.deltaY) < 30) return; 
 
       if (e.deltaY > 0) navigate(1);
       else if (e.deltaY < 0) navigate(-1);
@@ -151,19 +148,19 @@ function HomeMain() {
     const handleTouchMove = (e) => {
       const scrollable = e.target.closest('.overflow-y-auto');
       const touchEndY = e.touches[0].clientY;
-      const deltaTemp = touchStartY - touchEndY; // Positive is swiping up / scrolling down
+      const deltaTemp = touchStartY - touchEndY; 
       
       if (scrollable) {
         const { scrollTop, scrollHeight, clientHeight } = scrollable;
         const atTop = scrollTop === 0;
-        const atBottom = Math.abs(scrollHeight - clientHeight - scrollTop) < 1;
+        const atBottom = Math.abs(scrollHeight - clientHeight - scrollTop) < 5;
 
         if (deltaTemp > 0 && !atBottom) { touchStartY = touchEndY; return; }
         if (deltaTemp < 0 && !atTop) { touchStartY = touchEndY; return; }
       }
 
       if (isScrolling.current) return;
-      if (Math.abs(deltaTemp) < 40) return;
+      if (Math.abs(deltaTemp) < 50) return; // Increased threshold for stability
 
       if (deltaTemp > 0) {
         navigate(1);
@@ -184,7 +181,7 @@ function HomeMain() {
       if (id === 'home') targetIndex = 0;
       if (id === 'socials') targetIndex = 1;
       if (id === 'portfolio') targetIndex = 2;
-      if (id === 'footer') targetIndex = 4;
+      if (id === 'footer') targetIndex = 3; // Updated index
 
       if (targetIndex !== -1) {
         setIndex((prev) => {
@@ -225,7 +222,7 @@ function HomeMain() {
         return (
           <FullScreenWrap>
              <div className="flex flex-col flex-grow justify-center items-center w-full py-[10vh] min-h-max">
-               <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-6 px-4 sm:px-10 items-center justify-center h-full">
+               <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-6 px-4 sm:px-10 items-center justify-center">
                  <Socials />
                  <Interests />
                  <GithubSection />
@@ -236,7 +233,7 @@ function HomeMain() {
       case 2:
         return (
           <div className="w-full h-full relative">
-            <Vortex backgroundColor="#0000" containerClassName="absolute inset-0 w-full h-full" className="w-full h-full flex flex-col justify-center items-center" rangeY={400} particleCount={50} baseHue={120}>
+            <Vortex backgroundColor="#0000" containerClassName="absolute inset-0 w-full h-full" className="w-full h-full flex flex-col justify-center items-center" rangeY={400} particleCount={40} baseHue={120}>
               <div id="portfolio" className="w-full h-full flex justify-center items-center relative z-50">
                 <Portfolio />
               </div>
@@ -244,12 +241,6 @@ function HomeMain() {
           </div>
         );
       case 3:
-        return (
-          <div className="w-full h-full flex flex-col justify-center items-center">
-            <OtherLinks />
-          </div>
-        );
-      case 4:
         return (
           <FullScreenWrap>
             <div className="flex flex-col flex-grow justify-center items-center w-full min-h-max py-20 relative z-50">

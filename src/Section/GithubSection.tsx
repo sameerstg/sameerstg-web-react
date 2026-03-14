@@ -6,11 +6,16 @@ const GithubSection = () => {
   return (
     <div className="relative w-full flex flex-col items-center justify-center min-h-[350px] sm:min-h-[400px]">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        className="absolute top-0 text-white/50 text-xs sm:text-sm font-bold tracking-[0.4em] uppercase z-20 mix-blend-screen bg-black/30 px-6 py-2 rounded-full border border-white/5"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        className="absolute top-0 z-20"
       >
-        My GitHub
+        <div className="relative px-8 py-3 rounded-full bg-black/60 backdrop-blur-xl border border-[#00ffff]/30 shadow-[0_0_20px_rgba(0,255,255,0.2)]">
+          <span className="text-white text-sm sm:text-base font-black tracking-[0.5em] uppercase bg-gradient-to-r from-white via-[#00ffff] to-white bg-clip-text text-transparent">
+            My GitHub
+          </span>
+          <div className="absolute -bottom-[1px] left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-[#00ffff] to-transparent shadow-[0_0_10px_#00ffff]" />
+        </div>
       </motion.div>
 
       <div className="flex flex-col gap-6 w-full items-center justify-center mt-12 lg:mt-16 z-10 px-4">

@@ -1,5 +1,7 @@
-import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
+
+export const revalidate = 86400; // Cache for 24 hours (ISR)
 
 export async function GET() {
   try {
@@ -13,7 +15,11 @@ export async function GET() {
         },
       },
     });
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=59',
+      },
+    });
   } catch (e) {
     console.error(e);
     return NextResponse.json([], { status: 500 });

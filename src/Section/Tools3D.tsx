@@ -86,13 +86,14 @@ export function InteractiveGroup() {
         const y = r * Math.sin(theta) * Math.sin(phi);
         const z = r * Math.cos(phi);
 
-        const currentOpacity = (isHome && sectionIndex === 0) ? 0.6 : 0.05;
+        const currentOpacity = (isHome && sectionIndex === 0) ? 0.6 : 0.03;
+        const currentScale = (isHome && sectionIndex === 0) ? 1 : 0.7;
 
         return (
           <Float key={i} speed={2} rotationIntensity={1} floatIntensity={2} position={[x, y, z]}>
-            <Html transform sprite center style={{ pointerEvents: 'none', mixBlendMode: 'screen', opacity: currentOpacity, transition: 'opacity 1.5s ease-in-out' }}>
-              <div className="w-12 h-12 tablet:w-16 tablet:h-16 rounded-2xl flex items-center justify-center bg-black/40 backdrop-blur-md border border-[#00ffff]/20 shadow-[0_0_15px_rgba(0,255,255,0.1)]">
-                <img src={icon.src} alt={icon.name} className="w-6 h-6 tablet:w-8 tablet:h-8 object-contain drop-shadow-md" />
+            <Html transform sprite center style={{ pointerEvents: 'none', mixBlendMode: 'screen', opacity: currentOpacity, transition: 'all 1.5s ease-in-out', transform: `scale(${currentScale})` }}>
+              <div className="w-10 h-10 tablet:w-14 tablet:h-14 rounded-xl flex items-center justify-center bg-black/40 backdrop-blur-md border border-[#00ffff]/10 shadow-[0_0_10px_rgba(0,255,255,0.05)]">
+                <img src={icon.src} alt={icon.name} className="w-5 h-5 tablet:w-7 tablet:h-7 object-contain grayscale-[0.2]" />
               </div>
             </Html>
           </Float>

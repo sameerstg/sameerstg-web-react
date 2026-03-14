@@ -127,17 +127,17 @@ export default function Background3D() {
           <div className="absolute w-12 h-12 border-4 border-transparent border-b-[#6366f1] border-r-[#6366f1] rounded-full animate-[spin_1.5s_linear_reverse]"></div>
           <div className="absolute font-bold text-white text-xs">STG</div>
         </div>
-        <p className="mt-6 text-[#00ffff] font-mono tracking-widest text-sm animate-pulse">
-          INITIALIZING UNIVERSE...
+        <p className="mt-6 text-[#00ffff] font-mono tracking-widest text-sm animate-pulse uppercase">
+          Initializing Universe...
         </p>
       </div>
 
-      <div className={`fixed top-0 left-0 w-full h-full -z-50 pointer-events-none bg-[#020617] transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}>
+      <div className={`fixed top-0 left-0 w-full h-full -z-50 pointer-events-none transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}>
         <Canvas
           camera={{ position: [0, 0, 10], fov: 50 }}
           onCreated={() => {
-            // Slight delay to ensure smooth transition after context creation
-            setTimeout(() => setLoaded(true), 500);
+            // Slight delay to ensure content is ready before fade
+            setTimeout(() => setLoaded(true), 1200);
           }}
         >
           <ambientLight intensity={0.2} />

@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from '../Section/Navbar'
 import Footer from '../Section/Footer'
 import { Analytics } from "@vercel/analytics/react";
+import CustomCursor from "@/Components/CustomCursor";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Analytics mode={'production'} />
         <Navbar />
+        <CustomCursor />
         {children}
       </body>
     </html>

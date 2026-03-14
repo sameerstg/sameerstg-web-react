@@ -5,12 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BsList, BsXLg } from "react-icons/bs";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import Magnetic from "@/Components/Magnetic";
+
 
 const navItems = [
   { name: "Home", id: "home", index: 0 },
   { name: "Socials", id: "socials", index: 1 },
   { name: "Portfolio", id: "portfolio", index: 2 },
-  { name: "Contact", id: "footer", index: 4 }
+  { name: "Contact", id: "footer", index: 3 }
 ];
 
 export default function Navbar() {
@@ -43,29 +45,33 @@ export default function Navbar() {
         }`}
       >
         {/* Left: Logo */}
-        <button onClick={() => handleNav("home")} className="hover:scale-110 transition-transform drop-shadow-[0_0_10px_rgba(0,255,255,0.2)]">
-          <Image height={activeIndex > 0 || drawerOpen ? 35 : 55} width={activeIndex > 0 || drawerOpen ? 35 : 55} src={logo} alt="logo" className="transition-all duration-700 object-contain" />
-        </button>
+        <Magnetic>
+          <button onClick={() => handleNav("home")} className="hover:scale-110 transition-transform drop-shadow-[0_0_10px_rgba(0,255,255,0.2)]">
+            <Image height={activeIndex > 0 || drawerOpen ? 35 : 55} width={activeIndex > 0 || drawerOpen ? 35 : 55} src={logo} alt="logo" className="transition-all duration-700 object-contain" />
+          </button>
+        </Magnetic>
 
         {/* Center/Right: Desktop Links */}
         <div className="hidden tablet:flex items-center gap-10">
           {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNav(item.id)}
-              className={`relative text-xs lg:text-sm font-bold tracking-[0.2em] uppercase transition-colors duration-300 py-2 ${
-                activeIndex === item.index ? "text-[#00ffff]" : "text-white/60 hover:text-white"
-              }`}
-            >
-              {item.name}
-              {activeIndex === item.index && (
-                <motion.div 
-                  layoutId="nav-indicator"
-                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#00ffff] rounded-full shadow-[0_0_10px_#00ffff]"
-                  transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                />
-              )}
-            </button>
+            <Magnetic key={item.id}>
+              <button
+                key={item.id}
+                onClick={() => handleNav(item.id)}
+                className={`relative text-xs lg:text-sm font-bold tracking-[0.2em] uppercase transition-colors duration-300 py-2 ${
+                  activeIndex === item.index ? "text-[#00ffff]" : "text-white/60 hover:text-white"
+                }`}
+              >
+                {item.name}
+                {activeIndex === item.index && (
+                  <motion.div 
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#00ffff] rounded-full shadow-[0_0_10px_#00ffff]"
+                    transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                  />
+                )}
+              </button>
+            </Magnetic>
           ))}
         </div>
 
