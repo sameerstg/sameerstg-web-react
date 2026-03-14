@@ -1,5 +1,5 @@
 
 function Scroll(id: string){
-    window.scrollTo(0,0)
+    window.dispatchEvent(new CustomEvent('navigateToSection', { detail: { id: 'home' } }));
 }
 export default Scroll;

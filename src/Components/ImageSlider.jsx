@@ -11,7 +11,7 @@ import {
   CarouselDots,
 } from "../Components/ui/carousel";
 
-function ImageSlider({ title, link, contents }) {
+function ImageSlider({ title, link, contents, index = 0 }) {
   const ref = useRef(null);
 
   // Track if user is on a small/mobile viewport
@@ -27,8 +27,7 @@ function ImageSlider({ title, link, contents }) {
 
   return (
     <div
-      ref={ref}
-      className="flex flex-col justify-center items-center w-full max-w-6xl mx-auto my-12 tablet:my-24 px-4 overflow-hidden"
+      className="flex flex-col justify-center items-center w-full max-w-6xl mx-auto px-4 overflow-hidden h-[90vh] tablet:h-[80vh] tablet:my-10"
     >
       <div className="w-full flex justify-center items-center mb-6">
         <h2 className="text-2xl tablet:text-4xl font-bold text-primary group">

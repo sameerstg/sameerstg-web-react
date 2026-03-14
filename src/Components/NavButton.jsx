@@ -7,10 +7,9 @@ function NavButton({ text, scrollTo, to }) {
 
     const handleClick = () => {
         if (window?.location?.pathname === '/') {
-            // If the current location is '/', do the scrolling
-            document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' });
+            // Dispatch a custom event to trigger the 3D slider animation
+            window.dispatchEvent(new CustomEvent('navigateToSection', { detail: { id: scrollTo } }));
         } else {
-
             console.log("routing should start")
             router.push('/')
         }

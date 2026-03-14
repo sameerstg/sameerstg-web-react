@@ -2,8 +2,9 @@
 
 import React, { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Stars, Sparkles, Environment, MeshDistortMaterial, Sphere, TorusKnot, Text } from "@react-three/drei";
+import { Float, Stars, Sparkles, Environment, Text } from "@react-three/drei";
 import * as THREE from "three";
+import { InteractiveGroup } from "../Section/Tools3D";
 
 function RotatingShapes() {
   const group = useRef<THREE.Group>(null);
@@ -72,32 +73,7 @@ function RotatingShapes() {
 
   return (
     <group ref={group}>
-      {/* Central hero sphere */}
-      <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
-        <Sphere args={[2, 64, 64]} position={[4, 2, -5]}>
-          <MeshDistortMaterial
-            color="#00ffff"
-            envMapIntensity={1}
-            clearcoat={1}
-            clearcoatRoughness={0.1}
-            metalness={0.8}
-            roughness={0.2}
-            distort={0.4}
-            speed={2}
-          />
-        </Sphere>
-      </Float>
 
-      <Float speed={1.5} rotationIntensity={2} floatIntensity={1.5}>
-        <TorusKnot args={[1.2, 0.3, 128, 16]} position={[-5, -4, -8]}>
-          <meshStandardMaterial
-            color="#8be9ff"
-            metalness={0.9}
-            roughness={0.1}
-            wireframe
-          />
-        </TorusKnot>
-      </Float>
 
       {items.map((item, i) => (
         <Float
@@ -132,6 +108,7 @@ function RotatingShapes() {
 
 export default function Background3D() {
   const [mounted, setMounted] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -140,18 +117,41 @@ export default function Background3D() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-50 pointer-events-none bg-[#020617]">
-      <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
-        <ambientLight intensity={0.2} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00ffff" />
-        <directionalLight position={[-10, -10, -5]} intensity={1} color="#6366f1" />
-        <pointLight position={[0, 0, 0]} intensity={2} color="#8be9ff" />
+    <>
+      <div
+        className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#020617] transition-all duration-1000 ease-in-out ${loaded ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+      >
+        <div className="relative flex items-center justify-center">
+          <div className="w-20 h-20 border-4 border-transparent border-t-[#00ffff] border-l-[#00ffff] rounded-full animate-spin"></div>
+          <div className="absolute w-12 h-12 border-4 border-transparent border-b-[#6366f1] border-r-[#6366f1] rounded-full animate-[spin_1.5s_linear_reverse]"></div>
+          <div className="absolute font-bold text-white text-xs">STG</div>
+        </div>
+        <p className="mt-6 text-[#00ffff] font-mono tracking-widest text-sm animate-pulse">
+          INITIALIZING UNIVERSE...
+        </p>
+      </div>
 
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-        <Sparkles count={200} scale={20} size={2} speed={0.4} opacity={0.3} color="#00ffff" />
+      <div className={`fixed top-0 left-0 w-full h-full -z-50 pointer-events-none bg-[#020617] transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}>
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 50 }}
+          onCreated={() => {
+            // Slight delay to ensure smooth transition after context creation
+            setTimeout(() => setLoaded(true), 500);
+          }}
+        >
+          <ambientLight intensity={0.2} />
+          <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00ffff" />
+          <directionalLight position={[-10, -10, -5]} intensity={1} color="#6366f1" />
+          <pointLight position={[0, 0, 0]} intensity={2} color="#8be9ff" />
 
-        <RotatingShapes />
-      </Canvas>
-    </div>
+          <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+          <Sparkles count={200} scale={20} size={2} speed={0.4} opacity={0.3} color="#00ffff" />
+
+          <InteractiveGroup />
+          <RotatingShapes />
+        </Canvas>
+      </div>
+    </>
   );
 }

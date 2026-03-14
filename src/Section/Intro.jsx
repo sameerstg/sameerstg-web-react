@@ -5,15 +5,15 @@ import Particles from '@/Components/ui/particles'
 
 function Intro() {
   return (
-    <div className='relative min-h-screen flex flex-col gap-6 justify-center items-center text-center px-6 overflow-hidden'>
+    <div className='relative w-full h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden'>
 
       {/* Interactive particle network */}
-      <Particles
+      {/* <Particles
         count={90}
         connectionDistance={150}
         speed={0.35}
         color="0, 255, 255"
-      />
+      /> */}
 
       {/* Content on top */}
       <div className='relative z-10 flex flex-col gap-2 tablet:gap-3 laptop:gap-4'>

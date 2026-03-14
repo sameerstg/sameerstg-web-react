@@ -7,8 +7,8 @@ function Drawer({ drawerClicked, setDrawerClicked }) {
 
     const handleClick = (scrollTo) => {
         if (window.location.pathname === '/') {
-            // If we're on the homepage, scroll to the section
-            document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' });
+            // Dispatch a custom event to trigger the 3D slider animation
+            window.dispatchEvent(new CustomEvent('navigateToSection', { detail: { id: scrollTo } }));
         } else {
             // Otherwise, route to the homepage
             router.push('/');
