@@ -1,0 +1,16 @@
+{
+  "name": "Sameer stg (Sameerstg) Portfolio",
+  "short_name": "SameerSTG",
+  "description": "3D Creative Developer & Designer Portfolio of Sameer stg (Sameerstg)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#00ffff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
